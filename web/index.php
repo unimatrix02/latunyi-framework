@@ -1,6 +1,6 @@
 <?php
 /**
- * Entry point for all web requests 
+ * Entry point for all web requests
  */
 
 // Set document root if not set (when running on CLI)
@@ -8,18 +8,18 @@ if (!isset($_SERVER['DOCUMENT_ROOT']) || empty($_SERVER['DOCUMENT_ROOT']))
 {
 	$currentDir = getcwd();
 	$scriptDir = dirname($_SERVER['PHP_SELF']);
-	
+
 	if ($scriptDir == '.')
 	{
 		$documentRoot = $currentDir;
 	}
 	else
 	{
-		$documentRoot = $currentDir . '/' . $scriptDir; 
+		$documentRoot = $currentDir . '/' . $scriptDir;
 	}
-	
+
 	// Cutoff /web
-	$_SERVER['DOCUMENT_ROOT'] = $documentRoot; 
+	$_SERVER['DOCUMENT_ROOT'] = $documentRoot;
 }
 
 // Initialization

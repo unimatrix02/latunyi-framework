@@ -1,12 +1,12 @@
 <?php
 
 /*========================================================================
-                    _          _                     _ 
+                    _          _                     _
                    | |    __ _| |_ _   _ _ __  _   _(_)
                    | |   / _` | __| | | | '_ \| | | | |
                    | |__| (_| | |_| |_| | | | | |_| | |
                    |_____\__,_|\__|\__,_|_| |_|\__, |_|
-                                               |___/   
+                                               |___/
 
 =========================================================================*/
 /**
@@ -20,14 +20,14 @@
 
 /**
 *	redirect
-*	
+*
 *	Redirects to the specified URL, using header() and exit().
-*	
+*
 *	@param	string	$url		URL to go to
 *	@param	bool	$with_root	Prefix WEB_ROOT
 *	@return	void
 **/
-function redirect($url, $with_root = true) 
+function redirect($url, $with_root = true)
 {
 	if (defined('WEB_ROOT') && $with_root)
 	{
@@ -46,10 +46,10 @@ function redirect($url, $with_root = true)
 *	reload
 *
 *	Reload the current page using header().
-*	
+*
 *	@return	void
 **/
-function reload() 
+function reload()
 {
 	$url = $_SERVER['REQUEST_URI'];
 	header('Location: '.$url);
@@ -62,10 +62,10 @@ function reload()
 *	session_clean
 *
 *	Destroys the current session and starts a new one.
-*	
+*
 *	@return	void
 **/
-function session_clean() 
+function session_clean()
 {
 	$_SESSION = array();
 
@@ -84,10 +84,10 @@ function session_clean()
 *
 *	Unset one or more variables from $_SESSION with isset() check.
 *	Will iterate over over supplied arguments.
-*	
+*
 *	@return	void
 **/
-function s_unset() 
+function s_unset()
 {
 	$args = func_get_args();
 	for ($i = 0; $i < func_num_args(); $i++)
@@ -105,11 +105,11 @@ function s_unset()
 *	s_isset
 *
 *	Check if a variable is set in the session.
-*	
+*
 *	@param	string	$name	Variable name
 *	@return	bool			True: exists
 **/
-function s_isset($name) 
+function s_isset($name)
 {
 	return isset($_SESSION[$name]);
 }
@@ -125,7 +125,7 @@ function s_isset($name)
 *	@param	mixed	$dir_list	Array with dirs, by ref, default empty array
 *	@return	mixed				Array
 **/
-// 
+//
 function get_subdirs($root_dir)
 {
 	// Check if root_dir exists
@@ -141,14 +141,14 @@ function get_subdirs($root_dir)
 		return array();
 	}
 
-	$dir_list = array();	
+	$dir_list = array();
 	while ( ($file = readdir($handle) ) !== false)
 	{
 		if (filetype($root_dir . '/' . $file) == 'dir'
 			&& substr($file, 0, 1) !== '.')
 		{
 			$dir_list[] = $root_dir . '/' . $file;
-		} 
+		}
 	}
 	@closedir($root_dir);
 	return $dir_list;
@@ -170,8 +170,8 @@ function filter_array($data, $filter)
 			$clean[substr($key, strlen($filter))] = $val;
 		}
 	}
-	
-	// Check: not all empty 
+
+	// Check: not all empty
 	$is_empty = true;
 	foreach ($clean as $item)
 	{
@@ -179,13 +179,13 @@ function filter_array($data, $filter)
 		{
 			$is_empty = false;
 			break;
-		}	
+		}
 	}
 	if ($is_empty)
 	{
 		return array();
 	}
-	
+
 	return $clean;
 }
 
@@ -206,7 +206,7 @@ function now()
 /**
 *	date_iso
 *
-*	Returns an ISO date. If the given date is DD-MM-YYYY, it will be 
+*	Returns an ISO date. If the given date is DD-MM-YYYY, it will be
 *	reversed.
 **/
 function date_iso($str)
@@ -226,7 +226,7 @@ function date_iso($str)
 /**
 *	date_dutch
 *
-*	Returns an Dutch date (DD-MM-YYYY). 
+*	Returns an Dutch date (DD-MM-YYYY).
 **/
 function date_dutch($str)
 {
@@ -246,12 +246,12 @@ function date_dutch($str)
 *	regex_matches
 *
 *	Returns all matches as array using preg_match.
-*	
+*
 *	@param	string	$pattern	Pattern to match on
 *	@param	string	$input		Input string
 *	@return	mixed				Matches
 **/
-function regex_matches($pattern, $input) 
+function regex_matches($pattern, $input)
 {
 	$matches = array();
 	preg_match_all($pattern, $input, $matches);
@@ -268,12 +268,12 @@ function regex_matches($pattern, $input)
 *	regex_matches
 *
 *	Returns the first match as string using preg_match.
-*	
+*
 *	@param	string	$pattern	Pattern to match on
 *	@param	string	$input		Input string
 *	@return	string				First match
 **/
-function regex_match($pattern, $input) 
+function regex_match($pattern, $input)
 {
 	$matches = regex_matches($pattern, $input);
 	if (!empty($matches))
@@ -306,12 +306,12 @@ function regex_match($pattern, $input)
 *	regex_check
 *
 *	Returns true if the given input matches the pattern.
-*	
+*
 *	@param	string	$pattern	Pattern to match on
 *	@param	string	$input		Input string
 *	@return	bool				True: match found
 **/
-function regex_check($pattern, $input) 
+function regex_check($pattern, $input)
 {
 	$matches = regex_matches($pattern, $input);
 	if (!empty($matches))
@@ -330,12 +330,12 @@ function regex_check($pattern, $input)
 *	str_contains
 *
 *	Returns true if the 'needle' is found in the 'haystack'.
-*	
+*
 *	@param	string	$haystack	String to search in
 *	@param	string	$needle		String to search for
 *	@return	bool				True: needle found in haystack
 **/
-function str_contains($haystack, $needle) 
+function str_contains($haystack, $needle)
 {
 	return (strpos($haystack, $needle) !== false);
 }
@@ -345,9 +345,9 @@ function str_contains($haystack, $needle)
 /**
 *	unique_id
 *
-*	Wrapper for uniqid, used with mt_rand() as source of number, and 
+*	Wrapper for uniqid, used with mt_rand() as source of number, and
 *	base_convert for brevity.
-*	
+*
 *	@return	string	Unique ID
 **/
 function unique_id()
@@ -362,17 +362,17 @@ function unique_id()
 *	convert_filesize
 *
 *	Returns a human-readable size (... KB, MB, GB).
-*	
+*
 *	@param	int		$bytes		Number of bytes
 *	@return	string				Size in KB/MB/GB
 **/
-function convert_filesize($bytes) 
+function convert_filesize($bytes)
 {
     if ($bytes <= 0)
     {
         return '0 byte';
    	}
-    $convention = 1024; 
+    $convention = 1024;
     $s = array('B', 'KB', 'MB', 'GB');
     $e = floor(log($bytes, $convention));
     return round($bytes / pow($convention, $e), 1) . ' ' . $s[$e];
@@ -385,7 +385,7 @@ function convert_filesize($bytes)
 *
 *	Calls a static method from a class using call_user_func
 *	and returns the result.
-*	
+*
 *	@param	string	$class		Class name
 *	@param	string	$method		Method to call
 *	@return	mixed				Result of call_user_func
@@ -403,7 +403,7 @@ function call_static_method($class, $method)
 *
 *	Returns the value of a static property of a class using a reflection
 *	class.
-*	
+*
 *	@param	string	$class		Class name
 *	@param	string	$property	Property to read
 *	@return	mixed				Value of property
@@ -422,7 +422,7 @@ function get_static_property($class, $property)
 *	add_to_include_path
 *
 *	Adds the given path to the include path.
-*	
+*
 *	@param	string	$path		Path to add
 *	@return	void
 **/
@@ -438,21 +438,21 @@ function add_to_include_path($path)
 *
 *	Remembers the current time on first call, and returns the difference
 *   on the second call.
-*	
+*
 *	@param	string	$class		Class name
 *	@param	string	$property	Property to read
 *	@return	mixed				Value of property
 **/
-function timer() 
+function timer()
 {
     static $a;
-    if (empty($a)) 
+    if (empty($a))
     {
     	$a = microtime(true);
     }
-    else 
+    else
     {
-    	$time = (string)(microtime(true) - $a); 
+    	$time = (string)(microtime(true) - $a);
     	unset($a);
     	return $time;
     }
@@ -471,7 +471,7 @@ function timer()
  * @return string A UUID, made up of 32 hex digits and 4 hyphens.
  */
 function get_uuid() {
-  
+
     $pr_bits = null;
     $fp = @fopen('/dev/urandom','rb');
     if ($fp !== false) {
@@ -484,13 +484,13 @@ function get_uuid() {
             $pr_bits .= chr(mt_rand(0, 255));
         }
     }
-  
+
     $time_low = bin2hex(substr($pr_bits,0, 4));
     $time_mid = bin2hex(substr($pr_bits,4, 2));
     $time_hi_and_version = bin2hex(substr($pr_bits,6, 2));
     $clock_seq_hi_and_reserved = bin2hex(substr($pr_bits,8, 2));
     $node = bin2hex(substr($pr_bits,10, 6));
-  
+
     /**
      * Set the four most significant bits (bits 12 through 15) of the
      * time_hi_and_version field to the 4-bit version number from
@@ -500,7 +500,7 @@ function get_uuid() {
     $time_hi_and_version = hexdec($time_hi_and_version);
     $time_hi_and_version = $time_hi_and_version >> 4;
     $time_hi_and_version = $time_hi_and_version | 0x4000;
-  
+
     /**
      * Set the two most significant bits (bits 6 and 7) of the
      * clock_seq_hi_and_reserved to zero and one, respectively.
@@ -508,7 +508,7 @@ function get_uuid() {
     $clock_seq_hi_and_reserved = hexdec($clock_seq_hi_and_reserved);
     $clock_seq_hi_and_reserved = $clock_seq_hi_and_reserved >> 2;
     $clock_seq_hi_and_reserved = $clock_seq_hi_and_reserved | 0x8000;
-  
+
     return strtoupper(sprintf('%08s-%04s-%04x-%04x-%012s',
         $time_low, $time_mid, $time_hi_and_version, $clock_seq_hi_and_reserved, $node));
 }
@@ -519,7 +519,7 @@ function get_uuid() {
 *	__
 *
 *	Extension of gettext() to support placeholder replacement.
-*	
+*
 *	@param	string	$string		String to translate
 *	@return	string				Translated string
 **/
@@ -528,7 +528,7 @@ function __($string)
     $arg = array();
     for($i = 1 ; $i < func_num_args(); $i++)
         $arg[] = func_get_arg($i);
-   
+
     return vsprintf(gettext($string), $arg);
 }
 
@@ -538,4 +538,27 @@ function __($string)
 function val(&$x)
 {
 	return (isset($x) ? $x : '');
+}
+
+
+function arrayToObject($array)
+{
+    if (!is_array($array)) {
+        return $array;
+    }
+
+    $object = new stdClass();
+    if (is_array($array) && count($array) > 0)
+    {
+        foreach ($array as $name=>$value) {
+            $name = strtolower(trim($name));
+            if (!empty($name)) {
+                $object->$name = arrayToObject($value);
+            }
+        }
+        return $object;
+    }
+    else {
+        return false;
+    }
 }

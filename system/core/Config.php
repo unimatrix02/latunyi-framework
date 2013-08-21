@@ -11,26 +11,27 @@ class Config
 	 * @var array
 	 */
 	private $data;
-	
+
 	public function __construct()
 	{
-		$this->data = array();
-		
+		$this->data = new \StdClass();
+
 		// Load the core config file
-		$this->loadFile('core', SYSTEM_PATH . '/config/routing');
-		
+		$this->loadFile('core', SYSTEM_PATH . '/config/config');
+
 		// Load the application config file
-		
+		$this->loadFile('app', APP_PATH . '/config/config');
+
 		// Load the application action config file
 	}
 
 	/**
 	 * Loads the contents of the given configuration file
 	 * and stores it in the $data property under the given name.
-	 * First looks for a PHP include file, if not available, 
-	 * looks for a YAML file, loads the data, and dumps it 
+	 * First looks for a PHP include file, if not available,
+	 * looks for a YAML file, loads the data, and dumps it
 	 * as a PHP include file.
-	 * 
+	 *
 	 * @param string  $name
 	 * @param string  $path		Path to file, without extension
 	 */
@@ -38,20 +39,20 @@ class Config
 	{
 		$phpInclude = $path . '.inc.php';
 		$yamlFile = $path . '.yml';
-		
+
 		// Look for PHP include first
 		$createNewPhpInclude = true;
 		if (file_exists($phpInclude))
 		{
 			// Check PHP include is newer than YAML file
 			$includeMtime = filemtime($phpInclude);
-			
+
 			// Check YAML file exists
 			if (!file_exists($yamlFile))
 			{
 				throw new Exception('Failed to find YAML config file ' . $yamlFile);
 			}
-			
+
 			$yamlMtime = filemtime($yamlFile);
 
 			// Use PHP include if newer than YAML
@@ -60,7 +61,7 @@ class Config
 				$createNewPhpInclude = false;
 			}
 		}
-		
+
 		if ($createNewPhpInclude)
 		{
 			// Check YAML file exists
@@ -74,20 +75,33 @@ class Config
 			{
 				throw new Exception('Failed to read YAML config file ' . $yamlFile);
 			}
-			
+
 			$result = file_put_contents($phpInclude, '<?php $config = ' . var_export($data, true) . ';');
 		}
 
 		require($phpInclude);
-		
+
 		// Check for $config
 		if (!isset($config))
 		{
 			$createNewPhpInclude = true;
 			throw new Exception('Local variable $config was not created by configuration file');
 		}
-		
-		$this->data[$name] = $config;
+
+		$this->data->$name = arrayToObject($config);
 	}
-	
+
+	/**
+	 * Method to retrieve config data.
+	 *
+	 * @param string $key
+	 */
+	public function __get($key)
+	{
+		if (isset($this->data->$key))
+		{
+			return $this->data->$key;
+		}
+	}
+
 }
