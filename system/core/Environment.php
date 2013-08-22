@@ -6,8 +6,15 @@ namespace System\Core;
  */
 class Environment
 {
-	public function __construct()
+	const DEV = 'dev';
+	const TEST = 'test';
+	const PROD = 'prod';
+
+	protected $id;
+
+	public function __construct($id)
 	{
+		$this->id = $id;
 	}
-	
+
 }

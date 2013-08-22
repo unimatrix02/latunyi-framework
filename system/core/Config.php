@@ -23,6 +23,7 @@ class Config
 		$this->loadFile('app', APP_PATH . '/config/config');
 
 		// Load the application action config file
+		$this->loadFile('actions', APP_PATH . '/config/actions');
 	}
 
 	/**
@@ -88,6 +89,10 @@ class Config
 			throw new Exception('Local variable $config was not created by configuration file');
 		}
 
+		// TODO: use ConfigData recursively.
+		pr($config);
+		$data = new \System\Core\ConfigData(arrayToObject($config));
+		prx($data);
 		$this->data->$name = arrayToObject($config);
 	}
 
@@ -98,9 +103,15 @@ class Config
 	 */
 	public function __get($key)
 	{
+		pr($key);
+		prv(isset($this->data->$key));
 		if (isset($this->data->$key))
 		{
 			return $this->data->$key;
+		}
+		else
+		{
+			throw new Exception('Failed to find configuration key ' . $key);
 		}
 	}
 

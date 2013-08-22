@@ -1,6 +1,6 @@
 <?php $config = array (
-  'test' => 
+  'log' => 
   array (
-    'something' => 'bla',
+    'path' => 'application/log',
   ),
 );

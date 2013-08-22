@@ -1,3 +1,6 @@
-# Example
+# Logging
+log:
+    path: application/log
+
 test:
-    something: bla
+	bla: foo

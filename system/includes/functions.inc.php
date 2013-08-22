@@ -562,3 +562,15 @@ function arrayToObject($array)
         return false;
     }
 }
+
+/**
+ * Returns the local server's hostname.
+ *
+ * @return string
+ */
+function getServerHostName()
+{
+	$str = shell_exec('hostname');
+	$str = str_replace("\n", '', $str);
+	return $str;
+}
