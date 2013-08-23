@@ -1,3 +1,5 @@
 # Example
 log:
     dir: /log
+    test:
+        something: bla

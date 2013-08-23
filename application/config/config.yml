@@ -3,4 +3,5 @@ log:
     path: application/log
 
 test:
-	bla: foo
+    bla: 
+        foo: bar

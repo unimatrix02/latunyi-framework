@@ -41,10 +41,14 @@ class BaseApplication
 		$this->environment = new Environment($envId);
 
 		// Setup config
+		$configLoader = new ConfigLoader();
 		$this->config = new Config();
-
+		$this->config->core = $configLoader->loadFile(SYSTEM_PATH . '/config/config');
+		$this->config->app = $configLoader->loadFile(APP_PATH . '/config/config');
+		$this->config->actions = $configLoader->loadFile(APP_PATH . '/config/actions');
+		
 		// Setup logging
-		$this->log = new Log($this->config->core->log->dirx);
+		$this->log = new Log($this->config->core->log->dir);
 	}
 
 	/**

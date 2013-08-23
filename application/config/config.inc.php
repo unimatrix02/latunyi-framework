@@ -3,4 +3,11 @@
   array (
     'path' => 'application/log',
   ),
+  'test' => 
+  array (
+    'bla' => 
+    array (
+      'foo' => 'bar',
+    ),
+  ),
 );
