@@ -3,11 +3,27 @@ namespace Application;
 
 use System\Core\Environment as Env;
 
+/**
+ * Class that represents a specific application.
+ */
 class Application extends \System\Core\BaseApplication
 {
-	public function __construct()
+	/**
+	 * Constructor
+	 */
+	public function __construct($isWebRequest)
 	{
-		parent::__construct($this->getEnvironmentId());
+		parent::__construct($isWebRequest);
+	}
+	
+	/**
+	 * Initializes the application.
+	 * 
+	 * @see System\Core.BaseApplication::initialize()
+	 */
+	public function initialize()
+	{
+		parent::initialize($this->getEnvironmentId());
 	}
 
 	/**

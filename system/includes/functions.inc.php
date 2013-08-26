@@ -257,7 +257,7 @@ function regex_matches($pattern, $input)
 	preg_match_all($pattern, $input, $matches);
 	if (!empty($matches))
 	{
-		return $matches[0];
+		return $matches;
 	}
 	return $matches;
 }
@@ -313,7 +313,7 @@ function regex_match($pattern, $input)
 **/
 function regex_check($pattern, $input)
 {
-	$matches = regex_matches($pattern, $input);
+	$matches = regex_match($pattern, $input);
 	if (!empty($matches))
 	{
 		return true;

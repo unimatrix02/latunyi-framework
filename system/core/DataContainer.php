@@ -10,13 +10,13 @@ class DataContainer
 	 * List for holding data.
 	 * @var array
 	 */
-	private $data;
+	private $_data;
 
 	public function __construct($data = null)
 	{
 		if (!empty($data))
 		{
-			$this->data = $data;
+			$this->_data = $data;
 		}
 	}
 
@@ -27,9 +27,15 @@ class DataContainer
 	 */
 	public function __get($key)
 	{
-		if (isset($this->data[$key]))
+		// Look for properties first
+		if ($key != '_data' && property_exists($this, $key))
 		{
-			return $this->data[$key];
+			return $this->$key;
+		}
+		
+		if (isset($this->_data[$key]))
+		{
+			return $this->_data[$key];
 		}
 		else
 		{
@@ -45,7 +51,36 @@ class DataContainer
 	 */
 	public function __set($key, $value)
 	{
-		$this->data[$key] = $value;
+		// Look for property first
+		if ($key != '_data' && property_exists($this, $key))
+		{
+			$this->$key = $value;
+		}
+		else
+		{
+			$this->_data[$key] = $value;
+		}
+	}
+	
+	/**
+	 * Returns the content of the _data property.
+	 * 
+	 * @return array
+	 */
+	public function getData()
+	{
+		return $this->_data;
+	}
+
+	/**
+	 * Checks if the given key exists in the _data property.
+	 * 
+	 * @param string $key
+	 * @return bool
+	 */
+	public function has($key)
+	{
+		return isset($this->_data[$key]);
 	}
 	
 	/**
@@ -67,7 +102,7 @@ class DataContainer
 			foreach ($data as $key => $val)
 			{
 				$key = strtolower(trim($key));
-				if (!empty($key))
+				if (strlen($key) > 0)
 				{
 					$obj->$key = self::makeObject($val);
 				}
@@ -78,6 +113,50 @@ class DataContainer
 		{
 			return false;
 		}
+	}	
+
+	public function getArray()
+	{
+		$data = array();
+		foreach ($this->_data as $key => $val)
+		{
+			if ($val instanceOf self)
+			{
+				$data[$key] = $val->getArray();
+			}
+			else
+			{
+				$data[$key] = $val;
+			}
+		}
+		return $data;
 	}
 	
+	public static function getArray2($data, $key)
+	{
+		pr($data);
+		prx($key);
+		if (isset($data[$key]))
+		{
+			$val = $this->_data[$key];
+			if ($val instanceOf self)
+			{
+				return $val->getArray($val->getData());
+			}
+		}
+		
+		/*
+		if (isset($this->_data[$key]))
+		{
+			$val = $this->_data[$key];
+			if ($val instanceOf self)
+			{
+				//return (array)$val->_data;
+				return $this->getArray($val->_data);
+			} 
+			return $val;
+		}
+		*/
+	}
+
 }

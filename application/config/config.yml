@@ -2,6 +2,6 @@
 log:
     path: application/log
 
-test:
-    bla: 
-        foo: bar
+# Templating
+templating:
+    default: page.php

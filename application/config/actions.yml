@@ -1,4 +1,34 @@
 # Actions
 /:
+    controller: Test
+    method:     showHomepage
+    output:     html
+    vars:
+        content: homepage.php
+    files:
+         css:
+         - layout.css
+         js:
+         - test.js
+    
+/list:
     controller: Home
-    method: doSomething
+    method:     showList
+
+/list/(\d+)/item/(\d+)/view:
+    controller: Home
+    method:     viewItem
+    render:     json
+    
+/item/(\d+)/view:
+    controller: Home
+    method:     showItem
+    
+/item/(\d+)/save:
+    controller: Home
+    method:     saveItem
+    
+/item/new:
+    controller: Home
+    method:     showForm
+

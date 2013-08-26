@@ -3,11 +3,8 @@
   array (
     'path' => 'application/log',
   ),
-  'test' => 
+  'templating' => 
   array (
-    'bla' => 
-    array (
-      'foo' => 'bar',
-    ),
+    'default' => 'page.php',
   ),
 );
