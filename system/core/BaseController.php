@@ -29,21 +29,18 @@ class BaseController
 	 * @var \System\Core\Session
 	 */
 	protected $session;
+	
+	/**
+	 * Database object
+	 * @var \System\Core\Database
+	 */
+	protected $db;
 
 	/**
-	 * Constructor, sets config, response, log and session objects.
-	 * 
-	 * @param Config $config
-	 * @param Response $response
-	 * @param Log $log
-	 * @param Session $session
+	 * Constructor.
 	 */
-	public function __construct(Config $config, Response $response, Log $log, Session $session)
+	public function __construct()
 	{
-		$this->config = $config;
-		$this->response = $response;
-		$this->log = $log;
-		$this->session = $session;
 	}
 	
 	/**
@@ -105,4 +102,55 @@ class BaseController
 	{
 		$this->response->$key = $value;
 	}
+	
+	/**
+	 * Sets the config.
+	 * 
+	 * @param \System\Core\Config $config
+	 */
+	public function setConfig($config)
+	{
+		$this->config = $config;
+	}
+
+	/**
+	 * Sets the response.
+	 * 
+	 * @param \System\Core\Response $response
+	 */
+	public function setResponse(Response $response)
+	{
+		$this->response = $response;
+	}
+
+	/**
+	 * Sets the logs.
+	 * 
+	 * @param \System\Core\Log $log
+	 */
+	public function setLog(Log $log)
+	{
+		$this->log = $log;
+	}
+
+	/**
+	 * Sets the session.
+	 * 
+	 * @param \System\Core\Session $session
+	 */
+	public function setSession(Session $session)
+	{
+		$this->session = $session;
+	}
+
+	/**
+	 * Sets the database object.
+	 * 
+	 * @param \System\Core\Database $db
+	 */
+	public function setDatabase(Database $db)
+	{
+		$this->db = $db;
+	}
+	
 }

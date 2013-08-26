@@ -9,20 +9,63 @@ use \Application\Controller;
 class ControllerFactory
 {
 	/**
-	 * Action object
-	 * @var \System\Core\Action
+	 * Config object
+	 * @var \System\Core\Config
 	 */
-	protected $action;
+	protected $config;
 	
-	public function __construct(Action $action)
+	public function __construct(Config $config)
 	{
-		$this->action = $action;
+		$this->config = $config;
 	}
 	
-	public function makeController(Config $config, Log $log, Session $session, Response $response)
+	public function makeController($controllerName, Log $log, Session $session, Response $response)
 	{
-		$controllerName = '\\Application\\Controller\\' . $this->action->getController();
-		$controller = new $controllerName($config, $response, $log, $session);
+		$fullControllerName = '\\Application\\Controller\\' . $controllerName;
+		$controller = new $fullControllerName();
+		$controller->setConfig($this->config);
+		$controller->setResponse($response);
+		$controller->setLog($log);
+		$controller->setSession($session);
+		
+		// Execute additional factory method, if available
+		$method = 'make' . $controllerName . 'Controller';
+		if (is_callable(array($this, $method)))
+		{		
+			$this->$method($controller);
+		}
+		
 		return $controller;
+	}
+	
+	/**
+	 * Customizes the Test controller.
+	 * 
+	 * @param Controller $controller
+	 */
+	public function makeTestController(&$controller)
+	{
+		$controller->setDatabase($this->getDatabase());
+	}
+	
+	/**
+	 * Utility method to make Database object.
+	 * 
+	 * @return Database
+	 * @throws \Exception
+	 */
+	private function getDatabase()
+	{
+		if (!$this->config->app->has('database'))
+		{
+			throw new \Exception('Failed to find config for database connection');
+		}
+		
+		$config = new DbConnData();
+		$config->username = $this->config->app->database->username;
+		$config->password = $this->config->app->database->password;
+		$config->database = $this->config->app->database->name;
+		
+		return new Database($config);
 	}
 }

@@ -1,3 +1,9 @@
+# Database
+database:
+    username: rootx
+    password: Di19Mp78!
+    name: compare
+
 # Logging
 log:
     path: application/log

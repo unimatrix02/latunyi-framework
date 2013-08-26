@@ -129,8 +129,8 @@ class BaseApplication
 	 */
 	public function createController()
 	{
-		$controllerFactory = new ControllerFactory($this->action);
-		$this->controller = $controllerFactory->makeController($this->config, $this->log, $this->session, $this->response);
+		$controllerFactory = new ControllerFactory($this->config);
+		$this->controller = $controllerFactory->makeController($this->action->getController(), $this->log, $this->session, $this->response);
 	}
 	
 	/**
