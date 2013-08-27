@@ -133,7 +133,12 @@ class SplClassLoader
             // Make all chars before last / lowercase
             $fileName = strtolower(substr($fileName, 0, strrpos($fileName, '/'))) . substr($fileName, strrpos($fileName, '/'));
 
-            require ($this->_includePath !== null ? $this->_includePath . DIRECTORY_SEPARATOR : '') . $fileName;
+            $target = ($this->_includePath !== null ? $this->_includePath . DIRECTORY_SEPARATOR : '') . $fileName;
+            if (!file_exists($target))
+            {
+            	throw new \Exception('Failed to find class ' . $className . ' in file ' . $target);
+            } 
+            require $target;
         }
     }
 }

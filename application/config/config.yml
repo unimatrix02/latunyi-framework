@@ -1,8 +1,9 @@
 # Database
 database:
-    username: rootx
+    username: root
     password: Di19Mp78!
     name: compare
+    default_object_namespace: \Application\Domain\Entity
 
 # Logging
 log:

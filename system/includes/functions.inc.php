@@ -247,17 +247,22 @@ function date_dutch($str)
 *
 *	Returns all matches as array using preg_match.
 *
-*	@param	string	$pattern	Pattern to match on
-*	@param	string	$input		Input string
-*	@return	mixed				Matches
+*	@param	string	$pattern		Pattern to match on
+*	@param	string	$input			Input string
+*	@param	bool	$returnRaw		Return raw output
+*	@return	mixed					Matches
 **/
-function regex_matches($pattern, $input)
+function regex_matches($pattern, $input, $returnRaw = false)
 {
 	$matches = array();
 	preg_match_all($pattern, $input, $matches);
 	if (!empty($matches))
 	{
-		return $matches;
+		if ($returnRaw)
+		{
+			return $matches;
+		}
+		return $matches[0];
 	}
 	return $matches;
 }

@@ -66,6 +66,6 @@ class ControllerFactory
 		$config->password = $this->config->app->database->password;
 		$config->database = $this->config->app->database->name;
 		
-		return new Database($config);
+		return new Database($config, $this->config->app->database->default_object_namespace);
 	}
 }

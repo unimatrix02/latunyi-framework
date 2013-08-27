@@ -62,7 +62,7 @@ class Router
 					$action->setVariables($this->config->$path->vars->getArray());
 				}
 				
-				$matches = regex_matches($pattern, $request->path);
+				$matches = regex_matches($pattern, $request->path, true);
 				if (count($matches) > 1)
 				{
 					array_shift($matches);

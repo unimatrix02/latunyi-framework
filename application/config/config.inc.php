@@ -1,9 +1,10 @@
 <?php $config = array (
   'database' => 
   array (
-    'username' => 'rootx',
+    'username' => 'root',
     'password' => 'Di19Mp78!',
     'name' => 'compare',
+    'default_object_namespace' => '\\Application\\Domain\\Entity',
   ),
   'log' => 
   array (
