@@ -1,6 +1,8 @@
 <?php
 namespace System\Core;
 
+use Application\Database\ItemTable;
+
 use \Application\Controller;
 
 /**
@@ -45,7 +47,8 @@ class ControllerFactory
 	 */
 	public function makeTestController(&$controller)
 	{
-		$controller->setDatabase($this->getDatabase());
+		$table = new ItemTable($this->getDatabase());
+		$controller->setTable($table);
 	}
 	
 	/**

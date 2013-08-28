@@ -155,7 +155,7 @@ class Database
 		$params = (array)$params;
 	
 		// Check query for named placeholders
-		$placeholders = regex_matches('/(?<=\s):[a-z]+(?=\s|,|$)/', $query);
+		$placeholders = regex_matches('/(?<=\s):[a-z_]+(?=\s|,|$)/', $query);
 		if (count($placeholders) > count($params))
 		{
 			throw new \Exception('Placeholder/parameter count mismatch (placeholders: ' . count($placeholders) . '; parameters: ' . count($params) . ')');
@@ -259,4 +259,41 @@ class Database
 			return $this->handle->lastInsertId();
 		}
 	}
+	
+	/**
+	 *	Runs a query which selects only two fields, gets the data,
+	 *	and formats the results to a key > value array. The first
+	 *	field is used as key, the second as value.
+	 *
+	 *	@param	string	$sql	Query
+	 *  @param QueryConditionList $params
+	 *	@return	mixed			List
+	 **/
+	public function makeList($sql, $params)
+	{
+		// Get data
+		if ($params instanceOf QueryParams)
+		{
+			$result = $this->getData($sql, $params->asArray());
+		}
+		else
+		{
+			$result = $this->getData($sql);
+		}
+	
+		$list = array();
+		if (count($result) > 0)
+		{
+			// Find out names of fields
+			$fields = array_keys((array)$result[0]);
+				
+			foreach ($result as $item)
+			{
+				$item = (array)$item;
+				$list[$item[$fields[0]]] = $item[$fields[1]];
+			}
+		}
+		return $list;
+	}
+	
 }
