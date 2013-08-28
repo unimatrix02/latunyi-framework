@@ -1,5 +1,5 @@
 <?php
-namespace System\Core;
+namespace System\Core\Database;
 
 class TableField extends DataField
 {

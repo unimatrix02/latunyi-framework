@@ -1,7 +1,9 @@
 <?php
 namespace System\Core;
 
-use Application\Database\ItemTable;
+use 	Application\Database\ItemTable,
+		System\Core\Database\Database
+;
 
 use \Application\Controller;
 
@@ -64,7 +66,7 @@ class ControllerFactory
 			throw new \Exception('Failed to find config for database connection');
 		}
 		
-		$config = new DbConnData();
+		$config = new \System\Core\Database\ConnectionData();
 		$config->username = $this->config->app->database->username;
 		$config->password = $this->config->app->database->password;
 		$config->database = $this->config->app->database->name;

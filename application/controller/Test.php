@@ -3,9 +3,7 @@ namespace Application\Controller;
 
 use Application\Domain\Entity\Item;
 
-use System\Core\QueryParam;
-
-use System\Core\QueryParams;
+use \System\Core\Database\QueryParams;
 
 use Application\Database\ItemTable;
 use \Application\Domain\Entity\ItemList;
@@ -21,6 +19,17 @@ class Test extends \System\Core\BaseController
 	
 	public function showHomepage()
 	{
+		//$data = $this->table->getAllRows();
+		//pr($data);
+		
+		//$data = $this->table->getRow(9);
+		//pr($data);
+		
+// 		$params = new QueryParams();
+// 		$params->add('list_id', 2);
+// 		$data = $this->table->getRows($params);
+// 		pr($data);
+		
 		$item = new Item();
 		$item->listId = 2;
 		$item->name = 'Testing';
@@ -28,30 +37,26 @@ class Test extends \System\Core\BaseController
 		$item->status = 'active';
 		$item->url = 'http://www.something.com';
 		//$this->table->insertRow($item);
-		/*
 		
-		$item = $this->table->getRowById(30);
-		pr($item);
+		//$item = $this->table->getRow(36);
+		//pr($item);
 		
-		$item->name = 'Testing ' . date('H:i:s');
+		//$item->name = 'Testing ' . date('H:i:s');
 		
-		$this->table->UpdateRecord($item);
-		prx($item);
+		//$this->table->updateRow($item);
+		//prx($item);
 		
 		$data = array('name' => 'bla');
-		$params = new QueryConditionList();
-		$params->add(new QueryCondition('id', 30));
-		$this->table->updateRows($data, $params);
+		$params = new QueryParams();
+		$params->add('id', 30, '>');
+		//$this->table->updateRows($data, $params);
 		
-
-		$params = new QueryConditionList();
-		$params->add(new QueryCondition('id', 31, '>'));
-		
-		$this->table->deleteRows($params);
-		*/
+		$params = new QueryParams();
+		$params->add('id', 31, '>');
+		//$this->table->deleteRows($params);
 
 		$params = new QueryParams();
-		$params->add('list_id', 0);
+		$params->add('list_id', 2);
 		$count = $this->table->countRows($params);
 		pr($count);
 	}

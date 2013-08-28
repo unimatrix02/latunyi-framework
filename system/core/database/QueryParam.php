@@ -1,5 +1,5 @@
 <?php
-namespace System\Core;
+namespace System\Core\Database;
 
 /**
  * Class to represent a query parameter.

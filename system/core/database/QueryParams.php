@@ -1,5 +1,7 @@
 <?php
-namespace System\Core;
+namespace System\Core\Database;
+
+use \System\Core\ObjectList;
 
 /**
  * Class to represent a list of query conditions

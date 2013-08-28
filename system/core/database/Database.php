@@ -1,5 +1,5 @@
 <?php
-namespace System\Core;
+namespace System\Core\Database;
 
 /**
  * Class for MySQL database operations using PDO.
@@ -33,10 +33,10 @@ class Database
 	/**
 	 * Constructor, stores the connection data and default object namespace.
 	 * 
-	 * @param DbConnData $connData
-	 * @param string $defaultObjectNamespace
+	 * @param 	ConnectionData 	$connData
+	 * @param 	string 			$defaultObjectNamespace
 	 */
-	public function __construct(DbConnData $connData, $defaultObjectNamespace)
+	public function __construct(ConnectionData $connData, $defaultObjectNamespace)
 	{
 		$this->connData = $connData;
 		$this->defaultObjectNamespace = $defaultObjectNamespace;

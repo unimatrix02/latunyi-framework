@@ -1,10 +1,10 @@
 <?php
-namespace System\Core;
+namespace System\Core\Database;
 
 /**
  * Class for holding database connection data.
  */
-class DbConnData
+class ConnectionData
 {
 	public $host = 'localhost';
 	public $port = 3306;

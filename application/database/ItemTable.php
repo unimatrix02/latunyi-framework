@@ -1,15 +1,14 @@
 <?php
 namespace Application\Database;
 
-use System\Core\TableField;
-use System\Core\CustomField;
-use System\Core\ForeignField;
-
-use \System\Core\Table;
+use \System\Core\Database\TableField;
+use \System\Core\Database\CustomField;
+use \System\Core\Database\ForeignField;
+use \System\Core\Database\Table;
 
 class ItemTable extends Table
 {
-	public function __construct(\System\Core\Database $db)
+	public function __construct(\System\Core\Database\Database $db)
 	{
 		parent::__construct($db, 'Item');
 		

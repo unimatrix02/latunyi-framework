@@ -136,7 +136,7 @@ class SplClassLoader
             $target = ($this->_includePath !== null ? $this->_includePath . DIRECTORY_SEPARATOR : '') . $fileName;
             if (!file_exists($target))
             {
-            	throw new \Exception('Failed to find class ' . $className . ' in file ' . $target);
+            	throw new \Exception('Failed to find file ' . $target . ' for loading class ' . $className );
             } 
             require $target;
         }

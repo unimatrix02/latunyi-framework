@@ -1,5 +1,5 @@
 <?php
-namespace System\Core;
+namespace System\Core\Database;
 
 class Table
 {
@@ -91,7 +91,7 @@ class Table
 	 * 
 	 * @param mixed $id
 	 */
-	public function getRowById($id)
+	public function getRow($id)
 	{
 		$sql = $this->makeSelectAndFrom();
 
@@ -172,9 +172,6 @@ class Table
 			$sql .= ' LIMIT ' . $offset . ', '.$limit;
 		}
 		
-		pr($sql);
-		pr($params->asArray());
-	
 		// Get data
 		$result = $this->db->getData($sql, $params->asArray(), $this->entityClass);
 	
