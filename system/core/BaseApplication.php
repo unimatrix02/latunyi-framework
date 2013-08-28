@@ -62,6 +62,12 @@ class BaseApplication
 	 * @var string
 	 */
 	protected $output;
+	
+	/**
+	 * List of reusable objects
+	 * @var \System\Core\Registry
+	 */
+	protected $registry;
 
 	/**
 	 * Constructor
@@ -81,6 +87,8 @@ class BaseApplication
 	 */
 	public function initialize($envId)
 	{
+		$this->registry = new Registry();
+		
 		// Setup environment
 		$this->environment = new Environment($envId);
 		
@@ -129,7 +137,7 @@ class BaseApplication
 	 */
 	public function createController()
 	{
-		$controllerFactory = new ControllerFactory($this->config);
+		$controllerFactory = new \Application\Controller\Factory($this->config, $this->registry);
 		$this->controller = $controllerFactory->makeController($this->action->getController(), $this->log, $this->session, $this->response);
 	}
 	

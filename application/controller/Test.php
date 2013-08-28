@@ -5,7 +5,6 @@ use Application\Domain\Entity\Item;
 
 use \System\Core\Database\QueryParams;
 
-use Application\Database\ItemTable;
 use \Application\Domain\Entity\ItemList;
 use \System\Core;
 
@@ -58,8 +57,9 @@ class Test extends \System\Core\BaseController
 		$params = new QueryParams();
 		$params->add('list_id', 2);
 		$count = $this->table->countRows($params);
-		pr($count);
+		//pr($count);
 	}
+	
 	/**
 	 * Sets the table object
 	 * 
