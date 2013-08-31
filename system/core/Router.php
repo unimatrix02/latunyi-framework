@@ -50,18 +50,19 @@ class Router
 				{
 					if ($this->config->$path->files->has('css'))
 					{
-						$action->setStylesheets($this->config->$path->files->css->getArray());
+						$action->setStylesheets($this->config->$path->files->css->asArray());
 					}
 					if ($this->config->$path->files->has('js'))
 					{
-						$action->setScripts($this->config->$path->files->js->getArray());
+						$action->setScripts($this->config->$path->files->js->asArray());
 					}
 				}
 				if ($this->config->$path->has('vars'))
 				{
-					$action->setVariables($this->config->$path->vars->getArray());
+					$action->setVariables($this->config->$path->vars->asArray());
 				}
 				
+				// Add parameters from path as arguments to action
 				$matches = regex_matches($pattern, $request->path, true);
 				if (count($matches) > 1)
 				{
@@ -69,6 +70,14 @@ class Router
 					foreach ($matches as $arg)
 					{
 						$action->addArg($arg[0]);
+					}
+				}
+				else
+				{
+					// If the path didn't have parameters, and the config does, provide them to the action as arguments
+					if ($this->config->$path->has('args'))
+					{
+						$action->setArguments($this->config->$path->args->asArray());
 					}
 				}
 				

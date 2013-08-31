@@ -1,34 +1,39 @@
-# Actions
+# List
 /:
     controller: Test
-    method:     showHomepage
-    output:     html
-    vars:
-        content: homepage.php
-    files:
-         css:
-         - layout.css
-         js:
-         - test.js
-    
-/list:
-    controller: Home
     method:     showList
+    vars:
+        content: list.php
 
-/list/(\d+)/item/(\d+)/view:
-    controller: Home
-    method:     viewItem
-    render:     json
-    
-/item/(\d+)/view:
-    controller: Home
-    method:     showItem
-    
-/item/(\d+)/save:
-    controller: Home
-    method:     saveItem
-    
-/item/new:
-    controller: Home
+# Add item
+/item/(\d+)/add:
+    controller: Test
     method:     showForm
+    vars:
+        content: form.php
 
+# Edit item
+/item/(\d+)/edit:
+    controller: Test
+    method:     showForm
+    vars:
+        content: form.php
+
+    
+# Example
+# /some-path/(\d+):		# use regular expressions to indicate parameters
+#     controler: SomeController
+#     method:    doSomething
+#     args:				# provide arguments to controller method directly (works only if path doesn't have parameters)
+#		 foo: bar
+#     vars:    (inserted as template data) 
+#        content: some-template.php
+#        other: data
+#     output: html|json|text|none (default html)
+#     files: (optional, for additional files)
+#         css:
+#         - file1.css
+#         - file2.css
+#         js:
+#         - file1.js
+#         - file2.js

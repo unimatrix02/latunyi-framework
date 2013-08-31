@@ -1,9 +1,6 @@
 TO DO
 ---------
 
-PDO database class
-
-Table class
-
-Form helpers?
 Validation?
+
+Support for PK with multiple fields

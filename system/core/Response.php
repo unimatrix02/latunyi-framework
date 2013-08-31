@@ -168,4 +168,18 @@ class Response
 	{
 		$this->data[$key] = $value;
 	}
+
+	/**
+	 * Magic method to get data.
+	 * 
+	 * @param string $key
+	 * @return mixed $value 
+	 */
+	public function __get($key)
+	{
+		if (isset($this->data[$key]))
+		{
+			return $this->data[$key];
+		}
+	}
 }

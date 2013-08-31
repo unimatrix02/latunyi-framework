@@ -3,7 +3,7 @@
   array (
     'username' => 'root',
     'password' => 'Di19Mp78!',
-    'name' => 'compare',
+    'name' => 'framework',
     'default_object_namespace' => '\\Application\\Domain\\Entity',
   ),
   'log' => 

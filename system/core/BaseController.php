@@ -13,6 +13,12 @@ class BaseController
 	protected $config;
 	
 	/**
+	 * Request object
+	 * @var \System\Core\Request
+	 */
+	protected $request;
+	
+	/**
 	 * Response object
 	 * @var \System\Core\Response
 	 */
@@ -58,8 +64,8 @@ class BaseController
 		{
 			throw new \Exception('Can\'t call method ' . $methodName . ' on controller ' . get_class($this));
 		}
-		
-		$this->$methodName($arguments);
+
+		call_user_func_array(array($this, $methodName), $arguments);
 		
 		return $this->response;
 	}
@@ -101,6 +107,17 @@ class BaseController
 	public function __set($key, $value)
 	{
 		$this->response->$key = $value;
+	}
+	
+	/**
+	 * Magic method to get response data.
+	 * 
+	 * @param string $key
+	 * @return mixed $value
+	 */
+	public function __get($key)
+	{
+		return $this->response->$key;
 	}
 	
 	/**
@@ -152,5 +169,26 @@ class BaseController
 	{
 		$this->db = $db;
 	}
+	
+	/**
+	 * Returns the request object.
+	 * 
+	 * @return \System\Core\Request
+	 */
+	public function getRequest()
+	{
+		return $this->request;
+	}
+
+	/**
+	 * Sets the Request object.
+	 * 
+	 * @param \System\Core\Request $request
+	 */
+	public function setRequest($request)
+	{
+		$this->request = $request;
+	}
+
 	
 }

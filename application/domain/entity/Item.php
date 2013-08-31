@@ -3,11 +3,10 @@ namespace Application\Domain\Entity;
 
 class Item extends \System\Core\Entity
 {
-	public $id;
-	public $listId;
+	public $id = 0;
 	public $name;
-	public $url;
-	public $photo;
-	public $status;
-	
+	public $value;
+	public $typeId;
+	public $startDate;
+	public $endDate;
 }

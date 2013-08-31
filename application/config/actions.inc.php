@@ -2,48 +2,28 @@
   '/' => 
   array (
     'controller' => 'Test',
-    'method' => 'showHomepage',
-    'output' => 'html',
+    'method' => 'showList',
     'vars' => 
     array (
-      'content' => 'homepage.php',
-    ),
-    'files' => 
-    array (
-      'css' => 
-      array (
-        0 => 'layout.css',
-      ),
-      'js' => 
-      array (
-        0 => 'test.js',
-      ),
+      'content' => 'list.php',
     ),
   ),
-  '/list' => 
+  '/item/(\\d+)/add' => 
   array (
-    'controller' => 'Home',
-    'method' => 'showList',
-  ),
-  '/list/(\\d+)/item/(\\d+)/view' => 
-  array (
-    'controller' => 'Home',
-    'method' => 'viewItem',
-    'render' => 'json',
-  ),
-  '/item/(\\d+)/view' => 
-  array (
-    'controller' => 'Home',
-    'method' => 'showItem',
-  ),
-  '/item/(\\d+)/save' => 
-  array (
-    'controller' => 'Home',
-    'method' => 'saveItem',
-  ),
-  '/item/new' => 
-  array (
-    'controller' => 'Home',
+    'controller' => 'Test',
     'method' => 'showForm',
+    'vars' => 
+    array (
+      'content' => 'form.php',
+    ),
+  ),
+  '/item/(\\d+)/edit' => 
+  array (
+    'controller' => 'Test',
+    'method' => 'showForm',
+    'vars' => 
+    array (
+      'content' => 'form.php',
+    ),
   ),
 );

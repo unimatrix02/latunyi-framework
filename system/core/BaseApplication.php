@@ -105,6 +105,8 @@ class BaseApplication
 		// Initialize Request object
 		$this->request = new Request();
 		$this->request->path = $_SERVER['REQUEST_URI'];
+		$this->request->postData = $_POST;
+		$this->request->pathParameters = $_GET;
 
 		// Initialize Response object
 		$this->response = new Response($this->config->app->templating->default);
@@ -138,7 +140,7 @@ class BaseApplication
 	public function createController()
 	{
 		$controllerFactory = new \Application\Controller\Factory($this->config, $this->registry);
-		$this->controller = $controllerFactory->makeController($this->action->getController(), $this->log, $this->session, $this->response);
+		$this->controller = $controllerFactory->makeController($this->action->getController(), $this->log, $this->session, $this->request, $this->response);
 	}
 	
 	/**

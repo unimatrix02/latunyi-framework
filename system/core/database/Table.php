@@ -451,7 +451,7 @@ class Table
 	 *	@param		QueryParams	$params			Conditions for where, default empty
 	 *	@return		mixed						Array with list
 	 **/
-	public function getSimpleList($valueField, $keyField = null, $params = null)
+	public function getSimpleList($valueField, $keyField = null, QueryParams $params = null)
 	{
 		// Use primary key if key_field is empty
 		if (empty($keyField))

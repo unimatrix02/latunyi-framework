@@ -115,14 +115,14 @@ class DataContainer
 		}
 	}	
 
-	public function getArray()
+	public function asArray()
 	{
 		$data = array();
 		foreach ($this->_data as $key => $val)
 		{
 			if ($val instanceOf self)
 			{
-				$data[$key] = $val->getArray();
+				$data[$key] = $val->asArray();
 			}
 			else
 			{
@@ -130,33 +130,6 @@ class DataContainer
 			}
 		}
 		return $data;
-	}
-	
-	public static function getArray2($data, $key)
-	{
-		pr($data);
-		prx($key);
-		if (isset($data[$key]))
-		{
-			$val = $this->_data[$key];
-			if ($val instanceOf self)
-			{
-				return $val->getArray($val->getData());
-			}
-		}
-		
-		/*
-		if (isset($this->_data[$key]))
-		{
-			$val = $this->_data[$key];
-			if ($val instanceOf self)
-			{
-				//return (array)$val->_data;
-				return $this->getArray($val->_data);
-			} 
-			return $val;
-		}
-		*/
 	}
 
 }

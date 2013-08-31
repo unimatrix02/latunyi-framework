@@ -7,4 +7,34 @@ namespace System\Core;
 class Request extends DataContainer
 {
 	protected $path;
+	
+	/**
+	 * List of parameters from path, such as ?id=1
+	 * @var array
+	 */
+	protected $pathParameters;
+	
+	/**
+	 * List of POST data
+	 * @var array
+	 */
+	protected $postData;
+	
+	/**
+	 * Returns true if the pathParameters property is a non-empty array.
+	 * @returns bool
+	 */
+	public function hasParams()
+	{
+		return (is_array($this->pathParameters) && !empty($this->pathParameters));
+	}
+	
+	/**
+	 * Returns true if the postData property is a non-empty array.
+	 * @returns bool
+	 */
+	public function hasPostData()
+	{
+		return (is_array($this->postData) && !empty($this->postData));
+	} 
 }

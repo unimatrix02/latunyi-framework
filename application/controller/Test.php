@@ -2,74 +2,93 @@
 namespace Application\Controller;
 
 use Application\Domain\Entity\Item;
+use Application\Domain\Entity\Type;
+use Application\Domain\Repository\ItemRepository;
+use Application\Domain\Repository\TypeRepository;
+use Application\Domain\Service\ItemService;
 
-use \System\Core\Database\QueryParams;
-
-use \Application\Domain\Entity\ItemList;
 use \System\Core;
 
 class Test extends \System\Core\BaseController
 {
 	/**
-	 * ItemTable object
-	 * @var \Application\Database\ItemTable
+	 * Item repository
+	 * @var \Application\Domain\Repository\ItemRepository
 	 */
-	protected $table;
+	protected $itemRepo;
 	
-	public function showHomepage()
+	/**
+	 * Type repository
+	 * @var \Application\Domain\Repository\TypeRepository
+	 */
+	protected $typeRepo;
+	
+	/**
+	 * Item Service
+	 * @var \Application\Domain\Service\ItemService
+	 */
+	protected $itemService;
+	
+	/**
+	 * Shows a list of items.
+	 */
+	public function showList()
 	{
-		//$data = $this->table->getAllRows();
-		//pr($data);
-		
-		//$data = $this->table->getRow(9);
-		//pr($data);
-		
-// 		$params = new QueryParams();
-// 		$params->add('list_id', 2);
-// 		$data = $this->table->getRows($params);
-// 		pr($data);
-		
-		$item = new Item();
-		$item->listId = 2;
-		$item->name = 'Testing';
-		$item->photo = 'something.jpg';
-		$item->status = 'active';
-		$item->url = 'http://www.something.com';
-		//$this->table->insertRow($item);
-		
-		//$item = $this->table->getRow(36);
-		//pr($item);
-		
-		//$item->name = 'Testing ' . date('H:i:s');
-		
-		//$this->table->updateRow($item);
-		//prx($item);
-		
-		$data = array('name' => 'bla');
-		$params = new QueryParams();
-		$params->add('id', 30, '>');
-		//$this->table->updateRows($data, $params);
-		
-		$params = new QueryParams();
-		$params->add('id', 31, '>');
-		//$this->table->deleteRows($params);
-
-		$params = new QueryParams();
-		$params->add('list_id', 2);
-		$count = $this->table->countRows($params);
-		//pr($count);
+		$this->items = $this->itemRepo->getAll();
 	}
 	
 	/**
-	 * Sets the table object
 	 * 
-	 * @param \Application\Database\ItemTable $table
+	 * @param int $itemId	Item ID, 0 for new
 	 */
-	public function setTable($table)
+	public function showForm($itemId)
 	{
-		$this->table = $table;
+		$this->errors = array();
+		
+		if ($this->request->hasPostData())
+		{
+			$item = new Item($this->request->postData);
+			
+			// Validate item
+			$errors = $this->itemService->validateItem($item);
+			
+			if (empty($errors))
+			{
+				//$this->itemRepo->save($item);
+			}
+			else
+			{
+				$this->item = $item;
+				$this->errors = $errors;
+			}
+		}
+		
+		if ($itemId == 0)
+		{
+			$this->item = new Item;
+		}
+		else
+		{
+			$this->item = $this->itemRepo->getEntity($itemId);
+		}
+		
+		$this->types = $this->typeRepo->getSimpleList('name');
+	}
+
+	public function setItemRepo(ItemRepository $itemRepo)
+	{
+		$this->itemRepo = $itemRepo;
 	}
 	
+	public function setTypeRepo(TypeRepository $typeRepo)
+	{
+		$this->typeRepo = $typeRepo;
+	}
+	
+	public function setItemService(ItemService $svc)
+	{
+		$this->itemService = $svc;
+	}
 }
 
 ?>

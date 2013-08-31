@@ -3,7 +3,7 @@
  * Entry point for all web requests
  */
 
-// $startTime = microtime(true);
+$startTime = microtime(true);
 
 // Set document root if not set (when running on CLI)
 $isWebRequest = true;
@@ -66,7 +66,7 @@ catch (\Exception $ex)
 	pr('Location: ' . $ex->getFile() . ', line ' . $ex->getLine());
 }	
 
-// $endTime = microtime(true);
-// $duration = $endTime - $startTime;
-// pr('Duration: ' . $duration);
-// pr(GetMemory());
+$endTime = microtime(true);
+$duration = $endTime - $startTime;
+//pr('Duration: ' . $duration);
+//pr(GetMemory());

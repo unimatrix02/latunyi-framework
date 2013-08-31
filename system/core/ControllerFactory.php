@@ -34,11 +34,12 @@ class ControllerFactory
 		$this->registry = $registry;
 	}
 	
-	public function makeController($controllerName, Log $log, Session $session, Response $response)
+	public function makeController($controllerName, Log $log, Session $session, Request $request, Response $response)
 	{
 		$fullControllerName = '\\Application\\Controller\\' . $controllerName;
 		$controller = new $fullControllerName();
 		$controller->setConfig($this->config);
+		$controller->setRequest($request);
 		$controller->setResponse($response);
 		$controller->setLog($log);
 		$controller->setSession($session);

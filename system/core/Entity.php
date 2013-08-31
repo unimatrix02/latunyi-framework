@@ -6,8 +6,13 @@ class Entity
 	/**
 	 * Constructor. Runs the mapProperties() method.
 	 */
-	public function __construct()
+	public function __construct($data = null)
 	{
+		if (!empty($data))
+		{
+			$this->fillProperties($data);
+		}
+		
 		$this->mapProperties();
 	}
 	
@@ -39,4 +44,26 @@ class Entity
 			}
 		}
 	} 
+	
+	/**
+	 * Fills the properies of the entity with the given array of data.
+	 * 
+	 * @param array $data
+	 */
+	protected function fillProperties($data)
+	{
+		if (!is_array($data))
+		{
+			return;
+		}
+		
+		foreach ($data as $field => $value)
+		{
+			if (property_exists($this, $field))
+			{
+				$this->$field = $value;
+			}
+		}
+	}
+	
 }

@@ -1,0 +1,64 @@
+<h1>Item List</h1>
+
+<p>
+	<a href="/item/0/add">Add item</a>
+</p>
+
+<table class="list">
+	<thead>
+		<tr>
+			<td>
+				ID
+			</td>	
+			<td>
+				Name
+			</td>	
+			<td>
+				Value
+			</td>	
+			<td>
+				Type
+			</td>	
+			<td>
+				Start date
+			</td>	
+			<td>
+				End date
+			</td>	
+			<td>
+				Action
+			</td>	
+		</tr>
+	</thead>
+	<tbody>
+		<? foreach ($items as $item): ?>
+		<tr>
+			<td>
+				<?= $item->id ?>
+			</td>	
+			<td>
+				<a href="/item/<?=$item->id?>/edit">
+					<?= $item->name ?>
+				</a>
+			</td>	
+			<td>
+				<?= $item->value ?>
+			</td>	
+			<td>
+				<?= $item->type ?>
+			</td>	
+			<td>
+				<?= $item->startDate ?>
+			</td>	
+			<td>
+				<?= $item->endDate ?>
+			</td>	
+			<td>
+				<a href="?remove=<?=$item->id?>">
+					Remove
+				</a>
+			</td>	
+		</tr>
+		<? endforeach; ?>
+	</tbody>
+</table>

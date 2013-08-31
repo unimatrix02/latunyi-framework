@@ -17,23 +17,19 @@ class ItemTable extends Table
 		$this->setPrimaryKeyIsAutoIncrement(true);
 
 		$this->addField(new TableField('id', true));
-		$this->addField(new TableField('list_id'));
 		$this->addField(new TableField('name'));
-		$this->addField(new TableField('url'));
-		$this->addField(new TableField('photo'));
-		$this->addField(new TableField('status'));
+		$this->addField(new TableField('value'));
+		$this->addField(new TableField('type_id'));
+		$this->addField(new TableField('start_date'));
+		$this->addField(new TableField('end_date'));
 
-		$field = new ForeignField('list');
-		$field->table = 'list';
+		$field = new ForeignField('type');
+		$field->table = 'type';
 		$field->foreignFieldName = 'name';
-		$field->joinFrom = 'list_id';
+		$field->joinFrom = 'type_id';
 		$field->joinFromTable = '';
 		$field->joinTo = 'id';
 		$this->addField($field);
-		
-		$field = new CustomField('custom');
-		$field->query = "SELECT COUNT(*) FROM list WHERE id = item.id";
-		//$this->addField($field);
 	}
 }
 

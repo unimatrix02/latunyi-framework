@@ -2,7 +2,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-	<title>Compare</title>
+	<title>Latunyi Framework</title>
 
 	<meta name="author" content="Latunyi" />
 
@@ -13,6 +13,8 @@
 	<script src="/html/html5shiv.js"></script>
 	<![endif]-->
 
+	<link href="/css/reset.css" rel="stylesheet" type="text/css" media="screen">
+	<link href="/css/style.css" rel="stylesheet" type="text/css" media="screen">
 	<? foreach ($stylesheets as $file): ?>
 	<link href="/css/<?=$file?>" rel="stylesheet" type="text/css" media="screen">
 	<? endforeach; ?>
@@ -24,19 +26,17 @@
 </head>
 <body>
 
-	<div id="wrapper">	
-
-		<div id="header">
-			<h1>Framework Test Page</h1>
+	<header>
+		<div class="wrapper">
+			<h1>Framework Test</h1>
 		</div>
+	</header>
 	
-		<div id="main">
-
-			<? $this->load($content); ?>
-			
+	<div class="wrapper">
+		<div class="main">
+			<?= $this->render($content); ?>
 		</div>
-		
-	</div>
+	</div>	
 	
 </body>
 </html>

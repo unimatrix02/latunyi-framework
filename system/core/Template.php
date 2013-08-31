@@ -1,6 +1,8 @@
 <?php
 namespace System\Core;
 
+use \System\Core\Helper\tpl;
+
 /**
  * Class to render a PHP template.
  */
@@ -31,43 +33,45 @@ class Template
 	}
 
 	/**
-	 * Renders the set template with the provided data and returns the output.
+	 * Renders the default or given template with the provided data and returns the output.
 	 * 
+	 * @param string $template	Template file
 	 * @return string Output
 	 */
-	public function render()
+	public function render($template = '')
 	{
-		$tplFile = APP_PATH . '/templates/' . $this->template;
-		
-		$this->checkTemplateFileExists($this->template);
+		if (empty($template))
+		{
+			$tplFile = APP_PATH . '/templates/' . $this->template;
+		}
+		else
+		{
+			$tplFile = APP_PATH . '/templates/' . $template;
+		}
 
-		// Get data into scope and include template
-		extract($this->data, EXTR_REFS);
-		ob_start();
-		include($tplFile);
-		$result = ob_get_clean();
-		return $result;
-	}
-
-	/**
-	 * Loads the given file. Used to include subtemplates in the template.
-	 * 
-	 * @param string $file
-	 */
-	public function load($file)
-	{
-		$this->checkTemplateFileExists($file);
-		include(APP_PATH . '/templates/' . $file);	
-	}
-	
-	private function checkTemplateFileExists($file)
-	{
-		// Check for template file
-		$tplFile = APP_PATH . '/templates/' . $file;
-		
 		if (!file_exists($tplFile))
 		{
-			throw new \Exception('Failed to find template ' . $file);
+			//throw new \Exception('Failed to find template ' . $file);
+			echo '[Failed to find template ' . str_replace(APP_PATH . '/templates/', '', $tplFile) . ']';
+			return;
 		}
+		
+		// Start a new buffer to capture output
+		ob_start();
+		
+		// Load template functions
+		require_once(SYSTEM_PATH . '/includes/template_functions.php');
+
+		// Get data into scope
+		extract($this->data, EXTR_REFS);
+		
+		// Load template
+		include($tplFile);
+		
+		// Get result
+		$result = ob_get_clean();
+		
+		return $result;
 	}
+	
 }

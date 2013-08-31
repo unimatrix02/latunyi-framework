@@ -184,6 +184,16 @@ class Action
 	{
 		$this->variables = $variables;
 	}
+	
+	/**
+	 * Sets the arguments
+	 * 
+	 * @param array $arguments
+	 */
+	public function setArguments($arguments)
+	{
+		$this->arguments = $arguments;
+	}
 
 
 	

@@ -1,7 +1,15 @@
 <?php
 namespace Application\Controller;
 
+use Application\Domain\Entity\ItemValidator;
+
+use Application\Domain\Service\ItemService;
+
+use Application\Domain\Repository\TypeRepository;
+use Application\Domain\Repository\ItemRepository;
+
 use Application\Database\ItemTable;
+use Application\Database\TypeTable;
 
 class Factory extends \System\Core\ControllerFactory
 {
@@ -12,8 +20,17 @@ class Factory extends \System\Core\ControllerFactory
 	 */
 	public function makeTestController(Test $controller)
 	{
-		$table = new ItemTable($this->getDatabase());
-		$controller->setTable($table);
+		$itemTable = new ItemTable($this->getDatabase());
+		$itemRepo = new ItemRepository($itemTable);
+		$controller->setItemRepo($itemRepo);
+
+		$typeTable = new TypeTable($this->getDatabase());
+		$typeRepo = new TypeRepository($typeTable);
+		$controller->setTypeRepo($typeRepo);
+
+		$itemValidator = new ItemValidator();
+		$itemService = new ItemService($itemValidator);
+		$controller->setItemService($itemService);
 	}
 	
 }

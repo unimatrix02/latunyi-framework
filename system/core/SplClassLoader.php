@@ -137,7 +137,7 @@ class SplClassLoader
             if (!file_exists($target))
             {
             	throw new \Exception('Failed to find file ' . $target . ' for loading class ' . $className );
-            } 
+            }
             require $target;
         }
     }
