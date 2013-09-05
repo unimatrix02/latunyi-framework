@@ -29,9 +29,9 @@
 **/
 function redirect($url, $with_root = true)
 {
-	if (defined('WEB_ROOT') && $with_root)
+	if (defined('PUBLIC_ROOT') && $with_root)
 	{
-		header('Location: ' . WEB_ROOT . $url);
+		header('Location: ' . PUBLIC_ROOT . $url);
 	}
 	else
 	{

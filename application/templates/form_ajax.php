@@ -1,11 +1,8 @@
 <h1>Item Form</h1>
 
-<p>
-	<a href="/">Back to list</a>
-</p>
 <?= print_error('_form', $errors); ?>
 
-<form method="post">
+<form method="post" class="item-form">
 <table class="form">
 	<tr>
 		<td>

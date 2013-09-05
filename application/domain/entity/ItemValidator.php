@@ -19,16 +19,34 @@ class ItemValidator extends \System\Core\EntityValidator
 		
 		// Multiple rules can be applied to a field; if one fails, others are skipped
 		$this->addRule(new ValidationRule('_form', 'validateAnotherThing', 'Something is very wrong'));
+
+		// Example of a rule that should not be applied to new entities
+		$this->addRule(new ValidationRule('id', 'isInteger', 'Invalid ID'), false);
 		
-		$this->addRule(new ValidationRule('id', 'isInteger', 'Invalid ID'));
+		// Rules using standard validation functions from the Validator class
 		$this->addRule(new ValidationRule('name', 'isNotEmpty', 'Name is empty'));
 		$this->addRule(new ValidationRule('value', 'isAmount', 'Value is not valid'));
+		
+		// Rule using a custom validation method from ItemValidator class itself
 		$this->addRule(new ValidationRule('typeId', 'validateType', 'Invalid type'));
 		
 		// Example of a validtor that requires the values of multiple fields 
 		$this->addRule(new ValidationRule('startDate', 'isValidPeriod', 'Invalid period', array('startDate', 'endDate')));
 
-	}	
+	}
+	
+	/**
+	 * Determines if this is a new entity or not, then passes actual validation to the parent class,
+	 * and returns errors.
+	 * 
+	 * @param Item $item
+	 * @see System\Core.EntityValidator::validate()
+	 */
+	public function validate(Item $item)
+	{
+		$isNew = ($item->id == 0);
+		parent::validate($item, $isNew);
+	}
 
 	protected function validateType($type)
 	{

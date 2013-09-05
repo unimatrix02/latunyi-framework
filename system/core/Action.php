@@ -41,6 +41,12 @@ class Action
 	 * @var array
 	 */
 	protected $scripts;
+
+	/**
+	 * Template to use to render the response.
+	 * @var string
+	 */
+	protected $template;
 	
 	/**
 	 * Variables
@@ -194,8 +200,34 @@ class Action
 	{
 		$this->arguments = $arguments;
 	}
-
-
 	
-	
+	/**
+	 * Returns the template.
+	 * 
+	 * @return string
+	 */
+	public function getTemplate()
+	{
+		return $this->template;
+	}
+
+	/**
+	 * Sets the template.
+	 * 
+	 * @param string $template
+	 */
+	public function setTemplate($template)
+	{
+		$this->template = $template;
+	}
+
+	/**
+	 * Returns true if the template is not empty.
+	 * 
+	 * @return bool
+	 */
+	public function hasTemplate()
+	{
+		return !empty($this->template);
+	}
 }

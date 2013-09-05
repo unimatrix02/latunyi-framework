@@ -27,10 +27,9 @@ class ItemService extends Service
 	 * Validates the given item using the ItemValidator
 	 * 
 	 * @param Item $item
-	 * @return array List of errors
 	 */
 	public function validateItem(Item $item)
 	{
-		return $this->itemValidator->validate($item);
+		$this->itemValidator->validate($item);
 	}
 }

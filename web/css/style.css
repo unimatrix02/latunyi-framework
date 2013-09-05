@@ -4,8 +4,12 @@ body {
 }
 
 .wrapper {
-	width: 70%;
+	width: 60%;
 	margin: 0 auto;
+}
+
+.nav {
+	float: right;	
 }
 
 header {
@@ -17,6 +21,7 @@ header h1 {
 	font-size: 21px;
 	font-weight: bold;
 	color: #336699;
+	margin-bottom: 0.5em;
 }
 
 .main {
@@ -60,7 +65,16 @@ a {
 
 /* --- Forms --- */
 
+.form-container {
+	border: 2px solid #eee;
+	padding: 1em;
+	margin-bottom: 1em;
+}
+
 input[type=submit] {
 	padding: 0.5em 1.5em 0.5em 1.5em;
 }
 
+.hidden {
+	display: none;
+}

@@ -166,14 +166,38 @@ function paginate($total, $page_size, $cur_page, $url, $prev = 'Previous', $next
 	return $str;
 }
 
-function print_error($field, $errors)
+/**
+ * Prints a single message, or a field from DataContainer.
+ * 
+ * @param string $field_or_msg
+ * @param DataContainer|null $errors
+ * @return string
+ */
+function print_error($field_or_msg, $errors = null)
 {
-	if (false == ($errors instanceOf \System\Core\Datacontainer))
+	$output = '';
+	if ($errors instanceOf \System\Core\Datacontainer)
 	{
-		return;
+		$field = $field_or_msg;
+		if ($errors->has($field))
+		{
+			$output = $errors->$field;
+		}
 	}
-	if ($errors->has($field))
+	elseif (is_array($errors))
 	{
-		return '<div class="error">' . $errors->$field . '</div>';
+		$field = $field_or_msg;
+		if (!empty($errors[$field]))
+		{
+			$output = $errors[$field];
+		}
+	}
+	elseif ($errors == null)
+	{
+		$output = $field_or_msg;
+	}
+	if (!empty($output))
+	{
+		return '<div class="error">' . $output . '</div>';
 	}
 }

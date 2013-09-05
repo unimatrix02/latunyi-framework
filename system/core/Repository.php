@@ -31,7 +31,7 @@ class Repository
 	 * @param mixed $id
 	 * @return object
 	 */
-	public function getEntity($id)
+	public function get($id)
 	{
 		return $this->table->getRow($id);
 	}
@@ -46,5 +46,38 @@ class Repository
 	public function getSimpleList($valueField, $keyField = null, QueryParams $params = null)
 	{
 		return $this->table->getSimpleList($valueField, $keyField = null, $params = null);
+	}
+	
+	/**
+	 * Adds a new entity to the database.
+	 * 
+	 * @param \System\Core\Entity $entity
+	 * @return int Last inserted ID (for auto incremented primary keys)
+	 */
+	public function add($entity)
+	{
+		return $this->table->insertRow($entity);
+	}
+
+	/**
+	 * Updates an existing entity in the database.
+	 * 
+	 * @param \System\Core\Entity $entity
+	 * @return int Number of affected rows
+	 */
+	public function update($entity)
+	{
+		return $this->table->updateRow($entity);
+	}
+	
+	/**
+	 * Removes the entity with the given ID.
+	 *  
+	 * @param mixed $id
+	 * @return int Number of affected rows
+	 */
+	public function remove($entityId)
+	{
+		return $this->table->deleteRow($entityId);
 	}
 }

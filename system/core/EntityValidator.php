@@ -19,26 +19,34 @@ class EntityValidator
 		$this->rules = new ValidationRules();	
 	}
 	
-	public function addRule(ValidationRule $rule)
+	public function addRule(ValidationRule $rule, $applyWhenNew = true)
 	{
+		$rule->applyWhenNew = $applyWhenNew;
 		$this->rules->add($rule);
 	}
 	
 	/**
 	 * Validates the contents of the entity
 	 * by using the $validation property.
-	 * Returns a list of errors.
+	 * Throws a Validation exception with a list of errors.
 	 *
 	 * @param \System\Core\Entity $entity
-	 * @return DataContainer
+	 * @param bool $isNew Is a new entity or existing
+	 * @throws \System\Core\Exception\Validation
 	 */
-	public function validate(\System\Core\Entity $entity)
+	public function validate(\System\Core\Entity $entity, $isNew)
 	{
 		$errors = new DataContainer();
 	
 		$failedFields = array();
 		foreach ($this->rules as $rule)
 		{
+			// If this is a new entity, and the rule shouldn't be applied to new entities, skip it
+			if ($isNew && !$rule->applyWhenNew)
+			{
+				continue;
+			}
+			
 			// If a validation for the same field already failed, skip the rule
 			if (in_array($rule->fieldName, $failedFields))
 			{
@@ -88,7 +96,10 @@ class EntityValidator
 			}				
 		}
 		
-		return $errors;
+		if (!$errors->isEmpty())
+		{
+			throw new \System\Core\Exception\Validation($errors);
+		}
 	}
 
 	private function validateOneThing()

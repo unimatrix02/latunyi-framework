@@ -131,6 +131,13 @@ class BaseApplication
 		$this->response->setStylesheets($this->action->getStylesheets());
 		$this->response->setScripts($this->action->getScripts());
 		$this->response->setData($this->action->getVariables());
+		$this->response->setOutputType($this->action->getOutputType());
+		
+		// Override default template in response with template from action
+		if ($this->action->hasTemplate())
+		{
+			$this->response->setTemplate($this->action->getTemplate());
+		}
 	}
 
 	/**
@@ -151,11 +158,14 @@ class BaseApplication
 	{
 		$this->response = $this->controller->runMethod($this->action->getMethod(), $this->action->getArguments());
 	}
-	
+
+	/**
+	 * Lets the Renderer render the response and receives the result, stored in $this->output.
+	 */
 	public function renderResponse()
 	{
 		$renderer = new Renderer($this->response);
-		$this->output = $renderer->getOutput($this->action->getOutputType());
+		$this->output = $renderer->getOutput($this->response->getOutputType());
 	}
 	
 	/**

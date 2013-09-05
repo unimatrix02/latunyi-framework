@@ -61,6 +61,10 @@ class Router
 				{
 					$action->setVariables($this->config->$path->vars->asArray());
 				}
+				if ($this->config->$path->has('template'))
+				{
+					$action->setTemplate($this->config->$path->template);
+				}
 				
 				// Add parameters from path as arguments to action
 				$matches = regex_matches($pattern, $request->path, true);

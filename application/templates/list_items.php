@@ -1,11 +1,10 @@
-<h1>Item List</h1>
-
-<p>
-	<a href="/item/0/add">Add item</a>
-</p>
-
 <?= print_error(val($error)) ?>
 
+<? if (empty($items)): ?>
+<p>
+	No items in list.
+</p>
+<? else: ?>
 <table class="list">
 	<thead>
 		<tr>
@@ -39,7 +38,7 @@
 				<?= $item->id ?>
 			</td>	
 			<td>
-				<a href="/item/<?=$item->id?>/edit">
+				<a href="/ajax/item/<?=$item->id?>/edit" class="edit-link">
 					<?= $item->name ?>
 				</a>
 			</td>	
@@ -56,7 +55,7 @@
 				<?= $item->endDate ?>
 			</td>	
 			<td>
-				<a href="/item/<?=$item->id?>/remove">
+				<a href="/ajax/item/<?=$item->id?>/remove" class="remove-link">
 					Remove
 				</a>
 			</td>	
@@ -64,3 +63,4 @@
 		<? endforeach; ?>
 	</tbody>
 </table>
+<? endif ?>

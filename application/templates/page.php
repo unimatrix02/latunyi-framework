@@ -19,6 +19,7 @@
 	<link href="/css/<?=$file?>" rel="stylesheet" type="text/css" media="screen">
 	<? endforeach; ?>
 
+	<script type="text/javascript" src="/js/jquery.js"></script>
 	<? foreach ($scripts as $file): ?>
 	<script type="text/javascript" src="/js/<?=$file?>?t=<?=time()?>"></script>
 	<? endforeach; ?>
@@ -28,6 +29,10 @@
 
 	<header>
 		<div class="wrapper">
+			<div class="nav">
+				<a href="/">Normal list</a> |
+				<a href="/list">AJAX-loaded list</a>
+			</div>
 			<h1>Framework Test</h1>
 		</div>
 	</header>

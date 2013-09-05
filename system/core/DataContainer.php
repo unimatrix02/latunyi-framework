@@ -115,6 +115,11 @@ class DataContainer
 		}
 	}	
 
+	/**
+	 * Returns the content of _data (recursively) as array.
+	 * 
+	 * @return array
+	 */
 	public function asArray()
 	{
 		$data = array();
@@ -132,4 +137,13 @@ class DataContainer
 		return $data;
 	}
 
+	/**
+	 * Returns true if _data array is empty.
+	 * 
+	 * @return bool
+	 */
+	public function isEmpty()
+	{
+		return (count($this->_data) == 0);
+	}
 }

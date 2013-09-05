@@ -29,6 +29,12 @@ class Response
 	 * @var array
 	 */
 	protected $data;
+
+	/**
+	 * Type of output
+	 * @var \System\Core\OutputType
+	 */
+	protected $outputType;
 	
 	/**
 	 * Constructor. Initializes scripts, stylesheets and data as empty arrays
@@ -156,6 +162,25 @@ class Response
 			'stylesheets' => $this->stylesheets,
 		);
 		return array_merge($data, $this->data);
+	}
+	
+	/**
+	 * Returns the OutputType
+	 * @return \System\Core\OutputType
+	 */
+	public function getOutputType()
+	{
+		return $this->outputType;
+	}
+
+	/**
+	 * Sets the OutputType.
+	 * 
+	 * @param \System\Core\OutputType $outputType
+	 */
+	public function setOutputType($outputType)
+	{
+		$this->outputType = $outputType;
 	}
 
 	/**
