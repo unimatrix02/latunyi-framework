@@ -1,4 +1,11 @@
 <?php
+/**
+ *	Template class.
+ *
+ *	@author      Raymond van Velzen <raymond@latunyi.com>
+ *	@package     LatunyiFramework
+ **/
+
 namespace System\Core;
 
 use \System\Core\Helper\tpl;

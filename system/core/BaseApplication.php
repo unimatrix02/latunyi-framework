@@ -1,6 +1,16 @@
 <?php
+/**
+ *	Base application class.
+ *
+ *	@author      Raymond van Velzen <raymond@latunyi.com>
+ *	@package     LatunyiFramework
+ **/
+
 namespace System\Core;
 
+/**
+ * Base application class, runs the application lifecycle while delegating operations to other classes.
+ */
 class BaseApplication
 {
 	/**

@@ -1,4 +1,14 @@
 <?php
+/**
+ *	SPL class loader.
+ *
+ * @author Jonathan H. Wage <jonwage@gmail.com>
+ * @author Roman S. Borschel <roman@code-factory.org>
+ * @author Matthew Weier O'Phinney <matthew@zend.com>
+ * @author Kris Wallsmith <kris.wallsmith@gmail.com>
+ * @author Fabien Potencier <fabien.potencier@symfony-project.org>
+ *	@package     LatunyiFramework
+ **/
 
 /**
  * SplClassLoader implementation that implements the technical interoperability
@@ -11,17 +21,31 @@
  *     $classLoader = new SplClassLoader('Doctrine\Common', '/path/to/doctrine');
  *     $classLoader->register();
  *
- * @author Jonathan H. Wage <jonwage@gmail.com>
- * @author Roman S. Borschel <roman@code-factory.org>
- * @author Matthew Weier O'Phinney <matthew@zend.com>
- * @author Kris Wallsmith <kris.wallsmith@gmail.com>
- * @author Fabien Potencier <fabien.potencier@symfony-project.org>
  */
 class SplClassLoader
 {
+	/**
+	 * File extension
+	 * @var string
+	 */
     private $_fileExtension = '.php';
+    
+    /**
+     * Namespace
+     * @var string
+     */
     private $_namespace;
+    
+    /**
+     * Include path
+     * @var string
+     */
     private $_includePath;
+    
+    /**
+     * Namespace separator
+     * @var string
+     */
     private $_namespaceSeparator = '\\';
 
     /**

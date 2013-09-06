@@ -1,4 +1,11 @@
 <?php
+/**
+ *	Renderer class.
+ *
+ *	@author      Raymond van Velzen <raymond@latunyi.com>
+ *	@package     LatunyiFramework
+ **/
+
 namespace System\Core;
 
 /**
@@ -70,7 +77,10 @@ class Renderer
 		}
 		return '';
 	}
-	
+
+	/**
+	 * Renders nothing, immediately returns.
+	 */
 	public function renderNone()
 	{
 		return;

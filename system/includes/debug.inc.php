@@ -1,24 +1,10 @@
 <?php
-
-/*========================================================================
-                    _          _                     _ 
-                   | |    __ _| |_ _   _ _ __  _   _(_)
-                   | |   / _` | __| | | | '_ \| | | | |
-                   | |__| (_| | |_| |_| | | | | |_| | |
-                   |_____\__,_|\__|\__,_|_| |_|\__, |_|
-                                               |___/   
-
-=========================================================================*/
-
 /**
-*	Debug library
-*
-*	@author		Raymond van Velzen <raymond@latunyi.com>
-*	@version	10
-*	@package	Meridium
-**/
-
-// -----------------------------------------------------------------------
+ *	Debug library
+ *
+ *	@author      Raymond van Velzen <raymond@latunyi.com>
+ *	@package     LatunyiFramework
+ **/
 
 /**
 *	pr
@@ -64,8 +50,6 @@ function prd($x, $descr = '')
 	flush();
 }
 
-// -----------------------------------------------------------------------
-
 /**
 *	prx
 *
@@ -80,8 +64,6 @@ function prx($x, $descr = '')
 	pr($x, $descr);
 	exit;
 }
-
-// -----------------------------------------------------------------------
 
 /**
 *	printarr
@@ -118,8 +100,6 @@ function printarr($a, $descr = '')
 	}
 }
 
-// -----------------------------------------------------------------------
-
 /**
 *	printobj
 *
@@ -142,8 +122,6 @@ function printobj($a, $descr = '')
 	$str = ob_get_clean();
 	printNicely($str);
 }
-
-// -----------------------------------------------------------------------
 
 /**
 *	printbr
@@ -354,21 +332,24 @@ function prfx()
 
 // -----------------------------------------------------------------------
 
-// Print ISO date from timestamp
+/**
+ * Print ISO date from timestamp
+ * @param int $ts
+ */
 function prdt($ts)
 {
 	pr(date('Y-m-d', $ts));
 }
 
-// Print ISO date from timestamp and exit
+/**
+ * Print ISO date from timestamp and exit
+ * @param int $ts
+ */
 function prdtx($ts)
 {
 	prdt($ts);
 	exit;
 }
-
-// -----------------------------------------------------------------------
-
 
 /**
 *	prv
@@ -404,8 +385,6 @@ function prvx($x, $descr = '')
 	exit;
 }
 
-// -----------------------------------------------------------------------
-
 /**
 *	printxml
 *
@@ -434,8 +413,6 @@ function GetExecutionTime($start)
 	//return sprintf('%1.6f', (microtime(true) - $start)) . ' sec';
 	return (microtime(true) - $start) . ' sec';
 }
-
-// -----------------------------------------------------------------------
 
 /**
 *	GetMemory
@@ -476,16 +453,26 @@ function GetMemory($unit = 'All')
 	}
 }
 
-// Print GetMemory()
+/**
+ * Print GetMemory()
+ */
 function prmem() {
 	pr(GetMemory());
 }
 
-// Print GetMemory() and exit
+/**
+ * Print GetMemory() and exit
+ */
 function prmemx() {
 	prx(GetMemory());
 }
 
+/**
+ * Executes a var_dump and strips tags.
+ * 
+ * @param mixed $x
+ * @return string
+ */
 function vardump($x)
 {
 	ob_start();
@@ -493,8 +480,6 @@ function vardump($x)
 	$str = ob_get_clean();
 	return strip_tags($str);
 }
-
-// -----------------------------------------------------------------------
 
 /**
 *	texc
@@ -509,8 +494,6 @@ function texc($x)
 	throw new Exception('Debug: ' . $x);
 }
 
-// -----------------------------------------------------------------------
-
 /**
 *	show_errors
 *
@@ -523,8 +506,6 @@ function show_errors()
 	error_reporting(E_ALL);
 	ini_set('display_errors', '1');
 }
-
-// -----------------------------------------------------------------------
 
 /**
 *	prn
@@ -546,8 +527,6 @@ function prn($x)
 	}
 }
 
-// -----------------------------------------------------------------------
-
 /**
 *	prnx
 *
@@ -561,5 +540,3 @@ function prnx($s)
 	prn($s);
 	exit;
 }
-
-?>

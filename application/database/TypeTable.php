@@ -1,4 +1,11 @@
 <?php
+/**
+ *	Type table class.
+ *
+ *	@author      Raymond van Velzen <raymond@latunyi.com>
+ *	@package     LatunyiFramework
+ **/
+
 namespace Application\Database;
 
 use System\Core\Database\TableField;

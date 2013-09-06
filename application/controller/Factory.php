@@ -1,4 +1,11 @@
 <?php
+/**
+ *	Controller Factory class.
+ *
+ *	@author      Raymond van Velzen <raymond@latunyi.com>
+ *	@package     LatunyiFramework
+ **/
+
 namespace Application\Controller;
 
 use Application\Domain\Entity\ItemValidator;

@@ -1,4 +1,11 @@
 <?php
+/**
+ *	Validator helper class.
+ *
+ *	@author      Raymond van Velzen <raymond@latunyi.com>
+ *	@package     LatunyiFramework
+ **/
+
 namespace System\Helper;
 
 /**

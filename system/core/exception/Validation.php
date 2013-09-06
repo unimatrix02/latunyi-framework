@@ -1,4 +1,11 @@
 <?php
+/**
+ *	Validation exception class.
+ *
+ *	@author      Raymond van Velzen <raymond@latunyi.com>
+ *	@package     LatunyiFramework
+ **/
+
 namespace System\Core\Exception;
 
 use \System\Core\DataContainer;

@@ -1,4 +1,11 @@
 <?php
+/**
+ *	Controller Factory class.
+ *
+ *	@author      Raymond van Velzen <raymond@latunyi.com>
+ *	@package     LatunyiFramework
+ **/
+
 namespace System\Core;
 
 use System\Core\Database\Database;
@@ -32,7 +39,18 @@ class ControllerFactory
 		$this->config = $config;
 		$this->registry = $registry;
 	}
-	
+
+	/**
+	 * Initializes the given controller class and injects the given objects, then returns it.
+	 * Also executes the make<ControllerName>Controller method in the Application's Factory class.
+	 * 
+	 * @param string $controllerName
+	 * @param Log $log
+	 * @param Session $session
+	 * @param Request $request
+	 * @param Response $response
+	 * @return \System\Core\BaseController
+	 */
 	public function makeController($controllerName, Log $log, Session $session, Request $request, Response $response)
 	{
 		$fullControllerName = '\\Application\\Controller\\' . $controllerName;

@@ -1,4 +1,11 @@
 <?php
+/**
+ *	Item service class.
+ *
+ *	@author      Raymond van Velzen <raymond@latunyi.com>
+ *	@package     LatunyiFramework
+ **/
+
 namespace Application\Domain\Service;
 
 use System\Core\Service;

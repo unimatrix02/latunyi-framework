@@ -1,4 +1,11 @@
 <?php
+/**
+ *	Action class.
+ *
+ *	@author      Raymond van Velzen <raymond@latunyi.com>
+ *	@package     LatunyiFramework
+ **/
+
 namespace System\Core;
 
 /**
@@ -53,7 +60,11 @@ class Action
 	 * @var array
 	 */
 	protected $variables;
-	
+
+	/**
+	 * Constructor, sets the default output type and inits arguments, 
+	 * stylesheets and scripts as empty arrays.
+	 */
 	public function __construct()
 	{
 		// Set HTML as default output type
@@ -136,7 +147,8 @@ class Action
 	}
 
 	/**
-	 * Adds an argument
+	 * Adds an argument.
+	 * 
 	 * @param mixed $value
 	 */
 	public function addArg($value)
@@ -144,7 +156,9 @@ class Action
 		$this->arguments[] = $value;
 	}
 	/**
-	 * @return the $stylesheets
+	 * Returns the stylesheets.
+	 * 
+	 * @return array
 	 */
 	public function getStylesheets()
 	{
@@ -152,7 +166,9 @@ class Action
 	}
 
 	/**
-	 * @return the $scripts
+	 * Returns the scripts.
+	 * 
+	 * @return array
 	 */
 	public function getScripts()
 	{
@@ -160,7 +176,9 @@ class Action
 	}
 
 	/**
-	 * @return the $variables
+	 * Returns the variables.
+	 * 
+	 * @return array
 	 */
 	public function getVariables()
 	{
@@ -168,7 +186,9 @@ class Action
 	}
 
 	/**
-	 * @param multitype: $stylesheets
+	 * Sets the stylesheets
+	 * 
+	 * @param arary $stylesheets
 	 */
 	public function setStylesheets($stylesheets)
 	{
@@ -176,7 +196,9 @@ class Action
 	}
 
 	/**
-	 * @param multitype: $scripts
+	 * Sets the scripts.
+	 * 
+	 * @param array $scripts
 	 */
 	public function setScripts($scripts)
 	{
@@ -184,7 +206,9 @@ class Action
 	}
 
 	/**
-	 * @param multitype: $variables
+	 * Sets the variables.
+	 * 
+	 * @param array $variables
 	 */
 	public function setVariables($variables)
 	{

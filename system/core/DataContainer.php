@@ -1,4 +1,11 @@
 <?php
+/**
+ *	Data container class.
+ *
+ *	@author      Raymond van Velzen <raymond@latunyi.com>
+ *	@package     LatunyiFramework
+ **/
+
 namespace System\Core;
 
 /**
@@ -12,6 +19,11 @@ class DataContainer
 	 */
 	private $_data;
 
+	/**
+	 * Constructor, optionally receives and sets data.
+	 * 
+	 * @param array $data
+	 */
 	public function __construct($data = null)
 	{
 		if (!empty($data))

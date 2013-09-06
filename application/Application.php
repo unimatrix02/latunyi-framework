@@ -1,4 +1,11 @@
 <?php
+/**
+ *	Application class.
+ *
+ *	@author      Raymond van Velzen <raymond@latunyi.com>
+ *	@package     LatunyiFramework
+ **/
+
 namespace Application;
 
 use System\Core\Environment as Env;

@@ -1,7 +1,10 @@
 <?php
 /**
- *	Initialization 
- */
+ *	Initialization
+ *
+ *	@author      Raymond van Velzen <raymond@latunyi.com>
+ *	@package     LatunyiFramework
+ **/
 
 // Determine root for this site
 $base = dirname($_SERVER['PHP_SELF']);

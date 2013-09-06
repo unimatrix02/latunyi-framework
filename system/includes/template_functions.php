@@ -1,4 +1,11 @@
 <?php
+/**
+ *	Template functions.
+ *
+ *	@author      Raymond van Velzen <raymond@latunyi.com>
+ *	@package     LatunyiFramework
+ **/
+
 
 /**
  *	Returns each of the given values in turn.

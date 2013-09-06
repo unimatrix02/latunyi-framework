@@ -32,6 +32,7 @@
 			<div class="nav">
 				<a href="/">Normal list</a> |
 				<a href="/list">AJAX-loaded list</a>
+				<a href="/docs/" style="margin-left: 2em;">PHPDoc</a>
 			</div>
 			<h1>Framework Test</h1>
 		</div>

@@ -1,4 +1,11 @@
 <?php
+/**
+ *	Item repository class.
+ *
+ *	@author      Raymond van Velzen <raymond@latunyi.com>
+ *	@package     LatunyiFramework
+ **/
+
 namespace Application\Domain\Repository;
 
 use Application\Domain\Entity\Item;

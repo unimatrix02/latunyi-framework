@@ -1,6 +1,15 @@
 <?php
+/**
+ *	Router class.
+ *
+ *	@author      Raymond van Velzen <raymond@latunyi.com>
+ *	@package     LatunyiFramework
+ **/
 namespace System\Core;
 
+/**
+ * Router class, uses a Request to produce an Action. 
+ */
 class Router
 {
 	/**

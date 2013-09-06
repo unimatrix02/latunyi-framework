@@ -1,4 +1,11 @@
 <?php
+/**
+ *	Entity validator base class.
+ *
+ *	@author      Raymond van Velzen <raymond@latunyi.com>
+ *	@package     LatunyiFramework
+ **/
+
 namespace System\Core;
 
 use \System\Helper\Validator;

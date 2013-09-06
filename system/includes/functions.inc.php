@@ -1,22 +1,10 @@
 <?php
-
-/*========================================================================
-                    _          _                     _
-                   | |    __ _| |_ _   _ _ __  _   _(_)
-                   | |   / _` | __| | | | '_ \| | | | |
-                   | |__| (_| | |_| |_| | | | | |_| | |
-                   |_____\__,_|\__|\__,_|_| |_|\__, |_|
-                                               |___/
-
-=========================================================================*/
 /**
 *	Helper functions library
 *
 *	@author      Raymond van Velzen <raymond@latunyi.com>
-*	@package     Meridium
+*	@package     LatunyiFramework
 **/
-
-// -----------------------------------------------------------------------
 
 /**
 *	redirect
@@ -40,8 +28,6 @@ function redirect($url, $with_root = true)
 	exit;
 }
 
-// -----------------------------------------------------------------------
-
 /**
 *	reload
 *
@@ -55,8 +41,6 @@ function reload()
 	header('Location: '.$url);
 	exit;
 }
-
-// -----------------------------------------------------------------------
 
 /**
 *	session_clean
@@ -76,8 +60,6 @@ function session_clean()
 	session_destroy();
 	session_start();
 }
-
-// -----------------------------------------------------------------------
 
 /**
 *	s_unset
@@ -99,8 +81,6 @@ function s_unset()
 	}
 }
 
-// -----------------------------------------------------------------------
-
 /**
 *	s_isset
 *
@@ -114,18 +94,13 @@ function s_isset($name)
 	return isset($_SESSION[$name]);
 }
 
-// -----------------------------------------------------------------------
-
 /**
-*	get_subdirs
-*
 *	Returns all subdirs or empty array, non-recursive.
 *
 *	@param	string 	$root_dir	Root directory
 *	@param	mixed	$dir_list	Array with dirs, by ref, default empty array
 *	@return	mixed				Array
 **/
-//
 function get_subdirs($root_dir)
 {
 	// Check if root_dir exists
@@ -153,8 +128,6 @@ function get_subdirs($root_dir)
 	@closedir($root_dir);
 	return $dir_list;
 }
-
-// -----------------------------------------------------------------------
 
 /**
 *	Iterates over the given array $data. Takes out all keys that start with
@@ -192,8 +165,6 @@ function filter_array($data, $filter)
 // -----------------------------------------------------------------------
 
 /**
-*	now
-*
 *	Returns current date/time as YYYY-MM-DD HH:MM:SS.
 **/
 function now()
@@ -204,8 +175,6 @@ function now()
 // -----------------------------------------------------------------------
 
 /**
-*	date_iso
-*
 *	Returns an ISO date. If the given date is DD-MM-YYYY, it will be
 *	reversed.
 **/
@@ -224,8 +193,6 @@ function date_iso($str)
 // -----------------------------------------------------------------------
 
 /**
-*	date_dutch
-*
 *	Returns an Dutch date (DD-MM-YYYY).
 **/
 function date_dutch($str)
@@ -243,8 +210,6 @@ function date_dutch($str)
 // -----------------------------------------------------------------------
 
 /**
-*	regex_matches
-*
 *	Returns all matches as array using preg_match.
 *
 *	@param	string	$pattern		Pattern to match on
@@ -386,8 +351,6 @@ function convert_filesize($bytes)
 // -----------------------------------------------------------------------
 
 /**
-*	call_static_method
-*
 *	Calls a static method from a class using call_user_func
 *	and returns the result.
 *
@@ -404,8 +367,6 @@ function call_static_method($class, $method)
 // -----------------------------------------------------------------------
 
 /**
-*	get_static_property
-*
 *	Returns the value of a static property of a class using a reflection
 *	class.
 *
@@ -424,8 +385,6 @@ function get_static_property($class, $property)
 // -----------------------------------------------------------------------
 
 /**
-*	add_to_include_path
-*
 *	Adds the given path to the include path.
 *
 *	@param	string	$path		Path to add
@@ -439,8 +398,6 @@ function add_to_include_path($path)
 // -----------------------------------------------------------------------
 
 /**
-*	timer
-*
 *	Remembers the current time on first call, and returns the difference
 *   on the second call.
 *
@@ -466,8 +423,6 @@ function timer()
 // -----------------------------------------------------------------------
 
 /**
- * @brief Generates a Universally Unique IDentifier, version 4.
- *
  * This function generates a truly random UUID. The built in CakePHP String::uuid() function
  * is not cryptographically secure. You should uses this function instead.
  *
@@ -521,8 +476,6 @@ function get_uuid() {
 // -----------------------------------------------------------------------
 
 /**
-*	__
-*
 *	Extension of gettext() to support placeholder replacement.
 *
 *	@param	string	$string		String to translate
@@ -539,13 +492,21 @@ function __($string)
 
 // -----------------------------------------------------------------------
 
-// Returns the value of the given variable, or empty string if not set
+/**
+ * Returns the value of the given variable, or empty string if not set
+ * @param mixed $x
+ * @return Ambigous <string, unknown>
+ */
 function val(&$x)
 {
 	return (isset($x) ? $x : '');
 }
 
-
+/**
+ * Converts an array to StdClass object.
+ * @param array $array
+ * @return object
+ */
 function arrayToObject($array)
 {
     if (!is_array($array)) {

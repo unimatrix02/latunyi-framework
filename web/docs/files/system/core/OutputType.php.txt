@@ -1,0 +1,72 @@
+<?php
+/**
+ *	Output type class.
+ *
+ *	@author      Raymond van Velzen <raymond@latunyi.com>
+ *	@package     LatunyiFramework
+ **/
+
+namespace System\Core;
+
+/**
+ * Defines a type of output
+ */
+class OutputType
+{
+	/**
+	 * Constant for HTML output
+	 * @var string
+	 */
+	const TYPE_HTML = 'html';
+
+	/**
+	 * Constant for JSON output
+	 * @var string
+	 */
+	const TYPE_JSON = 'json';
+
+	/**
+	 * Constant for plain text output
+	 * @var string
+	 */
+	const TYPE_TEXT = 'text';
+
+	/**
+	 * Constant for no output
+	 * @var string
+	 */
+	const TYPE_NONE = 'none';
+		
+	/**
+	 * Type of output (HTML, JSON, plain text, none)
+	 * @var string
+	 */
+	protected $type;
+	
+	/**
+	 * Constructor, sets the given type, if valid.
+	 * 
+	 * @param string $type
+	 * @throws \Exception
+	 */
+	public function __construct($type)
+	{
+		$refClass = new \ReflectionClass(get_class($this));
+		$const = $refClass->getConstants();
+		if (!in_array($type, $const))
+		{
+			throw new \Exception('Invalid output type ' . $type);
+		}
+		
+		$this->type = $type;
+	}
+
+	/**
+	 * Returns the type as string.
+	 */
+	public function __toString()
+	{
+		return $this->type;
+	}
+}
+
