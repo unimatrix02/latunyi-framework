@@ -1,6 +1,9 @@
 <?php
 namespace System\Core\Database;
 
+/**
+ * Base class for operations on database tables.
+ */
 class Table
 {
 	/**

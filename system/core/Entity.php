@@ -1,6 +1,9 @@
 <?php
 namespace System\Core;
 
+/**
+ * Base class for entities.
+ */
 class Entity
 {
 	/**

@@ -36,7 +36,7 @@ class Application extends \System\Core\BaseApplication
 	{
 		$hostname = getServerHostName();
 
-		// Logic to determine env based on hostname
+		// Logic to determine env based on hostname, now simply dev
 		$env = Env::DEV;
 
 		return $env;

@@ -30,7 +30,15 @@ class ValidationRule
 	 * @var string
 	 */
 	public $errorMessage;
-	
+
+	/**
+	 * Constructor, sets field name, method, error message and input fields.
+	 * 
+	 * @param string $fieldName
+	 * @param string $method
+	 * @param string $errorMessage
+	 * @param array $inputFields
+	 */
 	public function __construct($fieldName, $method, $errorMessage, $inputFields = null)
 	{
 		$this->fieldName = $fieldName;

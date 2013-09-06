@@ -3,6 +3,9 @@ namespace System\Core\Exception;
 
 use \System\Core\DataContainer;
 
+/**
+ * Exeption class for validation errors.
+ */
 class Validation extends \Exception
 {
 	/**
@@ -10,7 +13,12 @@ class Validation extends \Exception
 	 * @var \System\Core\DataContainer
 	 */
 	public $errors;
-	
+
+	/**
+	 * Constructor, sets list of errors
+	 * 
+	 * @param \System\Core\DataContainer $errors
+	 */
 	public function __construct(\System\Core\DataContainer $errors)
 	{
 		$this->errors = $errors;

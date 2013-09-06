@@ -6,6 +6,10 @@ namespace System\Core;
  */
 class Request extends DataContainer
 {
+	/**
+	 * Request path
+	 * @var string
+	 */
 	protected $path;
 	
 	/**

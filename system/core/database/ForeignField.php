@@ -1,6 +1,9 @@
 <?php
 namespace System\Core\Database;
 
+/**
+ * Class to hold foreign fields.
+ */
 class ForeignField extends DataField
 {
 	/**

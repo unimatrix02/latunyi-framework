@@ -183,5 +183,3 @@ class DateTime
 		return date('Y-m-d', $date);
     }
 }	
-
-?>

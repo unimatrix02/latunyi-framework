@@ -6,6 +6,10 @@ namespace System\Core;
  */
 class Log
 {
+	/**
+	 * Path to the log file
+	 * @var string
+	 */
 	private $logFilePath;
 
 	/**
@@ -100,8 +104,6 @@ class Log
 			{
 				throw new \Exception('Can\'t open log file ' . $this->currentLogFile);
 			}
-			
-			//$this->add('', false);
 		}
 	}
 

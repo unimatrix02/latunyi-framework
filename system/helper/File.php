@@ -13,8 +13,6 @@ namespace System\Helper;
 class File {
 
 	/**
-	*	CheckUpload
-	*
 	*	Checks if an uploaded file exists, is not empty, and has no
 	*	error. Throws an exception if any of these is not OK.
 	*

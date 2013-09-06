@@ -2,7 +2,6 @@
 namespace System\Core;
 
 use System\Core\Database\Database;
-
 use \Application\Controller;
 
 /**

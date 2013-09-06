@@ -19,7 +19,12 @@ class QueryParams extends ObjectList
  	{
  		$this->objects[] = new QueryParam($fieldName, $fieldValue, $operator);
  	}
- 	
+
+ 	/**
+ 	 * Returns the object list as an array.
+ 	 * 
+ 	 * @return array
+ 	 */
  	public function asArray()
  	{
  		$list = array();

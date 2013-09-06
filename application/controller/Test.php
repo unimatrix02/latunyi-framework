@@ -12,6 +12,9 @@ use Application\Domain\Service\ItemService;
 
 use \System\Core;
 
+/**
+ * Test controller class.
+ */
 class Test extends \System\Core\BaseController
 {
 	/**
@@ -113,6 +116,7 @@ class Test extends \System\Core\BaseController
 	}
 	
 	/**
+	 * Shows a form to edit an item.
 	 * 
 	 * @param int $itemId	Item ID, 0 for new
 	 */
@@ -167,6 +171,12 @@ class Test extends \System\Core\BaseController
 		$this->types = $this->typeRepo->getSimpleList('name');
 	}
 	
+	/**
+	 * Removes an item, shows list with error when it fails,
+	 * otherwise reloads list.
+	 * 
+	 * @param int $itemId
+	 */
 	public function removeItem($itemId)
 	{
 		try
@@ -181,6 +191,12 @@ class Test extends \System\Core\BaseController
 		}
 	}
 	
+	/**
+	 * Removes an item, called via Ajax.
+	 * Returns OK or an error.
+	 * 
+	 * @param int $itemId
+	 */
 	public function removeItemAjax($itemId)
 	{
 		try
@@ -194,20 +210,33 @@ class Test extends \System\Core\BaseController
 		}
 	}
 
+	/**
+	 * Sets the ItemRepository.
+	 * 
+	 * @param ItemRepository $itemRepo
+	 */
 	public function setItemRepo(ItemRepository $itemRepo)
 	{
 		$this->itemRepo = $itemRepo;
 	}
 	
+	/**
+	 * Sets the type repository.
+	 * 
+	 * @param TypeRepository $typeRepo
+	 */
 	public function setTypeRepo(TypeRepository $typeRepo)
 	{
 		$this->typeRepo = $typeRepo;
 	}
 	
+	/**
+	 * Sets the ItemService.
+	 * 
+	 * @param ItemService $svc
+	 */
 	public function setItemService(ItemService $svc)
 	{
 		$this->itemService = $svc;
 	}
 }
-
-?>

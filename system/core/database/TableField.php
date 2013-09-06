@@ -1,6 +1,9 @@
 <?php
 namespace System\Core\Database;
 
+/**
+ * Class to hold table field info.
+ */
 class TableField extends DataField
 {
 	/**

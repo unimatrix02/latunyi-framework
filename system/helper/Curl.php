@@ -7,13 +7,15 @@ namespace System\Helper;
 class Curl
 {
 	/**
-	*	@var	Handle for curl resource 
-	**/
+	 * Handle for curl resource
+	 * @var resource
+	 */
 	private	$handle;
 
 	/**
-	*	@var	List of cookies
-	**/
+	 * List of cookies
+	 * @var array
+	 */
 	private	$cookies = array();
 
 	/**
@@ -40,11 +42,7 @@ class Curl
     	}
 	}
 
-	// -------------------------------------------------------------------
-
 	/**
-	*	SetPostData
-	*
 	*	Adds data for a POST request.
 	*
 	*	@param		mixed	$data		Data to POST
@@ -54,11 +52,8 @@ class Curl
     {
     	curl_setopt($this->handle, CURLOPT_POSTFIELDS, $data);
     }
-	// -------------------------------------------------------------------
 
 	/**
-	*	SetLogin
-	*
 	*	Adds username/password for HTTP authentication.
 	*
 	*	@param		string		$username
@@ -71,11 +66,7 @@ class Curl
     	curl_setopt($this->handle, CURLOPT_USERPWD, $username . ':' . $password);
     }
 
-	// -------------------------------------------------------------------
-
 	/**
-	*	SetCookie
-	*
 	*	Adds a cookie to the request.
 	*
 	*	@param		string		$name
@@ -87,11 +78,7 @@ class Curl
     	$this->cookies[] = $name . '=' . $value;
     }
     
-	// -------------------------------------------------------------------
-
 	/**
-	*	Execute
-    *
     *	Executes the request and returns the result.
     *
 	*	@return		string		Request result
@@ -112,11 +99,7 @@ class Curl
     	return $result;
     }
     
-	// -------------------------------------------------------------------
-
 	/**
-	*	Destructor
-    *
     *	Closes the resource.
     *
 	*	@return		void
@@ -126,5 +109,3 @@ class Curl
     	curl_close($this->handle);
     }
 }	
-
-?>

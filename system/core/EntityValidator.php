@@ -13,12 +13,21 @@ class EntityValidator
 	 * @var \System\Core\ValidationRules
 	 */
 	private $rules;
-	
+
+	/**
+	 * Constructor, sets up new ValidationRules.
+	 */
 	public function __construct()
 	{
 		$this->rules = new ValidationRules();	
 	}
 	
+	/**
+	 * Adds a ValidationRule to the list of rules.
+	 * 
+	 * @param ValidationRule $rule
+	 * @param bool $applyWhenNew	Apply the rule when an entity is new
+	 */
 	public function addRule(ValidationRule $rule, $applyWhenNew = true)
 	{
 		$rule->applyWhenNew = $applyWhenNew;
@@ -102,11 +111,21 @@ class EntityValidator
 		}
 	}
 
+	/**
+	 * Example of validation method
+	 * 
+	 * @return bool
+	 */
 	private function validateOneThing()
 	{
 		return true;
 	}
 
+	/**
+	 * Example of validation method
+	 * 
+	 * @return boolean
+	 */
 	private function validateAnotherThing()
 	{
 		return true;

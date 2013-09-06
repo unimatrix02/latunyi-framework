@@ -26,7 +26,12 @@ class ObjectList implements \Iterator
 		$this->position = 0;
 		$this->objects = array();
 	}
-	
+
+	/**
+	 * Adds an object to the list.
+	 * 
+	 * @param object $object
+	 */
  	public function add($object)
  	{
  		$this->objects[] = $object;

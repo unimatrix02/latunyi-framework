@@ -7,8 +7,16 @@ use System\Core\Database\ForeignField;
 
 use \System\Core\Database\Table;
 
+/**
+ * Child class for the Type table.
+ */
 class TypeTable extends Table
 {
+	/**
+	 * Constructor, receives the Database object, sets properties and fields.
+	 *
+	 * @param \System\Core\Database\Database $db
+	 */
 	public function __construct(\System\Core\Database\Database $db)
 	{
 		parent::__construct($db, 'Type');
@@ -28,5 +36,3 @@ class TypeTable extends Table
 		*/
 	}
 }
-
-?>

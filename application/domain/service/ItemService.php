@@ -5,6 +5,9 @@ use System\Core\Service;
 use Application\Domain\Entity\Item;
 use Application\Domain\Entity\ItemValidator;
 
+/**
+ * Class that provides additional operations not covered by Repository.
+ */
 class ItemService extends Service
 {
 	/**

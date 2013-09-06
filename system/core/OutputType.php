@@ -6,9 +6,28 @@ namespace System\Core;
  */
 class OutputType
 {
+	/**
+	 * Constant for HTML output
+	 * @var string
+	 */
 	const TYPE_HTML = 'html';
+
+	/**
+	 * Constant for JSON output
+	 * @var string
+	 */
 	const TYPE_JSON = 'json';
+
+	/**
+	 * Constant for plain text output
+	 * @var string
+	 */
 	const TYPE_TEXT = 'text';
+
+	/**
+	 * Constant for no output
+	 * @var string
+	 */
 	const TYPE_NONE = 'none';
 		
 	/**

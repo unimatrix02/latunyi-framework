@@ -5,6 +5,9 @@ use \System\Core\ValidationRules;
 use \System\Core\ValidationRule;
 use \System\Core\Helper\Validator;
 
+/**
+ * Child class for Item validation.
+ */
 class ItemValidator extends \System\Core\EntityValidator
 {
 	/**
@@ -48,6 +51,12 @@ class ItemValidator extends \System\Core\EntityValidator
 		parent::validate($item, $isNew);
 	}
 
+	/**
+	 * Validates the type. Not implemented.
+	 * 
+	 * @param int $type
+	 * @return boolean
+	 */
 	protected function validateType($type)
 	{
 		// Do something here to validate the type.

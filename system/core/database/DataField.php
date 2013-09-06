@@ -1,6 +1,9 @@
 <?php
 namespace System\Core\Database;
 
+/**
+ * Base class for data fields, such as TableField, CustomField and ForeignField.
+ */
 class DataField
 {
 	/**
