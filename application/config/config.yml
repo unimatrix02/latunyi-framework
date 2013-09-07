@@ -17,14 +17,19 @@ templating:
 assets:
     # Merge assets together or not
     merging: on
+    
     # Check if sources are newer and make new combined file if necessary
     autorefresh: on
+    
     # Minify assets or not
     minify: on
+    
+    # Shell commands to run the minifier of your choice
     minify_commands:
-        # Shell commands to run the minifier of your choice
         stylesheets: "cleancss -o [filename] [filename]"
         scripts: "uglifyjs2 [filename] -o [filename]"
+        
+    # Default files, must be loaded on every request:
     stylesheets:
         - reset.css
         - style.css

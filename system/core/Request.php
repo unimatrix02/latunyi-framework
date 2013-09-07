@@ -32,6 +32,12 @@ class Request extends DataContainer
 	protected $postData;
 	
 	/**
+	 * Is Ajax request or not
+	 * @var bool
+	 */
+	protected $isAjaxRequest = false;
+	
+	/**
 	 * Returns true if the pathParameters property is a non-empty array.
 	 * @returns bool
 	 */
@@ -47,5 +53,26 @@ class Request extends DataContainer
 	public function hasPostData()
 	{
 		return (is_array($this->postData) && !empty($this->postData));
-	} 
+	}
+	
+	/**
+	 * Returns the value of isAjaxRequest.
+	 * 
+	 * @return bool
+	 */
+	public function isAjaxRequest()
+	{
+		return $this->isAjaxRequest;
+	}
+
+	/**
+	 * Sets the value of isAjaxRequest.
+	 * 
+	 * @param boolean $isAjaxRequest
+	 */
+	public function setIsAjaxRequest($isAjaxRequest)
+	{
+		$this->isAjaxRequest = $isAjaxRequest;
+	}
+	
 }

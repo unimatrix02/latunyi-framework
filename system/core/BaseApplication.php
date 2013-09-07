@@ -117,6 +117,11 @@ class BaseApplication
 		$this->request->path = $_SERVER['REQUEST_URI'];
 		$this->request->postData = $_POST;
 		$this->request->pathParameters = $_GET;
+		
+		if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest')
+		{
+			$this->request->setIsAjaxRequest(true);
+		}
 
 		// Initialize Response object
 		$this->response = new Response($this->config->app->templating->default);
@@ -174,16 +179,21 @@ class BaseApplication
 	 */
 	public function renderResponse()
 	{
-		// Get list of assets (CSS/JS) to include in response
-		if (!$this->config->app->has('assets'))
+		// Only merge/minify assets for normal web requests
+		if (false === $this->request->isAjaxRequest())
 		{
-			throw new \Exception('Asset configuration is missing');
+			// Get list of assets (CSS/JS) to include in response
+			if (!$this->config->app->has('assets'))
+			{
+				throw new \Exception('Asset configuration is missing');
+			}
+			$assetMgr = new AssetManager($this->config->app->assets, $this->response->getStylesheets(), $this->response->getScripts());
+			$result = $assetMgr->mergeAssets();
+	
+			$this->response->setStylesheets($result->stylesheets);
+			$this->response->setScripts($result->scripts);
 		}
-		$assetMgr = new AssetManager($this->config->app->assets, $this->response->getStylesheets(), $this->response->getScripts());
-		$result = $assetMgr->mergeAssets();
-
-		$this->response->setStylesheets($result->stylesheets);
-		$this->response->setScripts($result->scripts);
+		$this->log->add($this->response);
 		
 		$renderer = new Renderer($this->response);
 		$this->output = $renderer->getOutput($this->response->getOutputType());
