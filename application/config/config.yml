@@ -12,3 +12,21 @@ log:
 # Templating
 templating:
     default: page.php
+    
+# Assets
+assets:
+    # Merge assets together or not
+    merging: on
+    # Check if sources are newer and make new combined file if necessary
+    autorefresh: on
+    # Minify assets or not
+    minify: on
+    minify_commands:
+        # Shell commands to run the minifier of your choice
+        stylesheets: "cleancss -o [filename] [filename]"
+        scripts: "uglifyjs2 [filename] -o [filename]"
+    stylesheets:
+        - reset.css
+        - style.css
+    scripts:
+        - jquery.js

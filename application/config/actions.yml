@@ -4,6 +4,11 @@
     method:     showList
     vars:
         content: list.php
+    files:
+        stylesheets:
+            - extra.css
+        scripts:
+            - test.js
 
 # Add item
 /item/(\d+)/add:
@@ -33,7 +38,7 @@
     vars:
         content: list_ajax.php
     files:
-        js:
+        scripts:
         - script.js
 
 # List items loaded by ajax - returns HTML
@@ -80,9 +85,9 @@
 #        other: data
 #     output: html|json|text|none (default html)
 #     files: (optional, for additional files)
-#         css:
-#         - file1.css
-#         - file2.css
-#         js:
-#         - file1.js
-#         - file2.js
+#         stylesheets:
+#             - file1.css
+#             - file2.css
+#         scripts:
+#             - file1.js
+#             - file2.js

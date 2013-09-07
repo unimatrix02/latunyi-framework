@@ -7,6 +7,17 @@
     array (
       'content' => 'list.php',
     ),
+    'files' => 
+    array (
+      'stylesheets' => 
+      array (
+        0 => 'extra.css',
+      ),
+      'scripts' => 
+      array (
+        0 => 'test.js',
+      ),
+    ),
   ),
   '/item/(\\d+)/add' => 
   array (
@@ -45,7 +56,7 @@
     ),
     'files' => 
     array (
-      'js' => 
+      'scripts' => 
       array (
         0 => 'script.js',
       ),

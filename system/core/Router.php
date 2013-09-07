@@ -57,13 +57,13 @@ class Router
 				}
 				if ($this->config->$path->has('files'))
 				{
-					if ($this->config->$path->files->has('css'))
+					if ($this->config->$path->files->has('stylesheets'))
 					{
-						$action->setStylesheets($this->config->$path->files->css->asArray());
+						$action->setStylesheets($this->config->$path->files->stylesheets->asArray());
 					}
-					if ($this->config->$path->files->has('js'))
+					if ($this->config->$path->files->has('scripts'))
 					{
-						$action->setScripts($this->config->$path->files->js->asArray());
+						$action->setScripts($this->config->$path->files->scripts->asArray());
 					}
 				}
 				if ($this->config->$path->has('vars'))

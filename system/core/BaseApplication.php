@@ -174,6 +174,17 @@ class BaseApplication
 	 */
 	public function renderResponse()
 	{
+		// Get list of assets (CSS/JS) to include in response
+		if (!$this->config->app->has('assets'))
+		{
+			throw new \Exception('Asset configuration is missing');
+		}
+		$assetMgr = new AssetManager($this->config->app->assets, $this->response->getStylesheets(), $this->response->getScripts());
+		$result = $assetMgr->mergeAssets();
+
+		$this->response->setStylesheets($result->stylesheets);
+		$this->response->setScripts($result->scripts);
+		
 		$renderer = new Renderer($this->response);
 		$this->output = $renderer->getOutput($this->response->getOutputType());
 	}

@@ -13,15 +13,12 @@
 	<script src="/html/html5shiv.js"></script>
 	<![endif]-->
 
-	<link href="/css/reset.css" rel="stylesheet" type="text/css" media="screen">
-	<link href="/css/style.css" rel="stylesheet" type="text/css" media="screen">
 	<? foreach ($stylesheets as $file): ?>
-	<link href="/css/<?=$file?>" rel="stylesheet" type="text/css" media="screen">
+	<link href="<?=$file?>" rel="stylesheet" type="text/css" media="screen">
 	<? endforeach; ?>
 
-	<script type="text/javascript" src="/js/jquery.js"></script>
 	<? foreach ($scripts as $file): ?>
-	<script type="text/javascript" src="/js/<?=$file?>?t=<?=time()?>"></script>
+	<script type="text/javascript" src="<?=$file?>"></script>
 	<? endforeach; ?>
 
 </head>
