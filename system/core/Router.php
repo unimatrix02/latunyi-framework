@@ -57,9 +57,9 @@ class Router
 				}
 				if ($this->config->$path->has('files'))
 				{
-					if ($this->config->$path->files->has('stylesheets'))
+					if ($this->config->$path->files->has('styles'))
 					{
-						$action->setStylesheets($this->config->$path->files->stylesheets->asArray());
+						$action->setstyles($this->config->$path->files->styles->asArray());
 					}
 					if ($this->config->$path->files->has('scripts'))
 					{

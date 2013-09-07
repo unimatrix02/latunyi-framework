@@ -21,10 +21,10 @@
     'minify' => true,
     'minify_commands' => 
     array (
-      'stylesheets' => 'cleancss -o [filename] [filename]',
+      'styles' => 'cleancss -o [filename] [filename]',
       'scripts' => 'uglifyjs2 [filename] -o [filename]',
     ),
-    'stylesheets' => 
+    'styles' => 
     array (
       0 => 'reset.css',
       1 => 'style.css',

@@ -143,7 +143,7 @@ class BaseApplication
 		$this->action = $router->findAction($this->request);
 		
 		// Copy variables, CSS/JS files from action into response
-		$this->response->setStylesheets($this->action->getStylesheets());
+		$this->response->setstyles($this->action->getstyles());
 		$this->response->setScripts($this->action->getScripts());
 		$this->response->setData($this->action->getVariables());
 		$this->response->setOutputType($this->action->getOutputType());
@@ -187,10 +187,10 @@ class BaseApplication
 			{
 				throw new \Exception('Asset configuration is missing');
 			}
-			$assetMgr = new AssetManager($this->config->app->assets, $this->response->getStylesheets(), $this->response->getScripts());
+			$assetMgr = new AssetManager($this->config->app->assets, $this->response->getStyles(), $this->response->getScripts());
 			$result = $assetMgr->mergeAssets();
 	
-			$this->response->setStylesheets($result->stylesheets);
+			$this->response->setStyles($result->styles);
 			$this->response->setScripts($result->scripts);
 		}
 		$this->log->add($this->response);

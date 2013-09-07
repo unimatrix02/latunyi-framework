@@ -36,17 +36,17 @@ class AssetManager
 	protected $files;
 	
 	/**
-	 * Constructor, receives the asset configuration and additional stylesheets and scripts.
+	 * Constructor, receives the asset configuration and additional styles and scripts.
 	 */
-	public function __construct(\System\Core\DataContainer $assetConfig, $stylesheets, $scripts)
+	public function __construct(\System\Core\DataContainer $assetConfig, $styles, $scripts)
 	{
-		if (!is_array($stylesheets) || !is_array($scripts))
+		if (!is_array($styles) || !is_array($scripts))
 		{
-			throw new \Exception('Stylesheets and/or scripts are not arrays');
+			throw new \Exception('Styles and/or scripts are not arrays');
 		}
 
 		$this->files = array();
-		$this->files['stylesheets'] = $stylesheets;
+		$this->files['styles'] = $styles;
 		$this->files['scripts'] = $scripts;
 		
 		$this->config = $assetConfig;
@@ -54,7 +54,7 @@ class AssetManager
 	
 	/**
 	 * Merges all CSS/JS assets (if enabled in config), and returns an StdClassobject
-	 * with keys for each type (stylesheets/scripts), with an array with either all files, 
+	 * with keys for each type (styles/scripts), with an array with either all files, 
 	 * or a list with a single combined file.
 	 * 
 	 * $return object 
@@ -62,7 +62,7 @@ class AssetManager
 	public function mergeAssets()
 	{
 		$result = new \StdClass();
-		$types = array('stylesheets', 'scripts');
+		$types = array('styles', 'scripts');
 
 		foreach ($types as $type)
 		{
@@ -148,7 +148,7 @@ class AssetManager
 	}
 	
 	/**
-	 * Takes the loaded list of stylesheets, concatenates their file names,
+	 * Takes the loaded list of styles, concatenates their file names,
 	 * makes a hash from that string, checks for a CSS file with that name;
 	 * If exists, compare timestamp of combined file with timestamps of
 	 * each of the input files. If not existing or out of date, the contents
@@ -159,7 +159,7 @@ class AssetManager
 	private function mergeFiles($type)
 	{
 		$hash = md5(implode(';', $this->files[$type]));
-		$combinedFileName = $hash . '/' . ($type == 'stylesheets' ? 'styles.css' : 'scripts.js');
+		$combinedFileName = $hash . '/' . ($type == 'styles' ? 'styles.css' : 'scripts.js');
 		
 		// Check file already exists
 		$normalPath = WEB_ROOT . constant(strtoupper($type) . '_PATH');
@@ -244,16 +244,4 @@ class AssetManager
 		}
 	}
 	
-	/**
-	 * Takes a type (stylesheets or scripts), takes the list of files,
-	 * and returns a sha1 hash of the concatenated file names.
-	 * 
-	 * @param string $type
-	 * @return string
-	 */
-	private function makeCombinedFileName($type)
-	{
-		$ext = ($type == 'stylesheets' ? 'css' : 'js');
-		return sha1(implode(';', $this->files[$type])) . '.' . $ext;
-	}
 }

@@ -26,10 +26,10 @@ class Response
 	protected $scripts;
 	
 	/**
-	 * List of stylesheets to include
+	 * List of styles to include
 	 * @var array
 	 */
-	protected $stylesheets;
+	protected $styles;
 	
 	/**
 	 * Data container
@@ -44,7 +44,7 @@ class Response
 	protected $outputType;
 	
 	/**
-	 * Constructor. Initializes scripts, stylesheets and data as empty arrays
+	 * Constructor. Initializes scripts, styles and data as empty arrays
 	 * and sets the default template.
 	 * 
 	 * @param string $defaultTemplate
@@ -52,7 +52,7 @@ class Response
 	public function __construct($defaultTemplate)
 	{
 		$this->scripts = array();
-		$this->stylesheets = array();
+		$this->styles = array();
 		$this->data = array();
 		
 		$this->template = $defaultTemplate;
@@ -78,13 +78,13 @@ class Response
 	}
 
 	/**
-	 * Returns the list of stylesheets.
+	 * Returns the list of styles.
 	 * 
 	 * @return array
 	 */
-	public function getStylesheets()
+	public function getStyles()
 	{
-		return $this->stylesheets;
+		return $this->styles;
 	}
 
 	/**
@@ -128,23 +128,23 @@ class Response
 	}
 
 	/**
-	 * Sets the list of stylesheets.
+	 * Sets the list of styles.
 	 * 
-	 * @param array $stylesheets
+	 * @param array $styles
 	 */
-	public function setStylesheets($stylesheets)
+	public function setStyles($styles)
 	{
-		$this->stylesheets = $stylesheets;
+		$this->styles = $styles;
 	}
 	
 	/**
-	 * Adds a file to the list of stylesheets.
+	 * Adds a file to the list of styles.
 	 * 
 	 * @param string $stylesheet
 	 */
 	public function addStylesheet($stylesheet)
 	{
-		$this->stylesheets[] = $stylesheet;
+		$this->styles[] = $stylesheet;
 	}
 
 	/**
@@ -158,7 +158,7 @@ class Response
 	}
 	
 	/**
-	 * Returns all data, scripts and stylesheets.
+	 * Returns all data, scripts and styles.
 	 * 
 	 * @return array
 	 */
@@ -166,7 +166,7 @@ class Response
 	{
 		$data = array(
 			'scripts' => $this->scripts,
-			'stylesheets' => $this->stylesheets,
+			'styles' => $this->styles,
 		);
 		return array_merge($data, $this->data);
 	}

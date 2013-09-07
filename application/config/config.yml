@@ -26,11 +26,11 @@ assets:
     
     # Shell commands to run the minifier of your choice
     minify_commands:
-        stylesheets: "cleancss -o [filename] [filename]"
+        styles: "cleancss -o [filename] [filename]"
         scripts: "uglifyjs2 [filename] -o [filename]"
         
     # Default files, must be loaded on every request:
-    stylesheets:
+    styles:
         - reset.css
         - style.css
     scripts:

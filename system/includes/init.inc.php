@@ -30,7 +30,7 @@ define('PUBLIC_ROOT', $base);
  * Path to CSS files
  * @var string
  */
-define('STYLESHEETS_PATH', PUBLIC_ROOT . '/css');
+define('STYLES_PATH', PUBLIC_ROOT . '/css');
 
 /**
  * Path to Javascript files

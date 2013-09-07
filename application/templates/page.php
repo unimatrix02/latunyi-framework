@@ -13,7 +13,7 @@
 	<script src="/html/html5shiv.js"></script>
 	<![endif]-->
 
-	<? foreach ($stylesheets as $file): ?>
+	<? foreach ($styles as $file): ?>
 	<link href="<?=$file?>" rel="stylesheet" type="text/css" media="screen">
 	<? endforeach; ?>
 

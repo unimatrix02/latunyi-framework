@@ -5,7 +5,7 @@
     vars:
         content: list.php
     files:
-        stylesheets:
+        styles:
             - extra.css
         scripts:
             - test.js
@@ -85,7 +85,7 @@
 #        other: data
 #     output: html|json|text|none (default html)
 #     files: (optional, for additional files)
-#         stylesheets:
+#         styles:
 #             - file1.css
 #             - file2.css
 #         scripts:

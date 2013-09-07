@@ -9,7 +9,7 @@
     ),
     'files' => 
     array (
-      'stylesheets' => 
+      'styles' => 
       array (
         0 => 'extra.css',
       ),
