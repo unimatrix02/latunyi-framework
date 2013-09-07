@@ -41,7 +41,7 @@ class Action
 	 * CSS files
 	 * @var array
 	 */
-	protected $stylesheets;
+	protected $styles;
 	
 	/**
 	 * Javascript files
@@ -63,16 +63,16 @@ class Action
 
 	/**
 	 * Constructor, sets the default output type and inits arguments, 
-	 * stylesheets and scripts as empty arrays.
+	 * styles and scripts as empty arrays.
 	 */
 	public function __construct()
 	{
 		// Set HTML as default output type
 		$this->outputType = new OutputType(OutputType::TYPE_HTML);
 		
-		// Set empty arrays for arguments, stylesheets and scripts
+		// Set empty arrays for arguments, styles and scripts
 		$this->arguments = array();
-		$this->stylesheets = array();
+		$this->styles = array();
 		$this->scripts = array();
 	}
 	
@@ -156,13 +156,13 @@ class Action
 		$this->arguments[] = $value;
 	}
 	/**
-	 * Returns the stylesheets.
+	 * Returns the styles.
 	 * 
 	 * @return array
 	 */
-	public function getStylesheets()
+	public function getStyles()
 	{
-		return $this->stylesheets;
+		return $this->styles;
 	}
 
 	/**
@@ -186,13 +186,13 @@ class Action
 	}
 
 	/**
-	 * Sets the stylesheets
+	 * Sets the styles
 	 * 
-	 * @param arary $stylesheets
+	 * @param arary $styles
 	 */
-	public function setStylesheets($stylesheets)
+	public function setStyles($styles)
 	{
-		$this->stylesheets = $stylesheets;
+		$this->styles = $styles;
 	}
 
 	/**

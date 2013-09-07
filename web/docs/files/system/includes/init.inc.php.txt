@@ -27,6 +27,18 @@ define('DOC_ROOT', dirname($_SERVER['DOCUMENT_ROOT']));
 define('PUBLIC_ROOT', $base);
 
 /**
+ * Path to CSS files
+ * @var string
+ */
+define('STYLES_PATH', PUBLIC_ROOT . '/css');
+
+/**
+ * Path to Javascript files
+ * @var string
+ */
+define('SCRIPTS_PATH', PUBLIC_ROOT . '/js');
+
+/**
  * Path to system directory
  * @var string
  */

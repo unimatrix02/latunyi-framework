@@ -98,11 +98,11 @@ class BaseController
 	 */
 	public function addStylesheet($fileName)
 	{
-		if (!$this->response->has('stylesheets'))
+		if (!$this->response->has('styles'))
 		{
-			$this->response->stylesheets = array();
+			$this->response->styles = array();
 		}
-		$this->response->stylesheets[] = $fileName;
+		$this->response->styles[] = $fileName;
 	}
 	
 	/**
