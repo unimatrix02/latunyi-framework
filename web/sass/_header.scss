@@ -1,0 +1,156 @@
+/* --- Header --- */
+
+header {
+	@include background(linear-gradient(top center, #cee7ff, #fff));
+	padding-top: 1em;
+	border-bottom: 1px solid #DDDDDD;
+	margin-bottom: 2em;
+
+	h1 {
+		font-family: HelveticaNeueLTStd;
+		font-weight: bold;
+		font-size: 2em;
+
+		margin: 0.25em 0 0.75em;
+		display: inline-block;
+
+		color: $light_blue;
+		line-height: 2em;
+		background: transparent url(../img/latunyi_logo.png) no-repeat left top;
+		background-size: contain;
+		padding-left: 2.5em;
+	}
+
+	/*
+	nav {
+		position: absolute;
+		bottom: 1px;
+		right: 20%;
+		display: inline-block;
+
+		li {
+			float: left;
+			display: inline-block;
+			margin-right: 0.5em;
+
+			a {
+				display: inline-block;
+				font-size: 13px;
+				color: #888;
+				text-decoration: none;
+				padding: 0 1em 0.5em 1em;
+				border-bottom: 2px solid #fff;
+
+				&.current {
+					font-weight: bold;
+					border-bottom: 2px solid $dark_yellow;
+				}
+
+				&:hover {
+					color: $std_blue;
+					border-bottom: 2px solid $std_blue;
+				}
+			}
+		}
+	}
+	*/
+
+}
+
+nav {
+	position: absolute;
+	bottom: -3px;
+	right: 20%;
+
+	ul {
+		position: relative;
+		display: inline-table;
+
+		// Clearfix for subitems
+		&:after {
+			content: "";
+			clear: both;
+			display: block;
+		}
+
+		// Hide submenus
+		ul {
+			z-index: 100;
+			display: none;
+			position: absolute;
+			top: 100%;
+
+			// Submenu items
+			li {
+				float: none;
+				position: relative;
+				margin-right: 0;
+
+				a {
+					border-bottom: none;
+
+					&:hover {
+						border-bottom: none;
+						background-color: #ffffee;
+						font-weight: normal;
+					}
+				}
+
+				&:hover {
+					background-color: $row_color;
+				}
+			}
+
+			// Sub-submenu
+			ul {
+				position: absolute;
+				left: 100%;
+				top:0;
+			}
+		}
+
+		li {
+			float: left;
+			margin-right: 0.5em;
+			width: 150px;
+
+			a {
+				display: block;
+				font-size: 1em;
+				font-weight: normal;
+				color: #777;
+				text-decoration: none;
+				padding: 0.5em 1em 0.5em 1em;
+				border-bottom: 2px solid #fff;
+
+				&.current {
+					font-weight: bold;
+					border-bottom: 2px solid $dark_yellow;
+				}
+
+				&:hover {
+					color: $std_blue;
+					border-bottom: 2px solid $std_blue;
+				}
+			}
+
+			// Show first submenu on hover
+			&:hover > ul {
+				display: block;
+				border:  1px solid #eee;
+				background-color: #fff;
+				box-shadow: 2px 2px 4px #ccc;
+			}
+
+			& > ul {
+				border:  1px solid #eee;
+				background-color: #fff;
+				box-shadow: 2px 2px 4px #ccc;
+			}
+
+			&:hover > a {
+				color: $std_blue;
+			}
+		}
+	}
+}

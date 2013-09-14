@@ -48,7 +48,10 @@ class AssetManager
 		$this->files = array();
 		$this->files['styles'] = $styles;
 		$this->files['scripts'] = $scripts;
-		
+
+		$this->files['remote_styles'] = array();
+		$this->files['remote_scripts'] = array();
+
 		$this->config = $assetConfig;
 	}
 	
@@ -67,18 +70,38 @@ class AssetManager
 		foreach ($types as $type)
 		{
 			$this->files[$type] = $this->getFileList($type);
-			
-			if ($this->config->merging === true)
+
+			// Move remote files into separate list
+			foreach ($this->files[$type] as $index => $file)
 			{
-				$this->files[$type] = array($this->mergeFiles($type));
+				if (substr($file, 0, 2) == '//')
+				{
+					$this->files['remote_' . $type][] = $file;
+					unset($this->files[$type][$index]);
+				}
 			}
 
-			$this->addVersionNumbers($this->files[$type], $type);
-			$this->addPath($this->files[$type], $type);
-			
+			// If there are files to process...
+			if (!empty($this->files[$type]))
+			{
+				if ($this->config->merging === true)
+				{
+					$this->files[$type] = array($this->mergeFiles($type));
+				}
+
+				$this->addVersionNumbers($this->files[$type], $type);
+				$this->addPath($this->files[$type], $type);
+			}
+
 			$result->$type = $this->files[$type];
+
+			// Prepend remote files, if any, before local files
+			if (!empty($this->files['remote_' . $type]))
+			{
+				$result->$type = array_merge($this->files['remote_' . $type], $this->files[$type]);
+			}
 		}
-		
+
 		return $result;
 	}
 
@@ -96,7 +119,7 @@ class AssetManager
 		{
 			$defaultFiles = $this->config->$type->asArray();
 		}
-			
+
 		// Get list of additional files from response
 		$additionalFiles = $this->files[$type];
 			
@@ -113,6 +136,7 @@ class AssetManager
 	 * 
 	 * @param string $list List, by reference
 	 * @param string $type
+	 * @throws \Exception
 	 */
 	private function addVersionNumbers(&$list, $type)
 	{
@@ -153,17 +177,18 @@ class AssetManager
 	 * If exists, compare timestamp of combined file with timestamps of
 	 * each of the input files. If not existing or out of date, the contents
 	 * of all files are combined into one file, named with the hash.
-	 * 
-	 * @return string	Name of the combined file
+	 *
+	 * @param string $type
+	 * @return string
+	 * @throws \Exception
 	 */
 	private function mergeFiles($type)
 	{
 		$hash = md5(implode(';', $this->files[$type]));
-		$combinedFileName = $hash . '/' . ($type == 'styles' ? 'styles.css' : 'scripts.js');
+		$combinedFileName = $hash . '.' . ($type == 'styles' ? 'css' : 'js');
 		
 		// Check file already exists
 		$normalPath = WEB_ROOT . constant(strtoupper($type) . '_PATH');
-		@mkdir($normalPath . '/' . $hash);
 		$shortCombinedFileName = $combinedFileName;
 		$combinedFileName = $normalPath . '/' . $combinedFileName;
 		
@@ -228,6 +253,7 @@ class AssetManager
 	 * 
 	 * @param array $files
 	 * @param string $type
+	 * @throws \Exception
 	 */
 	private function minifyFiles($files, $type)
 	{

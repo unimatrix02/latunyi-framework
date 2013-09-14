@@ -1,7 +1,7 @@
 # Database
 database:
-    username: root
-    password: Di19Mp78!
+    username: demo
+    password: 123456
     name: framework
     default_object_namespace: \Application\Domain\Entity
 
@@ -16,7 +16,7 @@ templating:
 # Assets
 assets:
     # Merge assets together or not
-    merging: on
+    merging: off
     
     # Check if sources are newer and make new combined file if necessary
     autorefresh: on
@@ -30,8 +30,10 @@ assets:
         scripts: "uglifyjs2 [filename] -o [filename]"
         
     # Default files, must be loaded on every request:
+    # Files can be local or remote; remote files must start with //
+    # Remote files will be loaded before local files.
     styles:
         - reset.css
-        - style.css
+        - layout.css
     scripts:
-        - jquery.js
+        - //ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js

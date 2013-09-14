@@ -41,6 +41,18 @@ class Test extends \System\Core\BaseController
 	 * @var \Application\Domain\Service\ItemService
 	 */
 	protected $itemService;
+
+	/**
+	 * Method to initialize controller. Sets up the menu
+	 */
+	public function init()
+	{
+		$this->response->reqPath = $this->request->path;
+		$this->menu = array(
+			'/' => 'Normal list',
+			'/list' => 'Ajax list',
+		);
+	}
 	
 	/**
 	 * Shows a list of items.

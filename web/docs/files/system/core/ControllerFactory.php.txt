@@ -43,6 +43,7 @@ class ControllerFactory
 	/**
 	 * Initializes the given controller class and injects the given objects, then returns it.
 	 * Also executes the make<ControllerName>Controller method in the Application's Factory class.
+	 * If available, calls the init() method on the controller as well.
 	 * 
 	 * @param string $controllerName
 	 * @param Log $log
@@ -67,7 +68,13 @@ class ControllerFactory
 		{
 			$this->$method($controller);
 		}
-		
+
+		// If the controller has an init() method, call it now
+		if (is_callable(array($controller, 'init')))
+		{
+			$controller->init();
+		}
+
 		return $controller;
 	}
 	

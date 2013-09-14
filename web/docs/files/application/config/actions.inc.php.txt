@@ -7,17 +7,6 @@
     array (
       'content' => 'list.php',
     ),
-    'files' => 
-    array (
-      'styles' => 
-      array (
-        0 => 'extra.css',
-      ),
-      'scripts' => 
-      array (
-        0 => 'test.js',
-      ),
-    ),
   ),
   '/item/(\\d+)/add' => 
   array (
@@ -56,9 +45,14 @@
     ),
     'files' => 
     array (
+      'styles' => 
+      array (
+        0 => 'fancybox/jquery.fancybox.css',
+      ),
       'scripts' => 
       array (
-        0 => 'script.js',
+        0 => 'jquery.fancybox.pack.js',
+        1 => 'script.js',
       ),
     ),
   ),

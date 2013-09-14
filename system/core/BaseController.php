@@ -50,7 +50,7 @@ class BaseController
 	protected $db;
 
 	/**
-	 * Constructor.
+	 * Constructor, empty yet.
 	 */
 	public function __construct()
 	{

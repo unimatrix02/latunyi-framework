@@ -1,7 +1,7 @@
 <h1>Item List - Loaded Via Ajax</h1>
 
 <p>
-	<a class="add-item" href="#">Add item</a>
+	<a accesskey="N" class="add-item" href="/ajax/item/0/add">Add item</a>
 </p>
 
 <div class="hidden form-container"></div>

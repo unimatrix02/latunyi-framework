@@ -4,11 +4,6 @@
     method:     showList
     vars:
         content: list.php
-    files:
-        styles:
-            - extra.css
-        scripts:
-            - test.js
 
 # Add item
 /item/(\d+)/add:
@@ -38,7 +33,10 @@
     vars:
         content: list_ajax.php
     files:
+        styles:
+        - fancybox/jquery.fancybox.css
         scripts:
+        - jquery.fancybox.pack.js
         - script.js
 
 # List items loaded by ajax - returns HTML

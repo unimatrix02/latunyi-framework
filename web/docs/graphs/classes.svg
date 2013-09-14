@@ -21,81 +21,81 @@
 <text text-anchor="middle" x="444.5" y="-2256.1" font-family="Times Roman,serif" font-size="11.00" fill="gray">\</text>
 </g>
 <g id="graph3" class="cluster"><title>cluster_\Application</title>
-<polyline fill="none" stroke="gray" points="568,-774 704,-774 "/>
-<path fill="none" stroke="gray" d="M704,-774C710,-774 716,-780 716,-786"/>
-<polyline fill="none" stroke="gray" points="716,-786 716,-1556 "/>
-<path fill="none" stroke="gray" d="M716,-1556C716,-1562 710,-1568 704,-1568"/>
-<polyline fill="none" stroke="gray" points="704,-1568 568,-1568 "/>
-<path fill="none" stroke="gray" d="M568,-1568C562,-1568 556,-1562 556,-1556"/>
-<polyline fill="none" stroke="gray" points="556,-1556 556,-786 "/>
-<path fill="none" stroke="gray" d="M556,-786C556,-780 562,-774 568,-774"/>
-<text text-anchor="middle" x="636" y="-1554.1" font-family="Times Roman,serif" font-size="11.00" fill="gray">Application</text>
+<polyline fill="none" stroke="gray" points="568,-720 704,-720 "/>
+<path fill="none" stroke="gray" d="M704,-720C710,-720 716,-726 716,-732"/>
+<polyline fill="none" stroke="gray" points="716,-732 716,-1502 "/>
+<path fill="none" stroke="gray" d="M716,-1502C716,-1508 710,-1514 704,-1514"/>
+<polyline fill="none" stroke="gray" points="704,-1514 568,-1514 "/>
+<path fill="none" stroke="gray" d="M568,-1514C562,-1514 556,-1508 556,-1502"/>
+<polyline fill="none" stroke="gray" points="556,-1502 556,-732 "/>
+<path fill="none" stroke="gray" d="M556,-732C556,-726 562,-720 568,-720"/>
+<text text-anchor="middle" x="636" y="-1500.1" font-family="Times Roman,serif" font-size="11.00" fill="gray">Application</text>
 </g>
 <g id="graph4" class="cluster"><title>cluster_\Application\Database</title>
-<polyline fill="none" stroke="gray" points="601,-1410 671,-1410 "/>
-<path fill="none" stroke="gray" d="M671,-1410C677,-1410 683,-1416 683,-1422"/>
-<polyline fill="none" stroke="gray" points="683,-1422 683,-1526 "/>
-<path fill="none" stroke="gray" d="M683,-1526C683,-1532 677,-1538 671,-1538"/>
-<polyline fill="none" stroke="gray" points="671,-1538 601,-1538 "/>
-<path fill="none" stroke="gray" d="M601,-1538C595,-1538 589,-1532 589,-1526"/>
-<polyline fill="none" stroke="gray" points="589,-1526 589,-1422 "/>
-<path fill="none" stroke="gray" d="M589,-1422C589,-1416 595,-1410 601,-1410"/>
-<text text-anchor="middle" x="636" y="-1524.1" font-family="Times Roman,serif" font-size="11.00" fill="gray">Database</text>
+<polyline fill="none" stroke="gray" points="601,-1356 671,-1356 "/>
+<path fill="none" stroke="gray" d="M671,-1356C677,-1356 683,-1362 683,-1368"/>
+<polyline fill="none" stroke="gray" points="683,-1368 683,-1472 "/>
+<path fill="none" stroke="gray" d="M683,-1472C683,-1478 677,-1484 671,-1484"/>
+<polyline fill="none" stroke="gray" points="671,-1484 601,-1484 "/>
+<path fill="none" stroke="gray" d="M601,-1484C595,-1484 589,-1478 589,-1472"/>
+<polyline fill="none" stroke="gray" points="589,-1472 589,-1368 "/>
+<path fill="none" stroke="gray" d="M589,-1368C589,-1362 595,-1356 601,-1356"/>
+<text text-anchor="middle" x="636" y="-1470.1" font-family="Times Roman,serif" font-size="11.00" fill="gray">Database</text>
 </g>
 <g id="graph5" class="cluster"><title>cluster_\Application\Domain</title>
-<polyline fill="none" stroke="gray" points="576,-964 696,-964 "/>
-<path fill="none" stroke="gray" d="M696,-964C702,-964 708,-970 708,-976"/>
-<polyline fill="none" stroke="gray" points="708,-976 708,-1390 "/>
-<path fill="none" stroke="gray" d="M708,-1390C708,-1396 702,-1402 696,-1402"/>
-<polyline fill="none" stroke="gray" points="696,-1402 576,-1402 "/>
-<path fill="none" stroke="gray" d="M576,-1402C570,-1402 564,-1396 564,-1390"/>
-<polyline fill="none" stroke="gray" points="564,-1390 564,-976 "/>
-<path fill="none" stroke="gray" d="M564,-976C564,-970 570,-964 576,-964"/>
-<text text-anchor="middle" x="636" y="-1388.1" font-family="Times Roman,serif" font-size="11.00" fill="gray">Domain</text>
+<polyline fill="none" stroke="gray" points="576,-910 696,-910 "/>
+<path fill="none" stroke="gray" d="M696,-910C702,-910 708,-916 708,-922"/>
+<polyline fill="none" stroke="gray" points="708,-922 708,-1336 "/>
+<path fill="none" stroke="gray" d="M708,-1336C708,-1342 702,-1348 696,-1348"/>
+<polyline fill="none" stroke="gray" points="696,-1348 576,-1348 "/>
+<path fill="none" stroke="gray" d="M576,-1348C570,-1348 564,-1342 564,-1336"/>
+<polyline fill="none" stroke="gray" points="564,-1336 564,-922 "/>
+<path fill="none" stroke="gray" d="M564,-922C564,-916 570,-910 576,-910"/>
+<text text-anchor="middle" x="636" y="-1334.1" font-family="Times Roman,serif" font-size="11.00" fill="gray">Domain</text>
 </g>
 <g id="graph6" class="cluster"><title>cluster_\Application\Domain\Entity</title>
-<polyline fill="none" stroke="gray" points="588,-1190 684,-1190 "/>
-<path fill="none" stroke="gray" d="M684,-1190C690,-1190 696,-1196 696,-1202"/>
-<polyline fill="none" stroke="gray" points="696,-1202 696,-1360 "/>
-<path fill="none" stroke="gray" d="M696,-1360C696,-1366 690,-1372 684,-1372"/>
-<polyline fill="none" stroke="gray" points="684,-1372 588,-1372 "/>
-<path fill="none" stroke="gray" d="M588,-1372C582,-1372 576,-1366 576,-1360"/>
-<polyline fill="none" stroke="gray" points="576,-1360 576,-1202 "/>
-<path fill="none" stroke="gray" d="M576,-1202C576,-1196 582,-1190 588,-1190"/>
-<text text-anchor="middle" x="636" y="-1358.1" font-family="Times Roman,serif" font-size="11.00" fill="gray">Entity</text>
+<polyline fill="none" stroke="gray" points="588,-1136 684,-1136 "/>
+<path fill="none" stroke="gray" d="M684,-1136C690,-1136 696,-1142 696,-1148"/>
+<polyline fill="none" stroke="gray" points="696,-1148 696,-1306 "/>
+<path fill="none" stroke="gray" d="M696,-1306C696,-1312 690,-1318 684,-1318"/>
+<polyline fill="none" stroke="gray" points="684,-1318 588,-1318 "/>
+<path fill="none" stroke="gray" d="M588,-1318C582,-1318 576,-1312 576,-1306"/>
+<polyline fill="none" stroke="gray" points="576,-1306 576,-1148 "/>
+<path fill="none" stroke="gray" d="M576,-1148C576,-1142 582,-1136 588,-1136"/>
+<text text-anchor="middle" x="636" y="-1304.1" font-family="Times Roman,serif" font-size="11.00" fill="gray">Entity</text>
 </g>
 <g id="graph7" class="cluster"><title>cluster_\Application\Domain\Service</title>
-<polyline fill="none" stroke="gray" points="594,-1108 678,-1108 "/>
-<path fill="none" stroke="gray" d="M678,-1108C684,-1108 690,-1114 690,-1120"/>
-<polyline fill="none" stroke="gray" points="690,-1120 690,-1170 "/>
-<path fill="none" stroke="gray" d="M690,-1170C690,-1176 684,-1182 678,-1182"/>
-<polyline fill="none" stroke="gray" points="678,-1182 594,-1182 "/>
-<path fill="none" stroke="gray" d="M594,-1182C588,-1182 582,-1176 582,-1170"/>
-<polyline fill="none" stroke="gray" points="582,-1170 582,-1120 "/>
-<path fill="none" stroke="gray" d="M582,-1120C582,-1114 588,-1108 594,-1108"/>
-<text text-anchor="middle" x="636" y="-1168.1" font-family="Times Roman,serif" font-size="11.00" fill="gray">Service</text>
+<polyline fill="none" stroke="gray" points="594,-1054 678,-1054 "/>
+<path fill="none" stroke="gray" d="M678,-1054C684,-1054 690,-1060 690,-1066"/>
+<polyline fill="none" stroke="gray" points="690,-1066 690,-1116 "/>
+<path fill="none" stroke="gray" d="M690,-1116C690,-1122 684,-1128 678,-1128"/>
+<polyline fill="none" stroke="gray" points="678,-1128 594,-1128 "/>
+<path fill="none" stroke="gray" d="M594,-1128C588,-1128 582,-1122 582,-1116"/>
+<polyline fill="none" stroke="gray" points="582,-1116 582,-1066 "/>
+<path fill="none" stroke="gray" d="M582,-1066C582,-1060 588,-1054 594,-1054"/>
+<text text-anchor="middle" x="636" y="-1114.1" font-family="Times Roman,serif" font-size="11.00" fill="gray">Service</text>
 </g>
 <g id="graph8" class="cluster"><title>cluster_\Application\Domain\Repository</title>
-<polyline fill="none" stroke="gray" points="584,-972 688,-972 "/>
-<path fill="none" stroke="gray" d="M688,-972C694,-972 700,-978 700,-984"/>
-<polyline fill="none" stroke="gray" points="700,-984 700,-1088 "/>
-<path fill="none" stroke="gray" d="M700,-1088C700,-1094 694,-1100 688,-1100"/>
-<polyline fill="none" stroke="gray" points="688,-1100 584,-1100 "/>
-<path fill="none" stroke="gray" d="M584,-1100C578,-1100 572,-1094 572,-1088"/>
-<polyline fill="none" stroke="gray" points="572,-1088 572,-984 "/>
-<path fill="none" stroke="gray" d="M572,-984C572,-978 578,-972 584,-972"/>
-<text text-anchor="middle" x="636" y="-1086.1" font-family="Times Roman,serif" font-size="11.00" fill="gray">Repository</text>
+<polyline fill="none" stroke="gray" points="584,-918 688,-918 "/>
+<path fill="none" stroke="gray" d="M688,-918C694,-918 700,-924 700,-930"/>
+<polyline fill="none" stroke="gray" points="700,-930 700,-1034 "/>
+<path fill="none" stroke="gray" d="M700,-1034C700,-1040 694,-1046 688,-1046"/>
+<polyline fill="none" stroke="gray" points="688,-1046 584,-1046 "/>
+<path fill="none" stroke="gray" d="M584,-1046C578,-1046 572,-1040 572,-1034"/>
+<polyline fill="none" stroke="gray" points="572,-1034 572,-930 "/>
+<path fill="none" stroke="gray" d="M572,-930C572,-924 578,-918 584,-918"/>
+<text text-anchor="middle" x="636" y="-1032.1" font-family="Times Roman,serif" font-size="11.00" fill="gray">Repository</text>
 </g>
 <g id="graph9" class="cluster"><title>cluster_\Application\Controller</title>
-<polyline fill="none" stroke="gray" points="608,-828 664,-828 "/>
-<path fill="none" stroke="gray" d="M664,-828C670,-828 676,-834 676,-840"/>
-<polyline fill="none" stroke="gray" points="676,-840 676,-944 "/>
-<path fill="none" stroke="gray" d="M676,-944C676,-950 670,-956 664,-956"/>
-<polyline fill="none" stroke="gray" points="664,-956 608,-956 "/>
-<path fill="none" stroke="gray" d="M608,-956C602,-956 596,-950 596,-944"/>
-<polyline fill="none" stroke="gray" points="596,-944 596,-840 "/>
-<path fill="none" stroke="gray" d="M596,-840C596,-834 602,-828 608,-828"/>
-<text text-anchor="middle" x="636" y="-942.1" font-family="Times Roman,serif" font-size="11.00" fill="gray">Controller</text>
+<polyline fill="none" stroke="gray" points="608,-774 664,-774 "/>
+<path fill="none" stroke="gray" d="M664,-774C670,-774 676,-780 676,-786"/>
+<polyline fill="none" stroke="gray" points="676,-786 676,-890 "/>
+<path fill="none" stroke="gray" d="M676,-890C676,-896 670,-902 664,-902"/>
+<polyline fill="none" stroke="gray" points="664,-902 608,-902 "/>
+<path fill="none" stroke="gray" d="M608,-902C602,-902 596,-896 596,-890"/>
+<polyline fill="none" stroke="gray" points="596,-890 596,-786 "/>
+<path fill="none" stroke="gray" d="M596,-786C596,-780 602,-774 608,-774"/>
+<text text-anchor="middle" x="636" y="-888.1" font-family="Times Roman,serif" font-size="11.00" fill="gray">Controller</text>
 </g>
 <g id="graph10" class="cluster"><title>cluster_\System</title>
 <polyline fill="none" stroke="gray" points="185,-52 512,-52 "/>
@@ -120,15 +120,15 @@
 <text text-anchor="middle" x="348.5" y="-2196.1" font-family="Times Roman,serif" font-size="11.00" fill="gray">Core</text>
 </g>
 <g id="graph12" class="cluster"><title>cluster_\System\Core\Exception</title>
-<polyline fill="none" stroke="gray" points="404,-574 480,-574 "/>
-<path fill="none" stroke="gray" d="M480,-574C486,-574 492,-580 492,-586"/>
-<polyline fill="none" stroke="gray" points="492,-586 492,-690 "/>
-<path fill="none" stroke="gray" d="M492,-690C492,-696 486,-702 480,-702"/>
-<polyline fill="none" stroke="gray" points="480,-702 404,-702 "/>
-<path fill="none" stroke="gray" d="M404,-702C398,-702 392,-696 392,-690"/>
-<polyline fill="none" stroke="gray" points="392,-690 392,-586 "/>
-<path fill="none" stroke="gray" d="M392,-586C392,-580 398,-574 404,-574"/>
-<text text-anchor="middle" x="442" y="-688.1" font-family="Times Roman,serif" font-size="11.00" fill="gray">Exception</text>
+<polyline fill="none" stroke="gray" points="404,-520 480,-520 "/>
+<path fill="none" stroke="gray" d="M480,-520C486,-520 492,-526 492,-532"/>
+<polyline fill="none" stroke="gray" points="492,-532 492,-636 "/>
+<path fill="none" stroke="gray" d="M492,-636C492,-642 486,-648 480,-648"/>
+<polyline fill="none" stroke="gray" points="480,-648 404,-648 "/>
+<path fill="none" stroke="gray" d="M404,-648C398,-648 392,-642 392,-636"/>
+<polyline fill="none" stroke="gray" points="392,-636 392,-532 "/>
+<path fill="none" stroke="gray" d="M392,-532C392,-526 398,-520 404,-520"/>
+<text text-anchor="middle" x="442" y="-634.1" font-family="Times Roman,serif" font-size="11.00" fill="gray">Exception</text>
 </g>
 <g id="graph13" class="cluster"><title>cluster_\System\Core\Database</title>
 <polyline fill="none" stroke="gray" points="206,-1728 494,-1728 "/>
@@ -154,8 +154,8 @@
 </g>
 <!-- \\Application\\Database\\ItemTable -->
 <g id="node4" class="node"><title>\\Application\\Database\\ItemTable</title>
-<polygon fill="none" stroke="black" points="674,-1508 598,-1508 598,-1472 674,-1472 674,-1508"/>
-<text text-anchor="middle" x="636" y="-1487.1" font-family="Courier,monospace" font-size="11.00">ItemTable</text>
+<polygon fill="none" stroke="black" points="674,-1454 598,-1454 598,-1418 674,-1418 674,-1454"/>
+<text text-anchor="middle" x="636" y="-1433.1" font-family="Courier,monospace" font-size="11.00">ItemTable</text>
 </g>
 <!-- \\System\\Core\\Database\\Table -->
 <g id="node26" class="node"><title>\\System\\Core\\Database\\Table</title>
@@ -164,38 +164,38 @@
 </g>
 <!-- \\Application\\Database\\ItemTable&#45;&gt;\\System\\Core\\Database\\Table -->
 <g id="edge15" class="edge"><title>\\Application\\Database\\ItemTable&#45;&gt;\\System\\Core\\Database\\Table</title>
-<path fill="none" stroke="black" d="M635.144,-1508.01C630.445,-1599.49 604.979,-2012 524,-2105 512.777,-2117.89 495.284,-2124.65 479.333,-2128.19"/>
-<polygon fill="none" stroke="black" points="478.347,-2124.81 469.155,-2130.08 479.626,-2131.7 478.347,-2124.81"/>
+<path fill="none" stroke="black" d="M635.423,-1454.28C632.011,-1551.07 611.532,-2003.02 524,-2105 512.869,-2117.97 495.387,-2124.74 479.418,-2128.26"/>
+<polygon fill="none" stroke="black" points="478.425,-2124.89 469.225,-2130.14 479.694,-2131.77 478.425,-2124.89"/>
 </g>
 <!-- \\Application\\Database\\TypeTable -->
 <g id="node5" class="node"><title>\\Application\\Database\\TypeTable</title>
-<polygon fill="none" stroke="black" points="674,-1454 598,-1454 598,-1418 674,-1418 674,-1454"/>
-<text text-anchor="middle" x="636" y="-1433.1" font-family="Courier,monospace" font-size="11.00">TypeTable</text>
+<polygon fill="none" stroke="black" points="674,-1400 598,-1400 598,-1364 674,-1364 674,-1400"/>
+<text text-anchor="middle" x="636" y="-1379.1" font-family="Courier,monospace" font-size="11.00">TypeTable</text>
 </g>
 <!-- \\Application\\Database\\TypeTable&#45;&gt;\\System\\Core\\Database\\Table -->
 <g id="edge41" class="edge"><title>\\Application\\Database\\TypeTable&#45;&gt;\\System\\Core\\Database\\Table</title>
-<path fill="none" stroke="black" d="M597.109,-1439.78C581.865,-1443.35 565.727,-1450.14 556,-1463 469.832,-1576.93 610.59,-1991.39 524,-2105 513.391,-2118.92 495.401,-2125.76 478.969,-2129.08"/>
-<polygon fill="none" stroke="black" points="478.315,-2125.64 469.02,-2130.72 479.457,-2132.55 478.315,-2125.64"/>
+<path fill="none" stroke="black" d="M597.085,-1385.76C581.837,-1389.32 565.702,-1396.12 556,-1409 462.839,-1532.67 617.618,-1981.68 524,-2105 513.418,-2118.94 495.43,-2125.78 478.993,-2129.1"/>
+<polygon fill="none" stroke="black" points="478.336,-2125.66 469.04,-2130.74 479.476,-2132.56 478.336,-2125.66"/>
 </g>
 <!-- \\Application\\Domain\\Entity\\ItemValidator -->
 <g id="node8" class="node"><title>\\Application\\Domain\\Entity\\ItemValidator</title>
-<polygon fill="none" stroke="black" points="688,-1342 584,-1342 584,-1306 688,-1306 688,-1342"/>
-<text text-anchor="middle" x="636" y="-1321.1" font-family="Courier,monospace" font-size="11.00">ItemValidator</text>
+<polygon fill="none" stroke="black" points="688,-1288 584,-1288 584,-1252 688,-1252 688,-1288"/>
+<text text-anchor="middle" x="636" y="-1267.1" font-family="Courier,monospace" font-size="11.00">ItemValidator</text>
 </g>
 <!-- \\System\\Core\\EntityValidator -->
-<g id="node58" class="node"><title>\\System\\Core\\EntityValidator</title>
+<g id="node59" class="node"><title>\\System\\Core\\EntityValidator</title>
 <polygon fill="none" stroke="black" points="501,-1664 383,-1664 383,-1628 501,-1628 501,-1664"/>
 <text text-anchor="middle" x="442" y="-1643.1" font-family="Courier,monospace" font-size="11.00">EntityValidator</text>
 </g>
 <!-- \\Application\\Domain\\Entity\\ItemValidator&#45;&gt;\\System\\Core\\EntityValidator -->
 <g id="edge19" class="edge"><title>\\Application\\Domain\\Entity\\ItemValidator&#45;&gt;\\System\\Core\\EntityValidator</title>
-<path fill="none" stroke="black" d="M611.538,-1342C593.123,-1356.98 568.92,-1379.99 556,-1406 513.408,-1491.73 585.737,-1545.84 524,-1619 520.099,-1623.62 515.39,-1627.46 510.224,-1630.64"/>
-<polygon fill="none" stroke="black" points="508.386,-1627.65 501.162,-1635.41 511.643,-1633.85 508.386,-1627.65"/>
+<path fill="none" stroke="black" d="M610.941,-1288.21C592.457,-1303.13 568.444,-1325.98 556,-1352 504.428,-1459.82 599.707,-1526.52 524,-1619 520.168,-1623.68 515.507,-1627.56 510.372,-1630.77"/>
+<polygon fill="none" stroke="black" points="508.537,-1627.78 501.347,-1635.56 511.82,-1633.96 508.537,-1627.78"/>
 </g>
 <!-- \\Application\\Domain\\Entity\\Type -->
 <g id="node9" class="node"><title>\\Application\\Domain\\Entity\\Type</title>
-<polygon fill="none" stroke="black" points="663,-1288 609,-1288 609,-1252 663,-1252 663,-1288"/>
-<text text-anchor="middle" x="636" y="-1267.1" font-family="Courier,monospace" font-size="11.00">Type</text>
+<polygon fill="none" stroke="black" points="663,-1234 609,-1234 609,-1198 663,-1198 663,-1234"/>
+<text text-anchor="middle" x="636" y="-1213.1" font-family="Courier,monospace" font-size="11.00">Type</text>
 </g>
 <!-- \\System\\Core\\Entity -->
 <g id="node35" class="node"><title>\\System\\Core\\Entity</title>
@@ -204,108 +204,108 @@
 </g>
 <!-- \\Application\\Domain\\Entity\\Type&#45;&gt;\\System\\Core\\Entity -->
 <g id="edge31" class="edge"><title>\\Application\\Domain\\Entity\\Type&#45;&gt;\\System\\Core\\Entity</title>
-<path fill="none" stroke="black" d="M608.809,-1272.3C591.241,-1275.25 569.262,-1281.92 556,-1297 508.108,-1351.46 572.093,-1402.72 524,-1457 512.993,-1469.42 496.164,-1476.15 480.61,-1479.79"/>
-<polygon fill="none" stroke="black" points="479.778,-1476.38 470.647,-1481.76 481.136,-1483.25 479.778,-1476.38"/>
-</g>
-<!-- \\Application\\Domain\\Entity\\Item -->
-<g id="node10" class="node"><title>\\Application\\Domain\\Entity\\Item</title>
-<polygon fill="none" stroke="black" points="663,-1234 609,-1234 609,-1198 663,-1198 663,-1234"/>
-<text text-anchor="middle" x="636" y="-1213.1" font-family="Courier,monospace" font-size="11.00">Item</text>
-</g>
-<!-- \\Application\\Domain\\Entity\\Item&#45;&gt;\\System\\Core\\Entity -->
-<g id="edge33" class="edge"><title>\\Application\\Domain\\Entity\\Item&#45;&gt;\\System\\Core\\Entity</title>
 <path fill="none" stroke="black" d="M608.953,-1218.03C591.216,-1220.85 568.983,-1227.49 556,-1243 494.277,-1316.75 585.995,-1383.48 524,-1457 513.3,-1469.69 496.513,-1476.45 480.907,-1480.04"/>
 <polygon fill="none" stroke="black" points="480.054,-1476.64 470.898,-1481.97 481.38,-1483.52 480.054,-1476.64"/>
 </g>
+<!-- \\Application\\Domain\\Entity\\Item -->
+<g id="node10" class="node"><title>\\Application\\Domain\\Entity\\Item</title>
+<polygon fill="none" stroke="black" points="663,-1180 609,-1180 609,-1144 663,-1144 663,-1180"/>
+<text text-anchor="middle" x="636" y="-1159.1" font-family="Courier,monospace" font-size="11.00">Item</text>
+</g>
+<!-- \\Application\\Domain\\Entity\\Item&#45;&gt;\\System\\Core\\Entity -->
+<g id="edge33" class="edge"><title>\\Application\\Domain\\Entity\\Item&#45;&gt;\\System\\Core\\Entity</title>
+<path fill="none" stroke="black" d="M608.806,-1163.91C591.003,-1166.68 568.752,-1173.3 556,-1189 480.379,-1282.12 599.966,-1364.16 524,-1457 513.411,-1469.94 496.478,-1476.73 480.742,-1480.27"/>
+<polygon fill="none" stroke="black" points="479.837,-1476.88 470.652,-1482.16 481.126,-1483.76 479.837,-1476.88"/>
+</g>
 <!-- \\Application\\Domain\\Service\\ItemService -->
 <g id="node12" class="node"><title>\\Application\\Domain\\Service\\ItemService</title>
-<polygon fill="none" stroke="black" points="681,-1152 591,-1152 591,-1116 681,-1116 681,-1152"/>
-<text text-anchor="middle" x="636" y="-1131.1" font-family="Courier,monospace" font-size="11.00">ItemService</text>
+<polygon fill="none" stroke="black" points="681,-1098 591,-1098 591,-1062 681,-1062 681,-1098"/>
+<text text-anchor="middle" x="636" y="-1077.1" font-family="Courier,monospace" font-size="11.00">ItemService</text>
 </g>
 <!-- \\System\\Core\\Service -->
-<g id="node51" class="node"><title>\\System\\Core\\Service</title>
+<g id="node52" class="node"><title>\\System\\Core\\Service</title>
 <polygon fill="none" stroke="black" points="474,-1070 410,-1070 410,-1034 474,-1034 474,-1070"/>
 <text text-anchor="middle" x="442" y="-1049.1" font-family="Courier,monospace" font-size="11.00">Service</text>
 </g>
 <!-- \\Application\\Domain\\Service\\ItemService&#45;&gt;\\System\\Core\\Service -->
 <g id="edge23" class="edge"><title>\\Application\\Domain\\Service\\ItemService&#45;&gt;\\System\\Core\\Service</title>
-<path fill="none" stroke="black" d="M590.488,-1119.66C578.924,-1115.29 566.739,-1110.02 556,-1104 540.257,-1095.17 539.919,-1087.5 524,-1079 511.569,-1072.36 497.207,-1066.95 484.01,-1062.77"/>
-<polygon fill="none" stroke="black" points="484.781,-1059.35 474.196,-1059.81 482.76,-1066.05 484.781,-1059.35"/>
+<path fill="none" stroke="black" d="M590.025,-1073.36C557.912,-1068.73 515.368,-1062.59 484.134,-1058.08"/>
+<polygon fill="none" stroke="black" points="484.404,-1054.58 474.006,-1056.62 483.404,-1061.51 484.404,-1054.58"/>
 </g>
 <!-- \\Application\\Domain\\Repository\\TypeRepository -->
 <g id="node14" class="node"><title>\\Application\\Domain\\Repository\\TypeRepository</title>
-<polygon fill="none" stroke="black" points="691,-1070 581,-1070 581,-1034 691,-1034 691,-1070"/>
-<text text-anchor="middle" x="636" y="-1049.1" font-family="Courier,monospace" font-size="11.00">TypeRepository</text>
+<polygon fill="none" stroke="black" points="691,-1016 581,-1016 581,-980 691,-980 691,-1016"/>
+<text text-anchor="middle" x="636" y="-995.1" font-family="Courier,monospace" font-size="11.00">TypeRepository</text>
 </g>
 <!-- \\System\\Core\\Repository -->
 <g id="node39" class="node"><title>\\System\\Core\\Repository</title>
-<polygon fill="none" stroke="black" points="484,-1016 400,-1016 400,-980 484,-980 484,-1016"/>
-<text text-anchor="middle" x="442" y="-995.1" font-family="Courier,monospace" font-size="11.00">Repository</text>
+<polygon fill="none" stroke="black" points="484,-962 400,-962 400,-926 484,-926 484,-962"/>
+<text text-anchor="middle" x="442" y="-941.1" font-family="Courier,monospace" font-size="11.00">Repository</text>
 </g>
 <!-- \\Application\\Domain\\Repository\\TypeRepository&#45;&gt;\\System\\Core\\Repository -->
 <g id="edge47" class="edge"><title>\\Application\\Domain\\Repository\\TypeRepository&#45;&gt;\\System\\Core\\Repository</title>
-<path fill="none" stroke="black" d="M580.407,-1036.53C553.204,-1028.95 520.652,-1019.89 493.953,-1012.46"/>
-<polygon fill="none" stroke="black" points="494.602,-1009.01 484.03,-1009.7 492.725,-1015.75 494.602,-1009.01"/>
+<path fill="none" stroke="black" d="M580.407,-982.526C553.204,-974.954 520.652,-965.893 493.953,-958.461"/>
+<polygon fill="none" stroke="black" points="494.602,-955.009 484.03,-955.699 492.725,-961.752 494.602,-955.009"/>
 </g>
 <!-- \\Application\\Domain\\Repository\\ItemRepository -->
 <g id="node15" class="node"><title>\\Application\\Domain\\Repository\\ItemRepository</title>
-<polygon fill="none" stroke="black" points="691,-1016 581,-1016 581,-980 691,-980 691,-1016"/>
-<text text-anchor="middle" x="636" y="-995.1" font-family="Courier,monospace" font-size="11.00">ItemRepository</text>
+<polygon fill="none" stroke="black" points="691,-962 581,-962 581,-926 691,-926 691,-962"/>
+<text text-anchor="middle" x="636" y="-941.1" font-family="Courier,monospace" font-size="11.00">ItemRepository</text>
 </g>
 <!-- \\Application\\Domain\\Repository\\ItemRepository&#45;&gt;\\System\\Core\\Repository -->
 <g id="edge57" class="edge"><title>\\Application\\Domain\\Repository\\ItemRepository&#45;&gt;\\System\\Core\\Repository</title>
-<path fill="none" stroke="black" d="M580.407,-998C553.324,-998 520.938,-998 494.306,-998"/>
-<polygon fill="none" stroke="black" points="494.03,-994.5 484.03,-998 494.03,-1001.5 494.03,-994.5"/>
+<path fill="none" stroke="black" d="M580.407,-944C553.324,-944 520.938,-944 494.306,-944"/>
+<polygon fill="none" stroke="black" points="494.03,-940.5 484.03,-944 494.03,-947.5 494.03,-940.5"/>
 </g>
 <!-- \\Application\\Controller\\Factory -->
 <g id="node17" class="node"><title>\\Application\\Controller\\Factory</title>
-<polygon fill="none" stroke="black" points="668,-926 604,-926 604,-890 668,-890 668,-926"/>
-<text text-anchor="middle" x="636" y="-905.1" font-family="Courier,monospace" font-size="11.00">Factory</text>
+<polygon fill="none" stroke="black" points="668,-872 604,-872 604,-836 668,-836 668,-872"/>
+<text text-anchor="middle" x="636" y="-851.1" font-family="Courier,monospace" font-size="11.00">Factory</text>
 </g>
 <!-- \\System\\Core\\ControllerFactory -->
 <g id="node47" class="node"><title>\\System\\Core\\ControllerFactory</title>
-<polygon fill="none" stroke="black" points="507,-854 377,-854 377,-818 507,-818 507,-854"/>
-<text text-anchor="middle" x="442" y="-833.1" font-family="Courier,monospace" font-size="11.00">ControllerFactory</text>
+<polygon fill="none" stroke="black" points="507,-800 377,-800 377,-764 507,-764 507,-800"/>
+<text text-anchor="middle" x="442" y="-779.1" font-family="Courier,monospace" font-size="11.00">ControllerFactory</text>
 </g>
 <!-- \\Application\\Controller\\Factory&#45;&gt;\\System\\Core\\ControllerFactory -->
 <g id="edge21" class="edge"><title>\\Application\\Controller\\Factory&#45;&gt;\\System\\Core\\ControllerFactory</title>
-<path fill="none" stroke="black" d="M603.942,-898.691C589.107,-894.002 571.4,-887.857 556,-881 541.093,-874.362 538.931,-869.583 524,-863 519.877,-861.182 515.592,-859.419 511.239,-857.723"/>
-<polygon fill="none" stroke="black" points="512.231,-854.357 501.639,-854.121 509.772,-860.911 512.231,-854.357"/>
+<path fill="none" stroke="black" d="M603.942,-844.691C589.107,-840.002 571.4,-833.857 556,-827 541.093,-820.362 538.931,-815.583 524,-809 519.877,-807.182 515.592,-805.419 511.239,-803.723"/>
+<polygon fill="none" stroke="black" points="512.231,-800.357 501.639,-800.121 509.772,-806.911 512.231,-800.357"/>
 </g>
 <!-- \\Application\\Controller\\Test -->
 <g id="node18" class="node"><title>\\Application\\Controller\\Test</title>
-<polygon fill="none" stroke="black" points="663,-872 609,-872 609,-836 663,-836 663,-872"/>
-<text text-anchor="middle" x="636" y="-851.1" font-family="Courier,monospace" font-size="11.00">Test</text>
+<polygon fill="none" stroke="black" points="663,-818 609,-818 609,-782 663,-782 663,-818"/>
+<text text-anchor="middle" x="636" y="-797.1" font-family="Courier,monospace" font-size="11.00">Test</text>
 </g>
 <!-- \\System\\Core\\BaseController -->
-<g id="node48" class="node"><title>\\System\\Core\\BaseController</title>
-<polygon fill="none" stroke="black" points="497,-746 387,-746 387,-710 497,-710 497,-746"/>
-<text text-anchor="middle" x="442" y="-725.1" font-family="Courier,monospace" font-size="11.00">BaseController</text>
+<g id="node49" class="node"><title>\\System\\Core\\BaseController</title>
+<polygon fill="none" stroke="black" points="497,-692 387,-692 387,-656 497,-656 497,-692"/>
+<text text-anchor="middle" x="442" y="-671.1" font-family="Courier,monospace" font-size="11.00">BaseController</text>
 </g>
 <!-- \\Application\\Controller\\Test&#45;&gt;\\System\\Core\\BaseController -->
 <g id="edge49" class="edge"><title>\\Application\\Controller\\Test&#45;&gt;\\System\\Core\\BaseController</title>
-<path fill="none" stroke="black" d="M608.675,-852.471C591.718,-850.195 570.478,-844.766 556,-832 528.203,-807.49 551.179,-780.194 524,-755 518.978,-750.345 513.137,-746.491 506.929,-743.302"/>
-<polygon fill="none" stroke="black" points="508.177,-740.025 497.623,-739.087 505.289,-746.401 508.177,-740.025"/>
+<path fill="none" stroke="black" d="M608.675,-798.471C591.718,-796.195 570.478,-790.766 556,-778 528.203,-753.49 551.179,-726.194 524,-701 518.978,-696.345 513.137,-692.491 506.929,-689.302"/>
+<polygon fill="none" stroke="black" points="508.177,-686.025 497.623,-685.087 505.289,-692.401 508.177,-686.025"/>
 </g>
 <!-- \\Application\\Application -->
 <g id="node19" class="node"><title>\\Application\\Application</title>
-<polygon fill="none" stroke="black" points="681,-818 591,-818 591,-782 681,-782 681,-818"/>
-<text text-anchor="middle" x="636" y="-797.1" font-family="Courier,monospace" font-size="11.00">Application</text>
+<polygon fill="none" stroke="black" points="681,-764 591,-764 591,-728 681,-728 681,-764"/>
+<text text-anchor="middle" x="636" y="-743.1" font-family="Courier,monospace" font-size="11.00">Application</text>
 </g>
 <!-- \\System\\Core\\BaseApplication -->
-<g id="node53" class="node"><title>\\System\\Core\\BaseApplication</title>
-<polygon fill="none" stroke="black" points="501,-456 383,-456 383,-420 501,-420 501,-456"/>
-<text text-anchor="middle" x="442" y="-435.1" font-family="Courier,monospace" font-size="11.00">BaseApplication</text>
+<g id="node54" class="node"><title>\\System\\Core\\BaseApplication</title>
+<polygon fill="none" stroke="black" points="501,-402 383,-402 383,-366 501,-366 501,-402"/>
+<text text-anchor="middle" x="442" y="-381.1" font-family="Courier,monospace" font-size="11.00">BaseApplication</text>
 </g>
 <!-- \\Application\\Application&#45;&gt;\\System\\Core\\BaseApplication -->
 <g id="edge37" class="edge"><title>\\Application\\Application&#45;&gt;\\System\\Core\\BaseApplication</title>
-<path fill="none" stroke="black" d="M590.108,-796.938C577.298,-793.804 564.559,-788.117 556,-778 465.685,-671.242 611.634,-573.97 524,-465 520.149,-460.211 515.428,-456.264 510.215,-453.011"/>
-<polygon fill="none" stroke="black" points="511.52,-449.743 501.043,-448.167 508.251,-455.932 511.52,-449.743"/>
+<path fill="none" stroke="black" d="M590.108,-742.938C577.298,-739.804 564.559,-734.117 556,-724 465.685,-617.242 611.634,-519.97 524,-411 520.149,-406.211 515.428,-402.264 510.215,-399.011"/>
+<polygon fill="none" stroke="black" points="511.52,-395.743 501.043,-394.167 508.251,-401.932 511.52,-395.743"/>
 </g>
 <!-- \\System\\Core\\Exception\\Validation -->
 <g id="node23" class="node"><title>\\System\\Core\\Exception\\Validation</title>
-<polygon fill="none" stroke="black" points="484,-672 400,-672 400,-636 484,-636 484,-672"/>
-<text text-anchor="middle" x="442" y="-651.1" font-family="Courier,monospace" font-size="11.00">Validation</text>
+<polygon fill="none" stroke="black" points="484,-618 400,-618 400,-582 484,-582 484,-618"/>
+<text text-anchor="middle" x="442" y="-597.1" font-family="Courier,monospace" font-size="11.00">Validation</text>
 </g>
 <!-- \\Exception -->
 <g id="node69" class="node"><title>\\Exception</title>
@@ -314,18 +314,18 @@
 </g>
 <!-- \\System\\Core\\Exception\\Validation&#45;&gt;\\Exception -->
 <g id="edge17" class="edge"><title>\\System\\Core\\Exception\\Validation&#45;&gt;\\Exception</title>
-<path fill="none" stroke="black" d="M399.673,-643.701C390.781,-639.775 382.223,-634.384 376,-627 356.627,-604.014 269.281,-162.652 246.466,-46.0511"/>
-<polygon fill="none" stroke="black" points="249.875,-45.246 244.522,-36.103 243.005,-46.5886 249.875,-45.246"/>
+<path fill="none" stroke="black" d="M399.783,-589.608C390.886,-585.685 382.298,-580.32 376,-573 340.513,-531.759 266.656,-153.345 246.296,-46.1686"/>
+<polygon fill="none" stroke="black" points="249.691,-45.2847 244.392,-36.1105 242.813,-46.5871 249.691,-45.2847"/>
 </g>
 <!-- \\System\\Core\\Exception\\Database -->
 <g id="node24" class="node"><title>\\System\\Core\\Exception\\Database</title>
-<polygon fill="none" stroke="black" points="477,-618 407,-618 407,-582 477,-582 477,-618"/>
-<text text-anchor="middle" x="442" y="-597.1" font-family="Courier,monospace" font-size="11.00">Database</text>
+<polygon fill="none" stroke="black" points="477,-564 407,-564 407,-528 477,-528 477,-564"/>
+<text text-anchor="middle" x="442" y="-543.1" font-family="Courier,monospace" font-size="11.00">Database</text>
 </g>
 <!-- \\System\\Core\\Exception\\Database&#45;&gt;\\Exception -->
 <g id="edge35" class="edge"><title>\\System\\Core\\Exception\\Database&#45;&gt;\\Exception</title>
-<path fill="none" stroke="black" d="M406.416,-595.069C395.319,-591.878 383.924,-586.63 376,-578 338.848,-537.54 266.032,-154.063 246.131,-46.1383"/>
-<polygon fill="none" stroke="black" points="249.521,-45.2216 244.272,-36.0189 242.637,-46.4868 249.521,-45.2216"/>
+<path fill="none" stroke="black" d="M406.193,-540.858C395.212,-537.65 383.945,-532.445 376,-524 308.74,-452.504 258.899,-141.628 244.944,-46.0571"/>
+<polygon fill="none" stroke="black" points="248.384,-45.3901 243.491,-35.9927 241.456,-46.3901 248.384,-45.3901"/>
 </g>
 <!-- \\System\\Core\\Database\\QueryParam -->
 <g id="node27" class="node"><title>\\System\\Core\\Database\\QueryParam</title>
@@ -363,7 +363,7 @@
 <text text-anchor="middle" x="442" y="-1751.1" font-family="Courier,monospace" font-size="11.00">QueryParams</text>
 </g>
 <!-- \\System\\Core\\ObjectList -->
-<g id="node57" class="node"><title>\\System\\Core\\ObjectList</title>
+<g id="node58" class="node"><title>\\System\\Core\\ObjectList</title>
 <polygon fill="none" stroke="black" points="283,-1719 199,-1719 199,-1683 283,-1683 283,-1719"/>
 <text text-anchor="middle" x="241" y="-1698.1" font-family="Courier,monospace" font-size="11.00">ObjectList</text>
 </g>
@@ -404,8 +404,8 @@
 </g>
 <!-- \\System\\Core\\DataContainer -->
 <g id="node38" class="node"><title>\\System\\Core\\DataContainer</title>
-<polygon fill="none" stroke="black" points="293,-962 189,-962 189,-926 293,-926 293,-962"/>
-<text text-anchor="middle" x="241" y="-941.1" font-family="Courier,monospace" font-size="11.00">DataContainer</text>
+<polygon fill="none" stroke="black" points="293,-908 189,-908 189,-872 293,-872 293,-908"/>
+<text text-anchor="middle" x="241" y="-887.1" font-family="Courier,monospace" font-size="11.00">DataContainer</text>
 </g>
 <!-- \\System\\Core\\Log -->
 <g id="node40" class="node"><title>\\System\\Core\\Log</title>
@@ -444,36 +444,41 @@
 </g>
 <!-- \\System\\Core\\Registry&#45;&gt;\\System\\Core\\DataContainer -->
 <g id="edge25" class="edge"><title>\\System\\Core\\Registry&#45;&gt;\\System\\Core\\DataContainer</title>
-<path fill="none" stroke="black" d="M406.44,-1094.45C396.19,-1090.34 385.278,-1085.17 376,-1079 329.581,-1048.13 285.885,-999.553 261.37,-969.859"/>
-<polygon fill="none" stroke="black" points="264.009,-967.556 254.978,-962.015 258.582,-971.978 264.009,-967.556"/>
+<path fill="none" stroke="black" d="M406.442,-1095.66C395.967,-1091.54 384.931,-1086.07 376,-1079 318.624,-1033.6 274.76,-957.603 254.08,-917.196"/>
+<polygon fill="none" stroke="black" points="257.175,-915.561 249.558,-908.197 250.921,-918.704 257.175,-915.561"/>
+</g>
+<!-- \\System\\Core\\AssetManager -->
+<g id="node48" class="node"><title>\\System\\Core\\AssetManager</title>
+<polygon fill="none" stroke="black" points="491,-1016 393,-1016 393,-980 491,-980 491,-1016"/>
+<text text-anchor="middle" x="442" y="-995.1" font-family="Courier,monospace" font-size="11.00">AssetManager</text>
 </g>
 <!-- \\System\\Core\\Request -->
-<g id="node49" class="node"><title>\\System\\Core\\Request</title>
-<polygon fill="none" stroke="black" points="474,-962 410,-962 410,-926 474,-926 474,-962"/>
-<text text-anchor="middle" x="442" y="-941.1" font-family="Courier,monospace" font-size="11.00">Request</text>
+<g id="node50" class="node"><title>\\System\\Core\\Request</title>
+<polygon fill="none" stroke="black" points="474,-908 410,-908 410,-872 474,-872 474,-908"/>
+<text text-anchor="middle" x="442" y="-887.1" font-family="Courier,monospace" font-size="11.00">Request</text>
 </g>
 <!-- \\System\\Core\\Request&#45;&gt;\\System\\Core\\DataContainer -->
 <g id="edge39" class="edge"><title>\\System\\Core\\Request&#45;&gt;\\System\\Core\\DataContainer</title>
-<path fill="none" stroke="black" d="M409.706,-944C381.122,-944 338.601,-944 303.4,-944"/>
-<polygon fill="none" stroke="black" points="303.21,-940.5 293.21,-944 303.21,-947.5 303.21,-940.5"/>
+<path fill="none" stroke="black" d="M409.706,-890C381.122,-890 338.601,-890 303.4,-890"/>
+<polygon fill="none" stroke="black" points="303.21,-886.5 293.21,-890 303.21,-893.5 303.21,-886.5"/>
 </g>
 <!-- \\System\\Core\\Renderer -->
-<g id="node50" class="node"><title>\\System\\Core\\Renderer</title>
-<polygon fill="none" stroke="black" points="477,-908 407,-908 407,-872 477,-872 477,-908"/>
-<text text-anchor="middle" x="442" y="-887.1" font-family="Courier,monospace" font-size="11.00">Renderer</text>
+<g id="node51" class="node"><title>\\System\\Core\\Renderer</title>
+<polygon fill="none" stroke="black" points="477,-854 407,-854 407,-818 477,-818 477,-854"/>
+<text text-anchor="middle" x="442" y="-833.1" font-family="Courier,monospace" font-size="11.00">Renderer</text>
 </g>
 <!-- \\System\\Core\\Config -->
-<g id="node52" class="node"><title>\\System\\Core\\Config</title>
-<polygon fill="none" stroke="black" points="470,-800 414,-800 414,-764 470,-764 470,-800"/>
-<text text-anchor="middle" x="442" y="-779.1" font-family="Courier,monospace" font-size="11.00">Config</text>
+<g id="node53" class="node"><title>\\System\\Core\\Config</title>
+<polygon fill="none" stroke="black" points="470,-746 414,-746 414,-710 470,-710 470,-746"/>
+<text text-anchor="middle" x="442" y="-725.1" font-family="Courier,monospace" font-size="11.00">Config</text>
 </g>
 <!-- \\System\\Core\\Config&#45;&gt;\\System\\Core\\DataContainer -->
 <g id="edge45" class="edge"><title>\\System\\Core\\Config&#45;&gt;\\System\\Core\\DataContainer</title>
-<path fill="none" stroke="black" d="M413.276,-789.467C400.854,-793.72 386.737,-800.032 376,-809 330.297,-847.177 350.687,-885.032 304,-922 303.265,-922.582 302.513,-923.149 301.747,-923.702"/>
-<polygon fill="none" stroke="black" points="299.711,-920.846 293.054,-929.088 303.398,-926.796 299.711,-920.846"/>
+<path fill="none" stroke="black" d="M413.276,-735.467C400.854,-739.72 386.737,-746.032 376,-755 330.297,-793.177 350.687,-831.032 304,-868 303.265,-868.582 302.513,-869.149 301.747,-869.702"/>
+<polygon fill="none" stroke="black" points="299.711,-866.846 293.054,-875.088 303.398,-872.796 299.711,-866.846"/>
 </g>
 <!-- \\System\\Core\\ValidationRules -->
-<g id="node54" class="node"><title>\\System\\Core\\ValidationRules</title>
+<g id="node55" class="node"><title>\\System\\Core\\ValidationRules</title>
 <polygon fill="none" stroke="black" points="501,-1718 383,-1718 383,-1682 501,-1682 501,-1718"/>
 <text text-anchor="middle" x="442" y="-1697.1" font-family="Courier,monospace" font-size="11.00">ValidationRules</text>
 </g>
@@ -483,14 +488,14 @@
 <polygon fill="none" stroke="black" points="293.21,-1697.24 283.228,-1700.79 293.245,-1704.24 293.21,-1697.24"/>
 </g>
 <!-- \\System\\Core\\OutputType -->
-<g id="node55" class="node"><title>\\System\\Core\\OutputType</title>
-<polygon fill="none" stroke="black" points="484,-564 400,-564 400,-528 484,-528 484,-564"/>
-<text text-anchor="middle" x="442" y="-543.1" font-family="Courier,monospace" font-size="11.00">OutputType</text>
+<g id="node56" class="node"><title>\\System\\Core\\OutputType</title>
+<polygon fill="none" stroke="black" points="484,-510 400,-510 400,-474 484,-474 484,-510"/>
+<text text-anchor="middle" x="442" y="-489.1" font-family="Courier,monospace" font-size="11.00">OutputType</text>
 </g>
 <!-- \\System\\Core\\Response -->
-<g id="node56" class="node"><title>\\System\\Core\\Response</title>
-<polygon fill="none" stroke="black" points="477,-510 407,-510 407,-474 477,-474 477,-510"/>
-<text text-anchor="middle" x="442" y="-489.1" font-family="Courier,monospace" font-size="11.00">Response</text>
+<g id="node57" class="node"><title>\\System\\Core\\Response</title>
+<polygon fill="none" stroke="black" points="477,-456 407,-456 407,-420 477,-420 477,-456"/>
+<text text-anchor="middle" x="442" y="-435.1" font-family="Courier,monospace" font-size="11.00">Response</text>
 </g>
 <!-- \\Iterator -->
 <g id="node88" class="node"><title>\\Iterator</title>
@@ -501,11 +506,6 @@
 <g id="edge53" class="edge"><title>\\System\\Core\\ObjectList&#45;&gt;\\Iterator</title>
 <path fill="none" stroke="black" stroke-dasharray="1,5" d="M198.809,-1701C174.426,-1701 143.28,-1701 116.039,-1701"/>
 <polygon fill="none" stroke="black" points="115.812,-1697.5 105.812,-1701 115.812,-1704.5 115.812,-1697.5"/>
-</g>
-<!-- \\System\\Core\\AssetManager -->
-<g id="node59" class="node"><title>\\System\\Core\\AssetManager</title>
-<polygon fill="none" stroke="black" points="491,-402 393,-402 393,-366 491,-366 491,-402"/>
-<text text-anchor="middle" x="442" y="-381.1" font-family="Courier,monospace" font-size="11.00">AssetManager</text>
 </g>
 <!-- \\System\\Helper\\Image -->
 <g id="node61" class="node"><title>\\System\\Helper\\Image</title>
@@ -534,8 +534,8 @@
 </g>
 <!-- \\SplClassLoader -->
 <g id="node66" class="node"><title>\\SplClassLoader</title>
-<polygon fill="none" stroke="black" points="691,-426 581,-426 581,-390 691,-390 691,-426"/>
-<text text-anchor="middle" x="636" y="-405.1" font-family="Courier,monospace" font-size="11.00">SplClassLoader</text>
+<polygon fill="none" stroke="black" points="691,-399 581,-399 581,-363 691,-363 691,-399"/>
+<text text-anchor="middle" x="636" y="-378.1" font-family="Courier,monospace" font-size="11.00">SplClassLoader</text>
 </g>
 </g>
 </svg>

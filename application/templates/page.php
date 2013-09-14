@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -25,22 +26,39 @@
 <body>
 
 	<header>
-		<div class="wrapper">
-			<div class="nav">
-				<a href="/">Normal list</a> |
-				<a href="/list">AJAX-loaded list</a>
-				<a href="/docs/" style="margin-left: 2em;">PHPDoc</a>
-			</div>
-			<h1>Framework Test</h1>
+		<div class="row">
+			<h1>
+				Framework Test
+			</h1>
+			<nav>
+				<ul>
+					<? foreach ($menu as $path => $label): ?>
+					<li>
+						<a <? if ($path == $reqPath): ?>class="current"<?endif; ?> href="<?=$path?>"><?= $label ?></a>
+					</li>
+					<? endforeach ?>
+					<li><a href="#">Test menu</a>
+						<ul>
+							<li><a href="#">Item 1</a></li>
+							<li><a href="#">Item 2</a>
+								<ul>
+									<li><a href="#">Item 1</a></li>
+									<li><a href="#">Item 2</a></li>
+									<li><a href="#">Item 3</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Item 3</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
 		</div>
 	</header>
-	
-	<div class="wrapper">
-		<div class="main">
-			<?= $this->render($content); ?>
-		</div>
-	</div>	
-	
+
+	<div class="row main">
+		<?= $this->render($content); ?>
+	</div>
+
 </body>
 </html>
 

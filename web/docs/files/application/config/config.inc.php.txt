@@ -1,8 +1,8 @@
 <?php $config = array (
   'database' => 
   array (
-    'username' => 'root',
-    'password' => 'Di19Mp78!',
+    'username' => 'demo',
+    'password' => 123456,
     'name' => 'framework',
     'default_object_namespace' => '\\Application\\Domain\\Entity',
   ),
@@ -16,7 +16,7 @@
   ),
   'assets' => 
   array (
-    'merging' => true,
+    'merging' => false,
     'autorefresh' => true,
     'minify' => true,
     'minify_commands' => 
@@ -27,11 +27,11 @@
     'styles' => 
     array (
       0 => 'reset.css',
-      1 => 'style.css',
+      1 => 'layout.css',
     ),
     'scripts' => 
     array (
-      0 => 'jquery.js',
+      0 => '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js',
     ),
   ),
 );

@@ -33,7 +33,7 @@
 	</thead>
 	<tbody>
 		<? foreach ($items as $item): ?>
-		<tr>
+		<tr class="<?= cycle('odd', 'even') ?>">
 			<td>
 				<?= $item->id ?>
 			</td>	
