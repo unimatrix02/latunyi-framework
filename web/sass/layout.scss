@@ -30,7 +30,7 @@ $row_color: #eef6ff;
 /* --- Defaults --- */
 
 body {
-	font-family: Verdana, HelveticaNeueLTStd;
+	font-family: Verdana, Arial, sans-serif;
 	font-size: 13px;
 	color: #555;
 }
@@ -42,7 +42,7 @@ body {
 .main {
 
 	h1, h2, h3 {
-		font-family: HelveticaNeueLTStd;
+		font-family: MyriadPro;
 		color: $std_blue;
 		margin-bottom: 1em;
 		font-weight: bold;
@@ -68,7 +68,7 @@ body {
 }
 
 .fancybox-inner h2 {
-	font-family: HelveticaNeueLTStd;
+	font-family: MyriadPro, HelveticaNeueLTStd;
 	font-weight: bold;
 	font-size: 1.75em;
 	color: $std_blue;
