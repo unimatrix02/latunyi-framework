@@ -40,8 +40,8 @@
 
 @font-face {
   font-family: 'MyriadPro';
-  src: url("../fonts/myriadpro-bold.eot");
-  src: url("../fonts/myriadpro-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/myriadpro-bold.woff") format("woff"), url("../fonts/myriadpro-bold.ttf") format("truetype"), url("../fonts/myriadpro-bold.svg#MyriadProBold") format("svg");
+  src: url("../fonts/myriadpro-boldsemiext.eot");
+  src: url("../fonts/myriadpro-boldsemiext.eot?#iefix") format("embedded-opentype"), url("../fonts/myriadpro-boldsemiext.woff") format("woff"), url("../fonts/myriadpro-boldsemiext.ttf") format("truetype"), url("../fonts/myriadpro-boldsemiext.svg#MyriadProBold") format("svg");
   font-weight: bold;
   font-style: normal;
 }
@@ -167,7 +167,7 @@ nav ul ul li a {
 /* line 92, ../sass/_header.scss */
 nav ul ul li a:hover {
   border-bottom: none;
-  background-color: #ffffee;
+  background-color: #ffffcc;
   font-weight: normal;
 }
 /* line 99, ../sass/_header.scss */

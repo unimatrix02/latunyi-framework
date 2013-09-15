@@ -53,13 +53,24 @@
 	font-style: normal;
 }
 
+//@font-face {
+//	font-family: 'MyriadPro';
+//	src: url('../fonts/myriadpro-bold.eot');
+//	src: url('../fonts/myriadpro-bold.eot?#iefix') format('embedded-opentype'),
+//	url('../fonts/myriadpro-bold.woff') format('woff'),
+//	url('../fonts/myriadpro-bold.ttf') format('truetype'),
+//	url('../fonts/myriadpro-bold.svg#MyriadProBold') format('svg');
+//	font-weight: bold;
+//	font-style: normal;
+//}
+
 @font-face {
 	font-family: 'MyriadPro';
-	src: url('../fonts/myriadpro-bold.eot');
-	src: url('../fonts/myriadpro-bold.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/myriadpro-bold.woff') format('woff'),
-	url('../fonts/myriadpro-bold.ttf') format('truetype'),
-	url('../fonts/myriadpro-bold.svg#MyriadProBold') format('svg');
+	src: url('../fonts/myriadpro-boldsemiext.eot');
+	src: url('../fonts/myriadpro-boldsemiext.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/myriadpro-boldsemiext.woff') format('woff'),
+	url('../fonts/myriadpro-boldsemiext.ttf') format('truetype'),
+	url('../fonts/myriadpro-boldsemiext.svg#MyriadProBold') format('svg');
 	font-weight: bold;
 	font-style: normal;
 }
