@@ -73,7 +73,7 @@
     
 # Example
 # /some-path/(\d+):		# use regular expressions to indicate parameters
-#     controler: SomeController
+#     controller: SomeController
 #     method:    doSomething
 #     template:  some_template.php		# set this when the default template should not be used; used for ajax requests that render a partial HTML template
 #     args:				# provide arguments to controller method directly (works only if path doesn't have parameters)
