@@ -23,7 +23,7 @@ class Database
 	 * PDO handle
 	 * @var \PDO
 	 */
-	protected $handle;
+	protected static $handle;
 	
 	/**
 	 * Last PDO statement
@@ -50,19 +50,25 @@ class Database
 	}
 
 	/**
-	 * Sets up a database connection handle.
+	 * Sets up a database connection handle, if not set yet.
 	 * 
 	 * @throws Exception\Database
 	 */
 	private function connect()
 	{
+		// Return if handle is already set up
+		if (is_object(self::$handle))
+		{
+			return;
+		}
+
 		$dsn = 'mysql:host=' . $this->connData->host . ';dbname=' . $this->connData->database .';charset=utf8';
 		try
 		{
-			$this->handle = new \PDO($dsn, $this->connData->username, $this->connData->password);
-			
+			self::$handle = new \PDO($dsn, $this->connData->username, $this->connData->password);
+
 			// Use exceptions for errors
-			$this->handle->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+			self::$handle->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 		}
 		catch (\PDOException $ex)
 		{
@@ -187,12 +193,12 @@ class Database
 		if (count($placeholders) == 0 && empty($params))
 		{
 			// Execute query immediately
-			$stmt = $this->handle->query($query);
+			$stmt = self::$handle->query($query);
 		}
 		else
 		{
 			// Prepare statement with params
-			$stmt = $this->handle->prepare($query);
+			$stmt = self::$handle->prepare($query);
 	
 			// Execute with params
 			$stmt->execute((array)$params);
@@ -261,9 +267,9 @@ class Database
 	 */
 	public function getLastInsertedId()
 	{
-		if (isset($this->handle))
+		if (isset(self::$handle))
 		{
-			return $this->handle->lastInsertId();
+			return self::$handle->lastInsertId();
 		}
 	}
 	
@@ -302,5 +308,43 @@ class Database
 		}
 		return $list;
 	}
-	
+
+	/**
+	 * Starts a transaction.
+	 */
+	public function start()
+	{
+		$this->connect();
+		$result = self::$handle->beginTransaction();
+		if ($result === false)
+		{
+			throw new \Exception('Failed to start transaction.');
+		}
+	}
+
+	/**
+	 * Rollsback the current transaction.
+	 */
+	public function rollBack()
+	{
+		$this->connect();
+		$result = self::$handle->rollBack();
+		if ($result === false)
+		{
+			throw new \Exception('Failed to rollback transaction.');
+		}
+	}
+
+	/**
+	 * Commits the current transaction.
+	 */
+	public function commit()
+	{
+		$this->connect();
+		$result = self::$handle->commit();
+		if ($result === false)
+		{
+			throw new \Exception('Failed to commit transaction.');
+		}
+	}
 }
