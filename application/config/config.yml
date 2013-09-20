@@ -16,7 +16,7 @@ templating:
 # Assets
 assets:
     # Merge assets together or not
-    merging: off
+    merging: on
     
     # Check if sources are newer and make new combined file if necessary
     autorefresh: on

@@ -16,7 +16,7 @@
   ),
   'assets' => 
   array (
-    'merging' => false,
+    'merging' => true,
     'autorefresh' => true,
     'minify' => true,
     'minify_commands' => 
