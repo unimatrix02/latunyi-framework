@@ -491,7 +491,7 @@ function vardump($x)
 **/
 function texc($x)
 {
-	throw new Exception('Debug: ' . $x);
+	throw new \Exception('Debug: ' . $x);
 }
 
 /**

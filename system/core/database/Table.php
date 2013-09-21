@@ -242,7 +242,7 @@ class Table
 		// No values: exception
 		if (count($values) == 0)
 		{
-			throw new Exception('No fields were added to the INSERT query');
+			throw new \Exception('No fields were added to the INSERT query');
 		}
 	
 		// Execute query
@@ -317,7 +317,7 @@ class Table
 		// No fields were found - update makes no sense
 		if (count($values) == 0)
 		{
-			throw new Exception('No fields were added to the UPDATE query');
+			throw new \Exception('No fields were added to the UPDATE query');
 		}
 			
 		// Add values to query
@@ -472,13 +472,13 @@ class Table
 		// Check key field exists
 		if (!$this->hasField($keyField))
 		{
-			throw new Exception('Field "' . $keyField . '" not found in table "' . $this->name . '"');
+			throw new \Exception('Field "' . $keyField . '" not found in table "' . $this->name . '"');
 		}
 	
 		// Check value field exist
 		if (!$this->hasField($valueField))
 		{
-			throw new Exception('Field "' . $valueField . '" not found in table "' . $this->name . '"');
+			throw new \Exception('Field "' . $valueField . '" not found in table "' . $this->name . '"');
 		}
 	
 		// Build query to get list

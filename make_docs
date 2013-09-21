@@ -1,0 +1,2 @@
+phpdoc -d /var/www/framework -t /var/www/framework/web/docs
+rm -f /var/www/framework/*.log

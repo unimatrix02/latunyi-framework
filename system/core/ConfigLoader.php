@@ -38,7 +38,7 @@ class ConfigLoader
 			// Check YAML file exists
 			if (!file_exists($yamlFile))
 			{
-				throw new Exception('Failed to find YAML config file ' . $yamlFile);
+				throw new \Exception('Failed to find YAML config file ' . $yamlFile);
 			}
 
 			$yamlMtime = filemtime($yamlFile);
@@ -55,13 +55,13 @@ class ConfigLoader
 			// Check YAML file exists
 			if (!file_exists($yamlFile))
 			{
-				throw new Exception('Failed to find YAML config file ' . $yamlFile);
+				throw new \Exception('Failed to find YAML config file ' . $yamlFile);
 			}
 
 			$data = yaml_parse_file($yamlFile);
 			if (false == $data)
 			{
-				throw new Exception('Failed to read YAML config file ' . $yamlFile);
+				throw new \Exception('Failed to read YAML config file ' . $yamlFile);
 			}
 
 			$result = file_put_contents($phpInclude, '<?php $config = ' . var_export($data, true) . ';');
@@ -73,7 +73,7 @@ class ConfigLoader
 		if (!isset($config))
 		{
 			$createNewPhpInclude = true;
-			throw new Exception('Local variable $config was not created by configuration file');
+			throw new \Exception('Local variable $config was not created by configuration file');
 		}
 
 		return DataContainer::makeObject($config);

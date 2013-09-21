@@ -31,7 +31,7 @@ class File {
 		if (empty($_FILES[$file_id]['name']))
 		{
 			$msg = 'No files were uploaded.';
-			throw new Exception($msg);
+			throw new \Exception($msg);
 		}
 
 		// Check for upload error
@@ -51,14 +51,14 @@ class File {
 				default:
 					$msg = 'Upload error ' . $_FILES[$file_id]['error'];
 			}
-			throw new Exception($msg);
+			throw new \Exception($msg);
 		}
 
 		// Check for empty file
 		if ($_FILES[$file_id]['size'] == 0)
 		{
 			$msg = 'The file is empty.';
-			throw new Exception($msg);
+			throw new \Exception($msg);
 		}
 
 	}
@@ -80,7 +80,7 @@ class File {
 		if (!in_array($type, $allowed_types))
 		{
 			$msg = 'Dit bestandstype is niet toegestaan.';
-			throw new Exception($msg);
+			throw new \Exception($msg);
 		}
 	}
 
@@ -99,7 +99,7 @@ class File {
 
 		if (!in_array(strtolower($ext), $valid_ext))
 		{
-			throw new Exception('Dit bestandstype is niet toegestaan. Alleen bestanden met de volgende extensies zijn toegestaan: ' . implode(', ', $valid_ext) . '.');
+			throw new \Exception('This file type is not allowed. Only files with the following extensions are allowed: ' . implode(', ', $valid_ext) . '.');
 		}
 
 	}
@@ -145,7 +145,7 @@ class File {
 		// Check if location exists and is writable
 		if (!is_writable(dirname($new_file)))
 		{
-			throw new Exception('Upload location ' . dirname($new_file) . ' does not exist, or is not writable.');
+			throw new \Exception('Upload location ' . dirname($new_file) . ' does not exist, or is not writable.');
 		}
 
 		// Move file
@@ -153,7 +153,7 @@ class File {
 
 		if (!$result)
 		{
-			throw new Exception('Failed to move file ' . $_FILES[$file_id]['name'] . ' to ' . $new_file);
+			throw new \Exception('Failed to move file ' . $_FILES[$file_id]['name'] . ' to ' . $new_file);
 		}
 		chmod($new_file, 0777);
 
@@ -173,19 +173,19 @@ class File {
 		// Check if original file exists
 		if (!is_readable($orig_file))
 		{
-			throw new Exception('Error: File "' . $orig_file . '" doesn\'t exist or is not readable.');
+			throw new \Exception('Error: File "' . $orig_file . '" doesn\'t exist or is not readable.');
 		}
 
 		// Check if new location exists and is writable
 		if (!is_writable(dirname($new_file)))
 		{
-			throw new Exception('Error: File can\'t be copied to "' . $new_file . '".');
+			throw new \Exception('Error: File can\'t be copied to "' . $new_file . '".');
 		}
 
 		// Copy file
 		$result = copy($orig_file, $new_file);
 		if (!$result) {
-			throw new Exception('An error occured while copying "' . $orig_file . '" to "' . $new_file . '".');
+			throw new \Exception('An error occured while copying "' . $orig_file . '" to "' . $new_file . '".');
 		}
 		chmod($new_file, 0777);
 
@@ -203,12 +203,12 @@ class File {
 	{
 		if (!file_exists($file1))
 		{
-			throw new Exception('Compare error: File "' . $file1 . '" does not exist.');
+			throw new \Exception('Compare error: File "' . $file1 . '" does not exist.');
 		}
 
 		if (!file_exists($file2))
 		{
-			throw new Exception('Compare error: File "' . $file2 . '" does not exist.');
+			throw new \Exception('Compare error: File "' . $file2 . '" does not exist.');
 		}
 
 		$content1 = file_get_contents($file1);
@@ -318,12 +318,12 @@ class File {
 		$content = file_get_contents($url);
 		if (false === $content)
 		{
-			throw new Exception('Error while downloading image from ' . $url);
+			throw new \Exception('Error while downloading image from ' . $url);
 		}
 		$result = file_put_contents($file, $content);
 		if (false === $result)
 		{
-			throw new Exception('Error while writing image data to ' . $file);
+			throw new \Exception('Error while writing image data to ' . $file);
 		}
 	}
 }

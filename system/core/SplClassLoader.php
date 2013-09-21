@@ -153,6 +153,8 @@ class SplClassLoader
                 $fileName = str_replace($this->_namespaceSeparator, DIRECTORY_SEPARATOR, $namespace) . DIRECTORY_SEPARATOR;
             }
             $fileName .= str_replace('_', DIRECTORY_SEPARATOR, $className) . $this->_fileExtension;
+
+			$stdFileName = $fileName;
             
             // Make all chars before last / lowercase
             $fileName = strtolower(substr($fileName, 0, strrpos($fileName, '/'))) . substr($fileName, strrpos($fileName, '/'));
@@ -160,8 +162,15 @@ class SplClassLoader
             $target = ($this->_includePath !== null ? $this->_includePath . DIRECTORY_SEPARATOR : '') . $fileName;
             if (!file_exists($target))
             {
-            	throw new \Exception('Failed to find file ' . $target . ' for loading class ' . $className );
+	            // Let's try with standard StudlyCaps name
+	            $target = ($this->_includePath !== null ? $this->_includePath . DIRECTORY_SEPARATOR : '') . $stdFileName;
+
+	            if (!file_exists($target))
+	            {
+           	    throw new \Exception('Failed to find file ' . $target . ' for loading class ' . $className );
+	            }
             }
+
             require $target;
         }
     }

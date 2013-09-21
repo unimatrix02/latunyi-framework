@@ -13,17 +13,20 @@ if ($base == '/')
 	$base = '';
 }
 
-// Web root = web directory
+/**
+ * Web directory
+ */
 define('WEB_ROOT', $_SERVER['DOCUMENT_ROOT'] . $base);
 
-// Document root = root directory of virtual host
 /**
  * Document root of virtual host
  * @var string
  */
 define('DOC_ROOT', dirname($_SERVER['DOCUMENT_ROOT']));
 
-// Public root = subdir of virtual host, if any
+/**
+ * Subdir of virtual host, if any
+ */
 define('PUBLIC_ROOT', $base);
 
 /**

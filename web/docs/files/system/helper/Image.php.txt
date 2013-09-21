@@ -35,7 +35,7 @@ class Image {
 		// Check file
 		if (!file_exists($img)) 
 		{
-			throw new Exception('Can\'t resize: Image "' . $img . '" doesn\'t exist.');
+			throw new \Exception('Can\'t resize: Image "' . $img . '" doesn\'t exist.');
 		}
 	
 		// Get current and new dimensions
@@ -67,7 +67,7 @@ class Image {
 
 		if (!$result) 
 		{
-			throw new Exception('Error resizing image "' . $img . '".');
+			throw new \Exception('Error resizing image "' . $img . '".');
 		}
 
 	}
@@ -212,7 +212,7 @@ class Image {
 
 		if (!$result) 
 		{
-			throw new Exception('Error resizing image "' . $img . '".');
+			throw new \Exception('Error resizing image "' . $img . '".');
 		}
 	}
 
@@ -234,7 +234,7 @@ class Image {
 		// Check file exists
 		if (!file_exists($img))
 		{
-			throw new Exception('Error: Image file "' . $img . '" was not found.');
+			throw new \Exception('Error: Image file "' . $img . '" was not found.');
 		}		 
 
 		// Get current image size
