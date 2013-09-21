@@ -14,12 +14,6 @@ namespace System\Core;
 class BaseApplication
 {
 	/**
-	 * Web request or CLI
-	 * @var bool
-	 */
-	protected $isWebRequest;
-	
-	/**
 	 * Environment object
 	 * @var \System\Core\Environment
 	 */
@@ -81,27 +75,22 @@ class BaseApplication
 
 	/**
 	 * Constructor
-	 * 
-	 * @param bool $isWebRequest
 	 */
-	public function __construct($isWebRequest)
+	public function __construct()
 	{
-		$this->isWebRequest = $isWebRequest;
 	}
-	
+
 	/**
 	 * Initializes Environment (using the given environment ID),
 	 * Config, Log, Request and Response objects.
-	 * 
-	 * @param string $envId
 	 */
-	public function initialize($envId)
+	public function initialize()
 	{
 		$this->registry = new Registry();
 		
 		// Setup environment
-		$this->environment = new Environment($envId);
-		
+		$this->environment = new Environment();
+
 		// Setup config
 		$configLoader = new ConfigLoader();
 		$this->config = new Config();
@@ -117,7 +106,7 @@ class BaseApplication
 		$this->request->path = $_SERVER['REQUEST_URI'];
 		$this->request->postData = $_POST;
 		$this->request->pathParameters = $_GET;
-		
+
 		if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest')
 		{
 			$this->request->setIsAjaxRequest(true);
@@ -127,7 +116,7 @@ class BaseApplication
 		$this->response = new Response($this->config->app->templating->default);
 		
 		// Initialize session
-		if (true === $this->isWebRequest)
+		if ($this->environment->isWeb())
 		{
 			$this->session = new Session();
 		}
@@ -179,8 +168,8 @@ class BaseApplication
 	 */
 	public function renderResponse()
 	{
-		// Only merge/minify assets for normal web requests
-		if (false === $this->request->isAjaxRequest())
+		// Only merge/minify assets for normal web requests, not for Ajax or CLI
+		if (false === $this->request->isAjaxRequest() && $this->environment->isWeb())
 		{
 			// Get list of assets (CSS/JS) to include in response
 			if (!$this->config->app->has('assets'))

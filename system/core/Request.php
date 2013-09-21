@@ -36,7 +36,13 @@ class Request extends DataContainer
 	 * @var bool
 	 */
 	protected $isAjaxRequest = false;
-	
+
+	/**
+	 * Web request or CLI
+	 * @var bool
+	 */
+	protected $isWebRequest = true;
+
 	/**
 	 * Returns true if the pathParameters property is a non-empty array.
 	 * @returns bool
@@ -74,5 +80,30 @@ class Request extends DataContainer
 	{
 		$this->isAjaxRequest = $isAjaxRequest;
 	}
-	
+
+
+	/**
+	 * Sets the value of isWebRequest
+	 *
+	 * @param bool $val
+	 * @throws \Exception
+	 */
+	public function setIsWebRequest($val)
+	{
+		if (!is_bool($val))
+		{
+			throw new \Exception('Invalid value');
+		}
+		$this->isWebRequest = $val;
+	}
+
+	/**
+	 * Returns the value of isWebRequest
+	 *
+	 * @return bool
+	 */
+	public function isWebRequest()
+	{
+		return $this->isWebRequest;
+	}
 }

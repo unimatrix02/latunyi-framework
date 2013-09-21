@@ -47,12 +47,12 @@ class ControllerFactory
 	 * 
 	 * @param string $controllerName
 	 * @param Log $log
-	 * @param Session $session
+	 * @param Session $session - might be null
 	 * @param Request $request
 	 * @param Response $response
 	 * @return \System\Core\BaseController
 	 */
-	public function makeController($controllerName, Log $log, Session $session, Request $request, Response $response)
+	public function makeController($controllerName, Log $log, $session, Request $request, Response $response)
 	{
 		$fullControllerName = '\\Application\\Controller\\' . $controllerName;
 		$controller = new $fullControllerName();
@@ -60,7 +60,10 @@ class ControllerFactory
 		$controller->setRequest($request);
 		$controller->setResponse($response);
 		$controller->setLog($log);
-		$controller->setSession($session);
+		if (isset($session))
+		{
+			$controller->setSession($session);
+		}
 
 		// Execute additional factory method, if available (exists in \Application\Controller\Factory)
 		$method = 'make' . $controllerName . 'Controller';

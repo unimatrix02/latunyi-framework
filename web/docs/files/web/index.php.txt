@@ -6,11 +6,8 @@
 $startTime = microtime(true);
 
 // Set document root if not set (when running on CLI)
-$isWebRequest = true;
 if (!isset($_SERVER['DOCUMENT_ROOT']) || empty($_SERVER['DOCUMENT_ROOT']))
 {
-	$isWebRequest = false;
-	
 	$currentDir = getcwd();
 	$scriptDir = dirname($_SERVER['PHP_SELF']);
 
@@ -52,7 +49,7 @@ $classLoader->register();
 
 try
 {
-	$appl = new Application\Application($isWebRequest);
+	$appl = new Application\Application();
 	$appl->initialize();
 	$appl->routeRequest();
 	$appl->createController();

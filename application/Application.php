@@ -18,34 +18,17 @@ class Application extends \System\Core\BaseApplication
 	/**
 	 * Constructor
 	 */
-	public function __construct($isWebRequest)
+	public function __construct()
 	{
-		parent::__construct($isWebRequest);
+		parent::__construct();
 	}
-	
+
 	/**
 	 * Initializes the application.
-	 * 
-	 * @see System\Core.BaseApplication::initialize()
 	 */
 	public function initialize()
 	{
-		parent::initialize($this->getEnvironmentId());
+		parent::initialize();
 	}
 
-	/**
-	 * Returns the ID for the currently detected environment,
-	 * such as "dev", "test", "prod".
-	 *
-	 * @return string
-	 */
-	private function getEnvironmentId()
-	{
-		$hostname = getServerHostName();
-
-		// Logic to determine env based on hostname, now simply dev
-		$env = Env::DEV;
-
-		return $env;
-	}
 }
