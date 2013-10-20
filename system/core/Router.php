@@ -42,7 +42,7 @@ class Router
 		foreach ($paths as $path)
 		{
 			$regexPath = str_replace('/', '\/', $path);
-			$pattern = '/^' . $regexPath . '$/';
+			$pattern = '/^' . $regexPath . '$/i';
 
 			if (regex_check($pattern, $request->path))
 			{
