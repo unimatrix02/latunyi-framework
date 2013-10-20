@@ -1,0 +1,11 @@
+<?php $config = array (
+  '/admin' => 
+  array (
+    'controller' => 'Test',
+    'method' => 'showStartPage',
+    'vars' => 
+    array (
+      'content' => 'start.php',
+    ),
+  ),
+);

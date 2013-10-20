@@ -1,4 +1,19 @@
 <?php $config = array (
+  'modules' => 
+  array (
+    'site' => 
+    array (
+      'root_path' => '/',
+      'controller_ns' => NULL,
+      'template_path' => NULL,
+    ),
+    'admin' => 
+    array (
+      'root_path' => '/admin',
+      'controller_ns' => 'Admin',
+      'template_path' => '/admin',
+    ),
+  ),
   'database' => 
   array (
     'username' => 'demo',

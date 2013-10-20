@@ -74,6 +74,7 @@ class Action
 		$this->arguments = array();
 		$this->styles = array();
 		$this->scripts = array();
+		$this->variables = array();
 	}
 	
 	/**

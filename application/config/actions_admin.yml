@@ -1,0 +1,7 @@
+# List
+/admin:
+    controller: Test
+    method:     showStartPage
+    vars:
+        content: start.php
+

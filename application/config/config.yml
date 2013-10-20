@@ -1,3 +1,23 @@
+# Modules
+#
+# You can have modules (for example, site + admin). You can also comment it out or remove it.
+# In this case, the standard /application/config/actions.yml file is used.
+# If you have modules, /application/config/actions_<module>.yml is read.
+
+# root_path defines path in URL that is regarded as a "namespace" for this module
+# So, /admin means all URLs starting with /admin will be part of the admin module.
+# Controller namespace is relative to \\Application\Controller, can be empty.
+# Template path is relative to /application/templates, can be empty.
+modules:
+    site:
+        root_path: /
+        controller_ns:
+        template_path:
+    admin:
+        root_path: /admin
+        controller_ns: Admin
+        template_path: /admin
+
 # Database
 database:
     username: demo

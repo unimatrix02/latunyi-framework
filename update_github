@@ -1,0 +1,4 @@
+cd /var/www/framework
+git co github-master
+git merge master
+git push github master

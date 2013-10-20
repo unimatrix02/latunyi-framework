@@ -74,6 +74,12 @@ class BaseApplication
 	protected $registry;
 
 	/**
+	 * Current module, if applicable.
+	 * @var \System\Core\Module
+	 */
+	protected $module;
+
+	/**
 	 * Constructor
 	 */
 	public function __construct()
@@ -91,17 +97,100 @@ class BaseApplication
 		// Setup environment
 		$this->environment = new Environment();
 
-		// Setup config
+		$this->setupConfig();
+
+		// Setup logging
+		$this->log = new Log(DOC_ROOT . $this->config->core->log->dir);
+
+		$this->initRequest();
+
+		$this->initModule();
+
+		$this->setupActionConfig();
+
+		$this->initResponse();
+
+		// Initialize session
+		if ($this->environment->isWeb())
+		{
+			$this->session = new Session();
+		}
+	}
+
+	/**
+	 * Loads configs for core, application into the config property.
+	 */
+	private function setupConfig()
+	{
 		$configLoader = new ConfigLoader();
 		$this->config = new Config();
 		$this->config->core 	= $configLoader->loadFile(SYSTEM_PATH . '/config/config');
 		$this->config->app 		= $configLoader->loadFile(APP_PATH . '/config/config');
-		$this->config->actions 	= $configLoader->loadFile(APP_PATH . '/config/actions');
-		
-		// Setup logging
-		$this->log = new Log(DOC_ROOT . $this->config->core->log->dir);
+	}
 
-		// Initialize Request object
+	/**
+	 * Takes modules from the application config, if available, and compares
+	 * the root path of each module with the request path. If there is a match,
+	 * a Module object is created and placed in the module property.
+	 */
+	private function initModule()
+	{
+		if ($this->config->app->has('modules'))
+		{
+			$modules = $this->config->app->modules->asArray();
+			arsort($modules);
+
+			foreach($modules as $name => $data)
+			{
+				if ($data['root_path'] == substr($this->request->path, 0, strlen($data['root_path'])))
+				{
+					$this->module = new Module($name, $data);
+					break;
+				}
+			}
+		}
+	}
+
+	/**
+	 * Sets up the action config, using either the standard actions config
+	 * or the actions config for a specific module.
+	 */
+	private function setupActionConfig()
+	{
+		$configLoader = new ConfigLoader();
+
+		if (!isset($this->module))
+		{
+			// Load common actions config
+			$this->config->actions 	= $configLoader->loadFile(APP_PATH . '/config/actions');
+		}
+		else
+		{
+			// Load module-specific actions
+			$this->config->actions 	= $configLoader->loadFile(APP_PATH . '/config/actions_' . $this->module->getId());
+		}
+	}
+
+	/**
+	 * Initializes the Reponse object with a default template.
+	 * If a module is set, the template path (if set) is prefixed to the default template.
+	 */
+	private function initResponse()
+	{
+		$defaultTemplate = $this->config->app->templating->default;
+		if ($this->hasModule() && $this->module->hasTemplatePath())
+		{
+			$defaultTemplate = $this->module->getTemplatePath() . '/' . $defaultTemplate;
+		}
+		$this->response = new Response($defaultTemplate);
+	}
+
+	/**
+	 * Initializes the Request object by setting path, postData and pathParameters,
+	 * and checks for an Ajax request.
+	 */
+	private function initRequest()
+	{
 		$this->request = new Request();
 		$this->request->path = $_SERVER['REQUEST_URI'];
 		$this->request->postData = $_POST;
@@ -110,15 +199,6 @@ class BaseApplication
 		if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest')
 		{
 			$this->request->setIsAjaxRequest(true);
-		}
-
-		// Initialize Response object
-		$this->response = new Response($this->config->app->templating->default);
-		
-		// Initialize session
-		if ($this->environment->isWeb())
-		{
-			$this->session = new Session();
 		}
 	}
 
@@ -130,7 +210,7 @@ class BaseApplication
 	{
 		$router = new Router($this->config->actions);
 		$this->action = $router->findAction($this->request);
-		
+
 		// Copy variables, CSS/JS files from action into response
 		$this->response->setstyles($this->action->getstyles());
 		$this->response->setScripts($this->action->getScripts());
@@ -150,8 +230,23 @@ class BaseApplication
 	 */
 	public function createController()
 	{
-		$controllerFactory = new \Application\Controller\Factory($this->config, $this->registry);
-		$this->controller = $controllerFactory->makeController($this->action->getController(), $this->log, $this->session, $this->request, $this->response);
+		$controllerName = $this->action->getController();
+		$controllerNamespace = '';
+
+		$factoryNamespace = '\Application\Controller';
+
+		// Prefix controller name and factory namespace with namespace from module, if present
+		if (isset($this->module) && $this->module->hasControllerNamespace())
+		{
+			$controllerNamespace = $this->module->getControllerNamespace();
+			$factoryNamespace .= '\\' . $controllerNamespace;
+		}
+
+		$factoryClass = $factoryNamespace . '\Factory';
+
+		$controllerFactory = new $factoryClass($this->config, $this->registry);
+
+		$this->controller = $controllerFactory->makeController($controllerNamespace, $controllerName, $this->log, $this->session, $this->request, $this->response);
 	}
 	
 	/**
@@ -223,5 +318,14 @@ class BaseApplication
 		}
 	}
 
+	/**
+	 * Returns true if a module is set.
+	 *
+	 * @return bool
+	 */
+	public function hasModule()
+	{
+		return isset($this->module);
+	}
 }
 

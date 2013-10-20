@@ -44,7 +44,8 @@ class ControllerFactory
 	 * Initializes the given controller class and injects the given objects, then returns it.
 	 * Also executes the make<ControllerName>Controller method in the Application's Factory class.
 	 * If available, calls the init() method on the controller as well.
-	 * 
+	 *
+	 * @param string $controllerNamespace
 	 * @param string $controllerName
 	 * @param Log $log
 	 * @param Session $session - might be null
@@ -52,9 +53,9 @@ class ControllerFactory
 	 * @param Response $response
 	 * @return \System\Core\BaseController
 	 */
-	public function makeController($controllerName, Log $log, $session, Request $request, Response $response)
+	public function makeController($controllerNamespace, $controllerName, Log $log, $session, Request $request, Response $response)
 	{
-		$fullControllerName = '\\Application\\Controller\\' . $controllerName;
+		$fullControllerName = '\\Application\\Controller\\' . (!empty($controllerNamespace) ? $controllerNamespace . '\\' : '') . $controllerName;
 		$controller = new $fullControllerName();
 		$controller->setConfig($this->config);
 		$controller->setRequest($request);

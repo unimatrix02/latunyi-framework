@@ -1,0 +1,91 @@
+# List
+/:
+    controller: Test
+    method:     showList
+    vars:
+        content: list.php
+
+# Add item
+/item/(\d+)/add:
+    controller: Test
+    method:     showForm
+    vars:
+        content: form.php
+
+# Edit item
+/item/(\d+)/edit:
+    controller: Test
+    method:     showForm
+    vars:
+        content: form.php
+
+# Remove item
+/item/(\d+)/remove:
+    controller: Test
+    method:     removeItem
+    vars:
+        content: list.php
+
+# Page for ajax-loaded list
+/list:
+    controller: Test
+    method:     showListAjax
+    vars:
+        content: list_ajax.php
+    files:
+        styles:
+        - fancybox/jquery.fancybox.css
+        scripts:
+        - jquery.fancybox.pack.js
+        - script.js
+
+# List items loaded by ajax - returns HTML
+/list/items:
+    controller: Test
+    method:     showListItems
+    template:   list_items.php
+    
+# Form loaded by ajax - returns HTML
+
+# Add item
+/ajax/item/(\d+)/add:
+    controller: Test
+    method:     showAjaxForm
+    template:   form_ajax.php
+
+# Edit item
+/ajax/item/(\d+)/edit:
+    controller: Test
+    method:     showAjaxForm
+    template:   form_ajax.php
+
+# Validate/save item data
+/ajax/item/(\d+)/save:
+    controller: Test
+    method:     showAjaxForm
+    template:   form_ajax.php
+    
+# Remove item 
+/ajax/item/(\d+)/remove:
+    controller: Test
+    method:     removeItemAjax
+    output:     text
+    
+# Example
+# /some-path/(\d+):		# use regular expressions to indicate parameters
+#     controller: SomeController
+#     method:    doSomething
+#     template:  some_template.php		# set this when the default template should not be used; used for ajax requests that render a partial HTML template
+#     args:				# provide arguments to controller method directly (works only if path doesn't have parameters)
+#		 foo: bar
+#     vars:    (inserted as template data) 
+#        content: some-template.php
+#        other: data
+#     output: html|json|text|none (default html)
+#     files: (optional, for additional files)
+#         styles:
+#             - file1.css
+#             - file2.css
+#         scripts:
+#             - file1.js
+#             - file2.js

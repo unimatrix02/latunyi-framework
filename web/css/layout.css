@@ -134,7 +134,7 @@ header h1 {
 nav {
   position: absolute;
   bottom: -3px;
-  right: 20%;
+  right: 10%;
 }
 /* line 65, ../sass/_header.scss */
 nav ul {

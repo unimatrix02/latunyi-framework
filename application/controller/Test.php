@@ -51,6 +51,7 @@ class Test extends \System\Core\BaseController
 		$this->menu = array(
 			'/' => 'Normal list',
 			'/list' => 'Ajax list',
+			'/admin' => 'Admin',
 		);
 	}
 	

@@ -18,11 +18,10 @@ class Renderer
 	 * @var \System\Core\Response
 	 */
 	protected $response;
-	
+
 	/**
 	 * Constructor
-	 * 
-	 * @param object $action
+	 *
 	 * @param object $response
 	 */
 	public function __construct($response)
