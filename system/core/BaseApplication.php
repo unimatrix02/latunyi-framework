@@ -106,6 +106,7 @@ class BaseApplication
 
 		$this->initModule();
 		$this->checkSecureRequest();
+		$this->checkAuth();
 
 		$this->setupActionConfig();
 
@@ -218,6 +219,27 @@ class BaseApplication
 		{
 			$url = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 			redirect($url);
+		}
+	}
+
+	/**
+	 * If a module is active, and the module has a login, require HTTP basic auth
+	 * to match the username and password from the module.
+	 */
+	public function checkAuth()
+	{
+		if ($this->hasModule() && $this->module->hasLogin())
+		{
+			if (empty($_SERVER['PHP_AUTH_USER']) || empty($_SERVER['PHP_AUTH_PW']) ||
+				$_SERVER['PHP_AUTH_USER'] !== $this->module->getUsername() ||
+				$_SERVER['PHP_AUTH_PW'] !== $this->module->getPassword())
+			{
+				header('WWW-Authenticate: Basic realm="Secure Area"');
+				header('HTTP/1.0 401 Unauthorized');
+
+				echo '<h1>Authorization required</h1>';
+				exit;
+			}
 		}
 	}
 

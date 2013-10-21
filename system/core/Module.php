@@ -44,6 +44,18 @@ class Module
 	protected $secure;
 
 	/**
+	 * Username for HTTP basic auth.
+	 * @var string
+	 */
+	protected $username;
+
+	/**
+	 * Password for HTTP basic auth.
+	 * @var string
+	 */
+	protected $password;
+
+	/**
 	 * Constructor, sets the ID and path properties.
 	 *
 	 * @param string $id
@@ -60,6 +72,8 @@ class Module
 			'controller_ns' => 'controllerNamespace',
 			'template_path' => 'templatePath',
 			'secure' => 'secure',
+			'username' => 'username',
+			'password' => 'password',
 		);
 		foreach($properties as $index => $name)
 		{
@@ -67,7 +81,7 @@ class Module
 			{
 				throw new \Exception("Module $index is missing.");
 			}
-			$this->$name = $data[$index];
+			$this->$name = (string)$data[$index];
 		}
 	}
 
@@ -141,4 +155,33 @@ class Module
 		return $this->secure;
 	}
 
+	/**
+	 * Returns the username.
+	 *
+	 * @return string
+	 */
+	public function getUsername()
+	{
+		return $this->username;
+	}
+
+	/**
+	 * Returns the password.
+	 *
+	 * @return string
+	 */
+	public function getPassword()
+	{
+		return $this->password;
+	}
+
+	/**
+	 * Returns true if username and password are not empty.
+	 *
+	 * @return bool
+	 */
+	public function hasLogin()
+	{
+		return (!empty($this->username) && !empty($this->password));
+	}
 }

@@ -14,6 +14,8 @@
       'controller_ns' => 'Admin',
       'template_path' => '/admin',
       'secure' => true,
+      'username' => 'admin',
+      'password' => 123456,
     ),
   ),
   'database' => 

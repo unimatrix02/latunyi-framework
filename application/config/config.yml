@@ -9,6 +9,8 @@
 # Controller namespace is relative to \\Application\Controller, can be empty.
 # Template path is relative to /application/templates, can be empty.
 # Secure: Enforces that requests must be made over SSL.
+# Username: Username for HTTP basic auth.
+# Password: Password for HTTP basic auth.
 modules:
     site:
         root_path: /
@@ -20,6 +22,8 @@ modules:
         controller_ns: Admin
         template_path: /admin
         secure: true
+        username: admin
+        password: 123456
 
 # Database
 database:
