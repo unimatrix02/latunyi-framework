@@ -77,6 +77,11 @@ class Module
 		);
 		foreach($properties as $index => $name)
 		{
+			// Username and password not required for non-secure modules
+			if (!$this->secure && in_array($index, array('username', 'password')))
+			{
+				continue;
+			}
 			if (!array_key_exists($index, $data))
 			{
 				throw new \Exception("Module $index is missing.");
