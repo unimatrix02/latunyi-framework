@@ -105,6 +105,7 @@ class BaseApplication
 		$this->initRequest();
 
 		$this->initModule();
+		$this->checkSecureRequest();
 
 		$this->setupActionConfig();
 
@@ -196,9 +197,27 @@ class BaseApplication
 		$this->request->postData = $_POST;
 		$this->request->pathParameters = $_GET;
 
+		if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' && isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443)
+		{
+			$this->request->setIsSecure(true);
+		}
+
 		if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest')
 		{
 			$this->request->setIsAjaxRequest(true);
+		}
+	}
+
+	/**
+	 * If a module is active, and the module requires secure requests,
+	 * checks the Request, and if it is not secure, redirect to https.
+	 */
+	public function checkSecureRequest()
+	{
+		if ($this->hasModule() && $this->module->isSecure() && !$this->request->isSecure())
+		{
+			$url = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+			redirect($url);
 		}
 	}
 

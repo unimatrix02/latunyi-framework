@@ -38,6 +38,12 @@ class Module
 	protected $templatePath;
 
 	/**
+	 * To allow only requests over SSL.
+	 * @var bool
+	 */
+	protected $secure;
+
+	/**
 	 * Constructor, sets the ID and path properties.
 	 *
 	 * @param string $id
@@ -47,11 +53,13 @@ class Module
 	public function __construct($id, $data)
 	{
 		$this->id = $id;
+		$this->secure = false;
 
 		$properties = array(
 			'root_path' => 'rootPath',
 			'controller_ns' => 'controllerNamespace',
-			'template_path' => 'templatePath'
+			'template_path' => 'templatePath',
+			'secure' => 'secure',
 		);
 		foreach($properties as $index => $name)
 		{
@@ -122,4 +130,15 @@ class Module
 	{
 		return !empty($this->templatePath);
 	}
+
+	/**
+	 * Returns true if the module requires secure requests.
+	 *
+	 * @return bool
+	 */
+	public function isSecure()
+	{
+		return $this->secure;
+	}
+
 }

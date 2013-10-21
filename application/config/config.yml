@@ -8,15 +8,18 @@
 # So, /admin means all URLs starting with /admin will be part of the admin module.
 # Controller namespace is relative to \\Application\Controller, can be empty.
 # Template path is relative to /application/templates, can be empty.
+# Secure: Enforces that requests must be made over SSL.
 modules:
     site:
         root_path: /
         controller_ns:
         template_path:
+        secure: false
     admin:
         root_path: /admin
         controller_ns: Admin
         template_path: /admin
+        secure: true
 
 # Database
 database:

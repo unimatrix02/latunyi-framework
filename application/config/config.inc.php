@@ -6,12 +6,14 @@
       'root_path' => '/',
       'controller_ns' => NULL,
       'template_path' => NULL,
+      'secure' => false,
     ),
     'admin' => 
     array (
       'root_path' => '/admin',
       'controller_ns' => 'Admin',
       'template_path' => '/admin',
+      'secure' => true,
     ),
   ),
   'database' => 

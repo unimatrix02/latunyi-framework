@@ -44,6 +44,12 @@ class Request extends DataContainer
 	protected $isWebRequest = true;
 
 	/**
+	 * Is secure request (using SSL)
+	 * @var bool
+	 */
+	protected $isSecure = false;
+
+	/**
 	 * Returns true if the pathParameters property is a non-empty array.
 	 * @returns bool
 	 */
@@ -106,4 +112,25 @@ class Request extends DataContainer
 	{
 		return $this->isWebRequest;
 	}
+
+	/**
+	 * Sets the value for isSecure.
+	 *
+	 * @param boolean $isSecure
+	 */
+	public function setIsSecure($isSecure)
+	{
+		$this->isSecure = $isSecure;
+	}
+
+	/**
+	 * Returns true if the request is secure.
+	 *
+	 * @return boolean
+	 */
+	public function isSecure()
+	{
+		return $this->isSecure;
+	}
+
 }
