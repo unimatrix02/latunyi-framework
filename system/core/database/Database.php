@@ -86,10 +86,10 @@ class Database
 	public function getData($query, $params = null, $class = '')
 	{
 		$stmt = $this->runStatement($query, $params, $class);
-		
+
 		// Collect results
 		$result = $stmt->fetchAll();
-		
+
 		// Return results
 		return $result;
 	}

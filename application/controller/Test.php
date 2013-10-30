@@ -61,6 +61,13 @@ class Test extends \System\Core\BaseController
 	public function showList()
 	{
 		$this->items = $this->itemRepo->getAll();
+
+		$map = array(
+			'typeId' => 'type_id',
+			'startDate' => 'start_date',
+			'endDate' => 'end_date',
+		);
+		$dm = new Core\DataMapper($map, 'Application\Domain\Entity\Item');
 	}
 	
 	/**
