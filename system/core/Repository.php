@@ -15,22 +15,34 @@ class Repository
 {
 	/**
 	 * Table object for retrieving/storing entities.
-	 * @var \System\Core\Database\Table
+	 * @var Database\Table
 	 */
 	protected $table;
 
 	/**
 	 * DataMapper
-	 * @var \System\Core\Database\DataMapper
+	 * @var Database\DataMapper
 	 */
 	protected $dataMapper;
 
 	/**
+	 * Constructor, receives and sets the Table and DataMapper objects.
+	 *
+	 * @param Database\Table $table
+	 * @param Database\DataMapper $dataMapper
+	 */
+	public function __construct(Database\Table $table, Database\DataMapper $dataMapper)
+	{
+		$this->table = $table;
+		$this->dataMapper = $dataMapper;
+	}
+
+	/**
 	 * Returns all rows from the table.
-	 * 
+	 *
 	 * @param string $orderBy
-	 * @param string $limit
-	 * @param string $offset
+	 * @param int $limit
+	 * @param int $offset
 	 * @return array
 	 */
 	public function getAll($orderBy = '', $limit = 0, $offset = 0)
@@ -56,10 +68,10 @@ class Repository
 	 *
 	 * @param string $valueField
 	 * @param string $keyField
-	 * @param QueryParams $params
+	 * @param Database\QueryParams $params
 	 * @return mixed
 	 */
-	public function getSimpleList($valueField, $keyField = null, QueryParams $params = null)
+	public function getSimpleList($valueField, $keyField = null, Database\QueryParams $params = null)
 	{
 		return $this->table->getSimpleList($valueField, $keyField = null, $params = null);
 	}

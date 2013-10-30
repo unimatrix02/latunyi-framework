@@ -179,14 +179,15 @@ class Table
 	
 		return $result;
 	}
-	
+
 	/**
-	 *	Add a record to the table.
+	 * Add a record to the table.
 	 *
-	 *	@param		array	$params		Array with fields and values, by ref
-	 *	@param		bool	$replace	Use REPLACE INTO instead of INSERT. Default false.
-	 *	@return		void
-	 **/
+	 * @param $data
+	 * @param  bool $replace Use REPLACE INTO instead of INSERT. Default false.
+	 * @throws \Exception
+	 * @return void|int
+	 */
 	public function insertRow($data, $replace = false)
 	{
 		$data = (array)$data;
@@ -247,11 +248,12 @@ class Table
 	}
 
 	/**
-	 *	Update a row in the table.
+	 *    Update a row in the table.
 	 *
-	 *	@param		array	$data		Array with fields and values, including primary key
-	 *	@return		void
-	 **/
+	 * @param        array $data Array with fields and values, including primary key
+	 * @throws \Exception
+	 * @return        void
+	 */
 	public function updateRow($data)
 	{
 		$data = (array)$data;

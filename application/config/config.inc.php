@@ -23,7 +23,6 @@
     'username' => 'demo',
     'password' => 123456,
     'name' => 'framework',
-    'default_object_namespace' => '\\Application\\Domain\\Entity',
   ),
   'log' => 
   array (

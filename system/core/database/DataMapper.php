@@ -69,6 +69,22 @@ class DataMapper
 		return $this->mapData($entity);
 	}
 
+	public function mapEntitiesToData($list)
+	{
+		if (!is_array($list))
+		{
+			throw new \Exception('No list of entities was supplied');
+		}
+
+		foreach ($list as &$item)
+		{
+			$item = $this->mapEntityToData($item);
+		}
+		unset($item);
+
+		return $list;
+	}
+
 	/**
 	 * Takes an array and returns an entity with its data.
 	 *
@@ -98,6 +114,8 @@ class DataMapper
 		{
 			$data = $this->mapDataToEntity($data);
 		}
+		unset($data);
+
 		return $list;
 	}
 

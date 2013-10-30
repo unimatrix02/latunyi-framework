@@ -23,8 +23,7 @@ class ItemRepository extends \System\Core\Repository
 	 */
 	public function __construct(\Application\Database\ItemTable $itemTable, \Application\Database\ItemDataMapper $dataMapper)
 	{
-		$this->table = $itemTable;
-		$this->dataMapper = $dataMapper;
+		parent::__construct($itemTable, $dataMapper);
 	}
 
 	/**
