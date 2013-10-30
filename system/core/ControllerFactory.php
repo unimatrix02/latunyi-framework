@@ -102,7 +102,7 @@ class ControllerFactory
 			$connData->password = $this->config->app->database->password;
 			$connData->database = $this->config->app->database->name;
 			
-			$this->registry->database = new Database($connData, $this->config->app->database->default_object_namespace);
+			$this->registry->database = new Database($connData);
 		}
 		
 		return $this->registry->database;

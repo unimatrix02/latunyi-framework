@@ -32,21 +32,14 @@ class Database
 	protected $lastStatement;
 	
 	/**
-	 * Default namespace for classes without namespace 
-	 * @var string
-	 */
-	protected $defaultObjectNamespace;
-	
-	/**
-	 * Constructor, stores the connection data and default object namespace.
+	 * Constructor, stores the connection data.
 	 * 
 	 * @param 	ConnectionData 	$connData
 	 * @param 	string 			$defaultObjectNamespace
 	 */
-	public function __construct(ConnectionData $connData, $defaultObjectNamespace)
+	public function __construct(ConnectionData $connData)
 	{
 		$this->connData = $connData;
-		$this->defaultObjectNamespace = $defaultObjectNamespace;
 	}
 
 	/**
@@ -81,11 +74,10 @@ class Database
 	 * 
 	 * @param string $query
 	 * @param array|object $params	Parameters, default null
-	 * @param string	$class		Class name, default empty
-	 */	
-	public function getData($query, $params = null, $class = '')
+	 */
+	public function getData($query, $params = null)
 	{
-		$stmt = $this->runStatement($query, $params, $class);
+		$stmt = $this->runStatement($query, $params);
 
 		// Collect results
 		$result = $stmt->fetchAll();
@@ -99,12 +91,11 @@ class Database
 	 * 
 	 * @param string $query
 	 * @param array|object $params
-	 * @param string $class
 	 * @return object
 	 */
-	public function getRow($query, $params = null, $class = '')
+	public function getRow($query, $params = null)
 	{
-		$stmt = $this->runStatement($query, $params, $class);
+		$stmt = $this->runStatement($query, $params);
 		
 		// Collect results
 		$result = $stmt->fetch();
@@ -121,9 +112,9 @@ class Database
 	 * @param string $class
 	 * @return array
 	 */
-	public function getField($query, $params = null, $class = '')
+	public function getField($query, $params = null)
 	{
-		$stmt = $this->runStatement($query, $params, $class);
+		$stmt = $this->runStatement($query, $params);
 		
 		$stmt->setFetchMode(\PDO::FETCH_COLUMN, 0);
 		
@@ -157,11 +148,10 @@ class Database
 	 * 
 	 * @param string $query
 	 * @param array|object $params
-	 * @param string $class
 	 * @return \PDOStatement
 	 * @throws \Exception
 	 */
-	private function runStatement($query, $params, $class)
+	private function runStatement($query, $params)
 	{
 		$this->connect();
 	
@@ -207,27 +197,19 @@ class Database
 		// Set fetch mode for selects
 		if (substr($query, 0, 6) == 'SELECT')
 		{
+			$stmt->setFetchMode(\PDO::FETCH_ASSOC);
+
+			/*
 			// Retrieve as objects
 			if (!empty($class))
 			{
-				// If just a class name was given, prefix with the default object namespace
-				if (substr($class, 0, 1) != '\\')
-				{
-					$class = $this->defaultObjectNamespace . '\\' . $class;
-				}
-		
-				// Check class exists
-				if (!class_exists($class))
-				{
-					throw new \Exception('Failed to find class ' . $class . ' to fetch data into');
-				}
-		
-				$stmt->setFetchMode(\PDO::FETCH_CLASS, $class);
+				$stmt->setFetchMode(\PDO::FETCH_ASSOC);
 			}
 			else
 			{
 				$stmt->setFetchMode(\PDO::FETCH_OBJ);
 			}
+			*/
 		}
 	
 		return $stmt;

@@ -8,6 +8,7 @@
 
 namespace Application\Controller;
 
+use Application\Database\ItemDataMapper;
 use Application\Domain\Entity\ItemValidator;
 use Application\Domain\Service\ItemService;
 use Application\Domain\Repository\TypeRepository;
@@ -28,7 +29,8 @@ class Factory extends \System\Core\ControllerFactory
 	public function makeTestController(Test $controller)
 	{
 		$itemTable = new ItemTable($this->getDatabase());
-		$itemRepo = new ItemRepository($itemTable);
+		$itemMapper = new ItemDataMapper();
+		$itemRepo = new ItemRepository($itemTable, $itemMapper);
 		$controller->setItemRepo($itemRepo);
 
 		$typeTable = new TypeTable($this->getDatabase());

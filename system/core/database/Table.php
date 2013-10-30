@@ -62,22 +62,14 @@ class Table
 	private $tableAliases;
 	
 	/**
-	 * Class for storing data in.
-	 * @var string
-	 */
-	private $entityClass;
-	
-	/**
-	 * Constructor, sets the db and entity class, inits fields/foreign fields.
+	 * Constructor, sets the db, inits fields/foreign fields.
 	 * 
 	 * @param Database $db
-	 * @param string $entityClass
 	 */
-	public function __construct(Database $db, $entityClass = '')
+	public function __construct(Database $db)
 	{
 		$this->db = $db;
-		$this->entityClass = $entityClass;
-		
+
 		$this->fields = array();
 		$this->tableAliases = array();
 	}
@@ -116,7 +108,7 @@ class Table
 		
 		$params = array('id' => $id);
 		
-		$row = $this->db->getRow($sql, $params, $this->entityClass);
+		$row = $this->db->getRow($sql, $params);
 		
 		return $row;
 	}
@@ -149,8 +141,8 @@ class Table
 		}
 		
 		// Get data
-		$result = $this->db->getData($sql, array(), $this->entityClass);
-	
+		$result = $this->db->getData($sql, array());
+
 		return $result;
 	}
 
@@ -183,7 +175,7 @@ class Table
 		}
 		
 		// Get data
-		$result = $this->db->getData($sql, $params->asArray(), $this->entityClass);
+		$result = $this->db->getData($sql, $params->asArray());
 	
 		return $result;
 	}

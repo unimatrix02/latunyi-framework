@@ -20,6 +20,12 @@ class Repository
 	protected $table;
 
 	/**
+	 * DataMapper
+	 * @var \System\Core\Database\DataMapper
+	 */
+	protected $dataMapper;
+
+	/**
 	 * Returns all rows from the table.
 	 * 
 	 * @param string $orderBy
@@ -29,7 +35,8 @@ class Repository
 	 */
 	public function getAll($orderBy = '', $limit = 0, $offset = 0)
 	{
-		return $this->table->getAllRows($orderBy, $limit, $offset);
+		$data = $this->table->getAllRows($orderBy, $limit, $offset);
+		return $this->dataMapper->mapDataToEntities($data);
 	}
 
 	/**
@@ -40,15 +47,17 @@ class Repository
 	 */
 	public function get($id)
 	{
-		return $this->table->getRow($id);
+		$data = $this->table->getRow($id);
+		return $this->dataMapper->mapDataToEntity($data);
 	}
-	
+
 	/**
 	 * Returns a simple key/value list.
-	 * 
+	 *
 	 * @param string $valueField
 	 * @param string $keyField
 	 * @param QueryParams $params
+	 * @return mixed
 	 */
 	public function getSimpleList($valueField, $keyField = null, QueryParams $params = null)
 	{
@@ -63,7 +72,8 @@ class Repository
 	 */
 	public function add($entity)
 	{
-		return $this->table->insertRow($entity);
+		$data = $this->dataMapper->mapEntityToData($entity);
+		return $this->table->insertRow($data);
 	}
 
 	/**
@@ -74,13 +84,14 @@ class Repository
 	 */
 	public function update($entity)
 	{
-		return $this->table->updateRow($entity);
+		$data = $this->dataMapper->mapEntityToData($entity);
+		return $this->table->updateRow($data);
 	}
-	
+
 	/**
 	 * Removes the entity with the given ID.
-	 *  
-	 * @param mixed $id
+	 *
+	 * @param int $entityId
 	 * @return int Number of affected rows
 	 */
 	public function remove($entityId)

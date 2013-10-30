@@ -16,13 +16,15 @@ use Application\Domain\Entity\Item;
 class ItemRepository extends \System\Core\Repository
 {
 	/**
-	 * Constructor, receives and sets the ItemTable object.
-	 * 
+	 * Constructor, receives and sets the ItemTable and DataMapper objects.
+	 *
 	 * @param \Application\Database\ItemTable $itemTable
+	 * @param \Application\Database\ItemDataMapper $dataMapper
 	 */
-	public function __construct(\Application\Database\ItemTable $itemTable)
+	public function __construct(\Application\Database\ItemTable $itemTable, \Application\Database\ItemDataMapper $dataMapper)
 	{
 		$this->table = $itemTable;
+		$this->dataMapper = $dataMapper;
 	}
 
 	/**

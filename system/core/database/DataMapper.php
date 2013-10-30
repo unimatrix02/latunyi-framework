@@ -6,7 +6,7 @@
  *	@package     LatunyiFramework
  **/
 
-namespace System\Core;
+namespace System\Core\Database;
 
 /**
  * Base class for datamapper classes.
@@ -41,6 +41,9 @@ class DataMapper
 		}
 		$this->map = $map;
 
+		// Prefix entity class with namespace
+		$entityClass = 'Application\Domain\Entity\\' . $entityClass;
+
 		if (!class_exists($entityClass))
 		{
 			throw new \Exception('Entity class ' . $entityClass . ' not found');
@@ -52,7 +55,7 @@ class DataMapper
 	 * Takes an entity and maps its data according to the map,
 	 * returning an array.
 	 *
-	 * @param Entity $entity
+	 * @param \System\Core\Entity $entity
 	 * @throws \Exception
 	 * @return array
 	 */
@@ -81,6 +84,21 @@ class DataMapper
 		}
 
 		return new $this->entityClass($this->mapData($data, true));
+	}
+
+	/**
+	 * Iterates the given list of data and maps the data to entities.
+	 *
+	 * @param array $list
+	 * @return array
+	 */
+	public function mapDataToEntities($list)
+	{
+		foreach ($list as &$data)
+		{
+			$data = $this->mapDataToEntity($data);
+		}
+		return $list;
 	}
 
 	/**

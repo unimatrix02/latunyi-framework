@@ -25,7 +25,7 @@ class ItemTable extends Table
 	 */
 	public function __construct(\System\Core\Database\Database $db)
 	{
-		parent::__construct($db, 'Item');
+		parent::__construct($db);
 		
 		$this->setName('item');
 		$this->setOrderBy('name');
