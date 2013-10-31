@@ -35,7 +35,7 @@ class DataMapper
 	 */
 	public function __construct($map, $entityClass)
 	{
-		if (!isset($map) || !is_array($map) || empty($map))
+		if (!isset($map) || !is_array($map))
 		{
 			throw new \Exception('Invalid map');
 		}
