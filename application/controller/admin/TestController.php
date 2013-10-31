@@ -22,7 +22,7 @@ use \System\Core;
 /**
  * Test controller class.
  */
-class Test extends Core\BaseController
+class TestController extends Core\BaseController
 {
 	/**
 	 * Method to initialize controller.

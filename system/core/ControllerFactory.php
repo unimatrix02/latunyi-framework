@@ -67,7 +67,7 @@ class ControllerFactory
 		}
 
 		// Execute additional factory method, if available (exists in \Application\Controller\Factory)
-		$method = 'make' . $controllerName . 'Controller';
+		$method = 'make' . $controllerName;
 		if (is_callable(array($this, $method)))
 		{
 			$this->$method($controller);

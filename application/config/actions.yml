@@ -1,34 +1,34 @@
 # List
 /:
-    controller: Test
+    controller: TestController
     method:     showList
     vars:
         content: list.php
 
 # Add item
 /item/(\d+)/add:
-    controller: Test
+    controller: TestController
     method:     showForm
     vars:
         content: form.php
 
 # Edit item
 /item/(\d+)/edit:
-    controller: Test
+    controller: TestController
     method:     showForm
     vars:
         content: form.php
 
 # Remove item
 /item/(\d+)/remove:
-    controller: Test
+    controller: TestController
     method:     removeItem
     vars:
         content: list.php
 
 # Page for ajax-loaded list
 /list:
-    controller: Test
+    controller: TestController
     method:     showListAjax
     vars:
         content: list_ajax.php
@@ -41,7 +41,7 @@
 
 # List items loaded by ajax - returns HTML
 /list/items:
-    controller: Test
+    controller: TestController
     method:     showListItems
     template:   list_items.php
     
@@ -49,25 +49,25 @@
 
 # Add item
 /ajax/item/(\d+)/add:
-    controller: Test
+    controller: TestController
     method:     showAjaxForm
     template:   form_ajax.php
 
 # Edit item
 /ajax/item/(\d+)/edit:
-    controller: Test
+    controller: TestController
     method:     showAjaxForm
     template:   form_ajax.php
 
 # Validate/save item data
 /ajax/item/(\d+)/save:
-    controller: Test
+    controller: TestController
     method:     showAjaxForm
     template:   form_ajax.php
     
 # Remove item 
 /ajax/item/(\d+)/remove:
-    controller: Test
+    controller: TestController
     method:     removeItemAjax
     output:     text
     

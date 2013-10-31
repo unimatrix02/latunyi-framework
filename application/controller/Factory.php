@@ -24,9 +24,9 @@ class Factory extends \System\Core\ControllerFactory
 	/**
 	 * Customizes the Test controller.
 	 *
-	 * @param Test $controller
+	 * @param TestController $controller
 	 */
-	public function makeTestController(Test $controller)
+	public function makeTestController(TestController $controller)
 	{
 		$itemTable = new ItemTable($this->getDatabase());
 		$itemMapper = new ItemDataMapper();

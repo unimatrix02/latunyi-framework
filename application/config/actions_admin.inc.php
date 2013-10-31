@@ -1,7 +1,7 @@
 <?php $config = array (
   '/admin' => 
   array (
-    'controller' => 'Test',
+    'controller' => 'TestController',
     'method' => 'showStartPage',
     'vars' => 
     array (

@@ -1,7 +1,7 @@
 <?php $config = array (
   '/' => 
   array (
-    'controller' => 'Test',
+    'controller' => 'TestController',
     'method' => 'showList',
     'vars' => 
     array (
@@ -10,7 +10,7 @@
   ),
   '/item/(\\d+)/add' => 
   array (
-    'controller' => 'Test',
+    'controller' => 'TestController',
     'method' => 'showForm',
     'vars' => 
     array (
@@ -19,7 +19,7 @@
   ),
   '/item/(\\d+)/edit' => 
   array (
-    'controller' => 'Test',
+    'controller' => 'TestController',
     'method' => 'showForm',
     'vars' => 
     array (
@@ -28,7 +28,7 @@
   ),
   '/item/(\\d+)/remove' => 
   array (
-    'controller' => 'Test',
+    'controller' => 'TestController',
     'method' => 'removeItem',
     'vars' => 
     array (
@@ -37,7 +37,7 @@
   ),
   '/list' => 
   array (
-    'controller' => 'Test',
+    'controller' => 'TestController',
     'method' => 'showListAjax',
     'vars' => 
     array (
@@ -58,31 +58,31 @@
   ),
   '/list/items' => 
   array (
-    'controller' => 'Test',
+    'controller' => 'TestController',
     'method' => 'showListItems',
     'template' => 'list_items.php',
   ),
   '/ajax/item/(\\d+)/add' => 
   array (
-    'controller' => 'Test',
+    'controller' => 'TestController',
     'method' => 'showAjaxForm',
     'template' => 'form_ajax.php',
   ),
   '/ajax/item/(\\d+)/edit' => 
   array (
-    'controller' => 'Test',
+    'controller' => 'TestController',
     'method' => 'showAjaxForm',
     'template' => 'form_ajax.php',
   ),
   '/ajax/item/(\\d+)/save' => 
   array (
-    'controller' => 'Test',
+    'controller' => 'TestControllerController',
     'method' => 'showAjaxForm',
     'template' => 'form_ajax.php',
   ),
   '/ajax/item/(\\d+)/remove' => 
   array (
-    'controller' => 'Test',
+    'controller' => 'TestControllerController',
     'method' => 'removeItemAjax',
     'output' => 'text',
   ),

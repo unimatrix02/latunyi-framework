@@ -1,6 +1,6 @@
 # List
 /admin:
-    controller: Test
+    controller: TestController
     method:     showStartPage
     vars:
         content: start.php

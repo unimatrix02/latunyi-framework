@@ -22,7 +22,7 @@ use \System\Core;
 /**
  * Test controller class.
  */
-class Test extends \System\Core\BaseController
+class TestController extends \System\Core\BaseController
 {
 	/**
 	 * Item repository
