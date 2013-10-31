@@ -75,17 +75,18 @@ class Repository
 	{
 		return $this->table->getSimpleList($valueField, $keyField = null, $params = null);
 	}
-	
+
 	/**
 	 * Adds a new entity to the database.
-	 * 
+	 *
 	 * @param \System\Core\Entity $entity
+	 * @param bool $replace     Replace instead of insert
 	 * @return int Last inserted ID (for auto incremented primary keys)
 	 */
-	public function add($entity)
+	public function add($entity, $replace = false)
 	{
 		$data = $this->dataMapper->mapEntityToData($entity);
-		return $this->table->insertRow($data);
+		return $this->table->insertRow($data, $replace);
 	}
 
 	/**
